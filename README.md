@@ -6,8 +6,8 @@ StudyPlay es una aplicación móvil que transforma el aprendizaje en una experie
 
 CARACTERISTICAS PROPIAS DEL MÓVIL
 
--Notificaciones push inteligentes para recordar sesiones de estudio
--Acceso ubicuo (estudio en cualquier momento y lugar)
+* Notificaciones push inteligentes para recordar sesiones de estudio
+* Acceso ubicuo (estudio en cualquier momento y lugar)
 -Conectividad en tiempo real mediante Firebase
 -Interacción dinámica con quizzes
 -Interfaz táctil intuitiva 
