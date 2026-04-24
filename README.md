@@ -54,7 +54,7 @@ TECNOLOGÍAS UTILIZADAS
 
 Diagrama de flujo
 
-![Diagrama](assets/images/diagrama.png)
+[Diagrama](assets/images/diagrama.png)
 
 [RESEARCH.md](./RESEARCH.md)
 
