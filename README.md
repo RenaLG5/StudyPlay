@@ -56,6 +56,8 @@ Diagrama de flujo
 
 [Diagrama](assets/images/diagrama.png)
 
+https://mermaid.ai/d/94ece48e-1112-4477-a783-1d48d7ebf778
+
 [RESEARCH.md](./RESEARCH.md)
 
 AUTOR
