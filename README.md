@@ -1,4 +1,4 @@
-[RESEARCH.md](./RESEARCH.md)
+
 
 STUDYPLAY
 
@@ -54,8 +54,9 @@ TECNOLOGÍAS UTILIZADAS
 
 Diagrama de flujo
 
-![Diagrama](assets/images/diagram.png)
+![Diagrama](assets/images/diagrama.png)
 
+[RESEARCH.md](./RESEARCH.md)
 
 AUTOR
 ●Renato León
