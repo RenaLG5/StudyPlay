@@ -69,17 +69,7 @@ class _MenuScreenState extends State<MenuScreen> {
         child: Column(
           mainAxisAlignment: MainAxisAlignment.center,
           children: [
-            Container(
-              decoration: BoxDecoration(
-                borderRadius: BorderRadius.circular(20),
-                boxShadow: [BoxShadow(color: Colors.black26, blurRadius: 8)],
-              ),
-              child: Image.asset(
-                'assets/images/perrito.png',
-                width: 80,
-                height: 80,
-              ),
-            ),
+            const Icon(Icons.school, size: 80),
 
             const SizedBox(height: 10),
 
@@ -90,8 +80,7 @@ class _MenuScreenState extends State<MenuScreen> {
 
             const SizedBox(height: 10),
 
-            const Text('Selecciona una opción para comenzar'),
-
+            //const Text('Selecciona una opción para comenzar'),
             const SizedBox(height: 30),
 
             ElevatedButton.icon(
