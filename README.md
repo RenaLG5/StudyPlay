@@ -1,6 +1,7 @@
 
 
 # STUDYPLAY
+### Motivar el aprendizaje mediante una experiencia interactiva y gamificada, facilitando el estudio en distintas áreas académicas.
 
 StudyPlay es una aplicación móvil que transforma el aprendizaje en una experiencia interactiva mediante gamificación. Permite a los usuarios estudiar a través de trivias dinamicas, obtener recompensas y mejorar sus habitos de estudio en cualquier lugar buscando resolver el problema de la desmotivación en el aprendizaje tradicional, incorporando elementos de juego como puntos, niveles y logros
 
@@ -8,7 +9,7 @@ StudyPlay es una aplicación móvil que transforma el aprendizaje en una experie
 
 * Notificaciones push inteligentes para recordar sesiones de estudio
 * Acceso ubicuo (estudio en cualquier momento y lugar)
-* onectividad en tiempo real mediante Firebase
+* Conectividad en tiempo real mediante Firebase
 * Interacción dinámica con quizzes
 * Interfaz táctil intuitiva 
 
@@ -51,6 +52,32 @@ Cliente(Flutter) ↔ Servidor(Firebase)
 * Dart
 * Firebase
 * Material Design
+
+## Manual de uso
+
+### MENU
+
+* Presiona el icono jugar para acceder a los quiz
+* Accede al historial desde la barra inferior boton izquierdo
+* Accede al perfil del usuario desde la barra inferior boton derecho
+
+### Pantalla de asignaturas
+
+* Seleccionar materia para las preguntas
+
+### Dentro del quiz
+
+* Responder preguntas
+* Obtener resultados al finalizar
+
+### Historial
+
+#### Ver partidas anteriores con: 
+* Fecha
+* Tiempo de juego
+* Dificultad
+* Asignatura
+* Conteo de respuestas correctas e incorrectas
 
 ## Diagrama de flujo
 
