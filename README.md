@@ -53,6 +53,35 @@ Cliente(Flutter) ↔ Servidor(Firebase)
 * Firebase
 * Material Design
 
+## Navegación
+
+La aplicación StudyPlay utiliza un sistema de navegación basado en múltiples componentes para facilitar la experiencia del usuario:
+
+* **Barra inferior (Bottom Navigation Bar):**
+  * Acceso rápido al historial de partidas.
+  * Acceso al perfil del usuario.
+
+* **Botón central (Floating Action Button):**
+  * Permite iniciar una partida (JUGAR).
+
+* **Menú lateral (Drawer - ☰):**
+  * Acceso a funcionalidades adicionales como:
+    * Perfil de usuario
+    * Configuración
+    * Notificaciones (vista futura)
+
+La navegación entre pantallas se implementa mediante `Navigator.pushNamed`, permitiendo una estructura clara y escalable dentro de la aplicación.
+
+## Pantallas de la aplicación
+
+* Menú principal
+* Selección de asignaturas
+* Quiz
+* Historial
+* Perfil
+* Recompensas
+* Configuración
+
 ## Manual de uso
 
 ### MENU
