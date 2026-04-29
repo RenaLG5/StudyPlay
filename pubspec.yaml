@@ -57,13 +57,12 @@ flutter:
   # the material Icons class.
   uses-material-design: true
 
-assets:
-      - assets/icons/
-      - assets/icons/Perrito.ico
-      - assets/images/
-      - assets/images/diagrama.png
-      - assets/images/perrito.png
-      
+  assets:
+    - assets/images/
+    - assets/images/perrito1.png
+    - assets/icons/
+    - assets/icons/Perrito.ico
+
 
   # To add assets to your application, add an assets section, like this:
   # assets:
