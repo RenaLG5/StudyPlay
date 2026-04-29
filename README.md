@@ -110,6 +110,17 @@ La navegación entre pantallas se implementa mediante `Navigator.pushNamed`, per
 
 ## Diagrama de flujo
 
+```mermaid
+flowchart TD
+A[Menú Principal] 
+    --> B[Seleccionar Asignatura]
+    B --> C[Iniciar Quiz]
+    C --> D[Responder Preguntas]
+    D --> E[Mostrar Resultados]
+    E --> F[Guardar en Historial]
+    F --> A
+```
+
 [Diagrama](assets/images/diagrama.png)
 
 [Link Diagrama](https://mermaid.ai/d/94ece48e-1112-4477-a783-1d48d7ebf778)
