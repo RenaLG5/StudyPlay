@@ -69,7 +69,17 @@ class _MenuScreenState extends State<MenuScreen> {
         child: Column(
           mainAxisAlignment: MainAxisAlignment.center,
           children: [
-            const Icon(Icons.school, size: 80),
+            Container(
+              decoration: BoxDecoration(
+                borderRadius: BorderRadius.circular(20),
+                boxShadow: [BoxShadow(color: Colors.black26, blurRadius: 8)],
+              ),
+              child: Image.asset(
+                'assets/images/perrito.png',
+                width: 80,
+                height: 80,
+              ),
+            ),
 
             const SizedBox(height: 10),
 
