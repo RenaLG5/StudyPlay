@@ -28,25 +28,30 @@ class _SplashScreenState extends State<SplashScreen> {
         child: Column(
           mainAxisAlignment: MainAxisAlignment.center,
           children: [
-            Image.asset('assets/images/perrito1.png', width: 120, height: 120),
+            const Spacer(),
+
+            Image.asset('assets/images/perrito1.png', width: 120),
 
             const SizedBox(height: 20),
 
             const Text(
               'StudyPlay',
+              textAlign: TextAlign.center,
               style: TextStyle(
-                fontSize: 28,
+                fontSize: 32,
                 fontWeight: FontWeight.bold,
                 color: Colors.white,
               ),
             ),
 
-            const SizedBox(height: 10),
+            const Spacer(),
 
             const Text(
               '100% Gratis - Sin Publicidad',
               style: TextStyle(color: Colors.white70),
             ),
+
+            const SizedBox(height: 30),
           ],
         ),
       ),
