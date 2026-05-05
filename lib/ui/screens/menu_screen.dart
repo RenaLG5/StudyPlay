@@ -59,15 +59,69 @@ class _MenuScreenState extends State<MenuScreen> {
               leading: const Icon(Icons.notifications),
               title: const Text('Notificaciones'),
               onTap: () {
-                // Acción para notificaciones (puede ser una nueva pantalla o un diálogo)
+                showDialog(
+                  context: context,
+                  builder: (context) => AlertDialog(
+                    title: const Text('Notificaciones'),
+                    content: const Text(
+                      '¿Quieres activar o desactivar las notificaciones?',
+                    ),
+                    actions: [
+                      TextButton(
+                        onPressed: () {
+                          Navigator.pop(context);
+                        },
+                        child: const Text('Cancelar'),
+                      ),
+                      TextButton(
+                        onPressed: () {
+                          Navigator.pop(context);
+                        },
+                        child: const Text('Desactivar'),
+                      ),
+                      ElevatedButton(
+                        onPressed: () {
+                          Navigator.pop(context);
+                        },
+                        child: const Text('Activar'),
+                      ),
+                    ],
+                  ),
+                );
+              },
+            ),
+            ListTile(
+              leading: const Icon(Icons.help),
+              title: const Text('Ayuda y soporte'),
+              onTap: () {
+                Navigator.pushNamed(context, '/help');
               },
             ),
 
             ListTile(
-              leading: const Icon(Icons.help),
+              leading: const Icon(Icons.logout),
               title: const Text('Cerrar sesión'),
               onTap: () {
-                Navigator.pushNamed(context, '/profile');
+                showDialog(
+                  context: context,
+                  builder: (context) => AlertDialog(
+                    title: const Text('Cerrar sesión'),
+                    content: const Text('¿Estás seguro?'),
+                    actions: [
+                      TextButton(
+                        onPressed: () => Navigator.pop(context),
+                        child: const Text('Cancelar'),
+                      ),
+                      TextButton(
+                        onPressed: () {
+                          Navigator.pop(context);
+                          Navigator.pushReplacementNamed(context, '/menu');
+                        },
+                        child: const Text('Salir'),
+                      ),
+                    ],
+                  ),
+                );
               },
             ),
           ],

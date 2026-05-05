@@ -10,6 +10,8 @@ import 'ui/screens/setting_screen.dart';
 import 'ui/screens/splash_screen.dart';
 import 'ui/screens/about.dart';
 
+import 'ui/screens/help_screen.dart';
+
 void main() {
   runApp(const MyApp());
 }
@@ -47,6 +49,7 @@ class MyApp extends StatelessWidget {
         '/rewards': (context) => const RewardsScreen(),
         '/settings': (context) => const SettingScreen(),
         '/about': (context) => const AboutScreen(),
+        '/help': (context) => const HelpScreen(),
       },
     );
   }

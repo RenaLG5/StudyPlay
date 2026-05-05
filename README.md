@@ -1,131 +1,187 @@
-
-
 # STUDYPLAY
 ### Motivar el aprendizaje mediante una experiencia interactiva y gamificada, facilitando el estudio en distintas áreas académicas.
 
-StudyPlay es una aplicación móvil que transforma el aprendizaje en una experiencia interactiva mediante gamificación. Permite a los usuarios estudiar a través de trivias dinamicas, obtener recompensas y mejorar sus habitos de estudio en cualquier lugar buscando resolver el problema de la desmotivación en el aprendizaje tradicional, incorporando elementos de juego como puntos, niveles y logros
+StudyPlay es una aplicación móvil que transforma el aprendizaje en una experiencia interactiva mediante gamificación. Permite a los usuarios estudiar a través de trivias dinámicas, obtener recompensas y mejorar sus hábitos de estudio en cualquier lugar, abordando la desmotivación del aprendizaje tradicional mediante el uso de puntos, logros y progreso visual.
 
-## CARACTERISTICAS PROPIAS DEL MÓVIL
+---
 
-* Notificaciones push inteligentes para recordar sesiones de estudio
-* Acceso ubicuo (estudio en cualquier momento y lugar)
-* Conectividad en tiempo real mediante Firebase
-* Interacción dinámica con quizzes
-* Interfaz táctil intuitiva 
+## CARACTERÍSTICAS PROPIAS DEL MÓVIL
+
+* Notificaciones push (simuladas en maqueta)
+* Acceso ubicuo (uso en cualquier momento y lugar)
+* Interfaz táctil intuitiva
+* Interacción dinámica mediante quizzes
+* Navegación fluida entre pantallas
+* Uso de recursos visuales (iconos, imágenes, tarjetas)
+
+---
 
 ## HISTORIAS DE USUARIO
 
-* Como estudiante, quiero responder quizzes para practicar mis conocimientos
-* Como estudiante, quiero y necesito tener recordatorios para estudiar y poder mejorar mis notas
-* Como estudiante, me gustaria ganar puntos para motivarme a estudiar
-* Como estudiante, me cuesta concentrarme, seria entretenido aprender de una forma menos rigida y más amigable para la gente que no logra concentrarse
+* Como estudiante, quiero responder quizzes para practicar mis conocimientos.
+* Como estudiante, quiero recibir recordatorios para estudiar.
+* Como estudiante, quiero ganar logros para motivarme.
+* Como estudiante, quiero revisar mi historial de partidas.
+* Como estudiante, quiero ver mi perfil y progreso.
 
-## REQUERIMIENTO FUNCIONALES (RF)
-* RF1: El sistema debe permitir responder quizzes
-* RF2: El sistema debe mostar resultados al finalizar una actividad
-* RF3: El sistema debe registrar el progreso dell usuario
-* RF4: El sistema debe enviar notificaciones push
-* RF5: El sistema debe mostar puntuación o un sistema de ranking entre usuarios
+---
+
+## REQUERIMIENTOS FUNCIONALES (RF)
+
+* RF1: El sistema debe permitir responder quizzes.
+* RF2: El sistema debe mostrar resultados al finalizar.
+* RF3: El sistema debe registrar el historial de partidas.
+* RF4: El sistema debe mostrar logros y recompensas.
+* RF5: El sistema debe permitir navegación entre pantallas.
+* RF6: El sistema debe mostrar información del perfil del usuario.
+* RF7: El sistema debe mostrar ayuda y soporte.
+
+---
 
 ## REQUERIMIENTOS NO FUNCIONALES (RNF)
-* RNF1: La aplicaciónn debe ser responsiva
-* RNF2: La app debe funcionar en Android
-* RNF3: La interfaz debe ser intuitiva
-* RNF4: El tiempo de respuesta debe ser rapido
-* RNF5: La app debe ser escalable
+
+* RNF1: La aplicación debe ser responsiva.
+* RNF2: Debe funcionar en Android.
+* RNF3: La interfaz debe ser intuitiva.
+* RNF4: Tiempo de respuesta rápido.
+* RNF5: Arquitectura escalable y modular.
+
+---
+
+## ARQUITECTURA Y PATRONES
+
+La aplicación sigue una estructura modular:
+
+lib/
+├── models/
+├── ui/
+│ ├── screens/
+│ ├── widgets/
+├── main.dart
 
 
-## DETALLE TÉCNICO
+Se utiliza el patrón de navegación basado en rutas Navigator.pushNamed y el patrón **Lista-Detalle** en el historial de partidas.
 
-### La aplicación utiliza
-
-* Flutter para el desarrollo de la interfaz
-* Firebase para:
-    * Auteticación
-    * Base de datos en tiempo real
-    * Notificaciones push
-# Arquitectura:
-Cliente(Flutter) ↔ Servidor(Firebase)
+---
 
 ## TECNOLOGÍAS UTILIZADAS
+
 * Flutter
 * Dart
-* Firebase
 * Material Design
 
-## Navegación
+---
 
-La aplicación StudyPlay utiliza un sistema de navegación basado en múltiples componentes para facilitar la experiencia del usuario:
+## NAVEGACIÓN
 
-* **Barra inferior (Bottom Navigation Bar):**
-  * Acceso rápido al historial de partidas.
-  * Acceso al perfil del usuario.
+La aplicación utiliza múltiples sistemas de navegación:
 
-* **Botón central (Floating Action Button):**
-  * Permite iniciar una partida (JUGAR).
+### Bottom Navigation Bar
+* Historial
+* Perfil
 
-* **Menú lateral (Drawer - ☰):**
-  * Acceso a funcionalidades adicionales como:
-    * Perfil de usuario
-    * Configuración
-    * Notificaciones (vista futura)
+### Floating Action Button (centro)
+* Iniciar juego (JUGAR)
 
-La navegación entre pantallas se implementa mediante `Navigator.pushNamed`, permitiendo una estructura clara y escalable dentro de la aplicación.
+### Drawer (menú lateral ☰)
+* Perfil
+* Configuración
+* Notificaciones (simuladas)
+* Ayuda y soporte
 
-## Pantallas de la aplicación
+---
 
+## PANTALLAS DE LA APLICACIÓN
+
+* Splash Screen (inicio)
 * Menú principal
 * Selección de asignaturas
 * Quiz
-* Historial
-* Perfil
-* Recompensas
+* Resultado de partida
+* Historial (lista)
+* Detalle de partida (detalle)
+* Perfil de usuario
+* Recompensas (logros)
 * Configuración
+* Ayuda y soporte
 
-## Manual de uso
+---
 
-### MENU
+## GAMIFICACIÓN
 
-* Presiona el icono jugar para acceder a los quiz
-* Accede al historial desde la barra inferior boton izquierdo
-* Accede al perfil del usuario desde la barra inferior boton derecho
+La aplicación incluye un sistema de logros:
 
-### Pantalla de asignaturas
+* Rachas de estudio (5, 10, 50 días)
+* Logros por asignatura
+* Progreso por cantidad de quizzes
+* Logros bloqueados/desbloqueados
 
-* Seleccionar materia para las preguntas
+---
 
-### Dentro del quiz
+## MANUAL DE USO
 
+### Menú principal
+* Presionar "JUGAR" para iniciar un quiz
+* Usar barra inferior para acceder a historial o perfil
+* Usar menú lateral para opciones adicionales
+
+### Quiz
+* Seleccionar asignatura
 * Responder preguntas
-* Obtener resultados al finalizar
+* Visualizar resultados
 
 ### Historial
+* Ver partidas anteriores con:
+  - Fecha
+  - Tiempo
+  - Dificultad
+  - Asignatura
+  - Respuestas correctas/incorrectas
 
-#### Ver partidas anteriores con: 
-* Fecha
-* Tiempo de juego
-* Dificultad
-* Asignatura
-* Conteo de respuestas correctas e incorrectas
+### Recompensas
+* Visualizar logros obtenidos
+* Ver logros bloqueados
 
-## Diagrama de flujo
+### Perfil
+* Ver información personal
+* Imagen de usuario
+* Datos básicos
+
+### Ayuda
+* Preguntas frecuentes
+* Información de soporte
+
+---
+
+## DIAGRAMA DE FLUJO
 
 ```mermaid
 flowchart TD
-A[Menú Principal] 
-    --> B[Seleccionar Asignatura]
-    B --> C[Iniciar Quiz]
-    C --> D[Responder Preguntas]
-    D --> E[Mostrar Resultados]
-    E --> F[Guardar en Historial]
-    F --> A
+
+
+    A[Splash Screen] --> B[Menú Principal]
+
+    B --> C[Jugar]
+    B --> H[Historial]
+    B --> P[Perfil]
+    B --> R[Recompensas]
+    B --> D[Menú lateral]
+
+    D --> S[Configuración]
+    D --> N[Notificaciones]
+    D --> AY[Ayuda]
+
+    C --> E[Seleccionar Asignatura]
+    E --> F[Iniciar Quiz]
+    F --> G[Responder Preguntas]
+    G --> I[Resultados]
+    I --> H
+
+    R --> B
+    P --> B
+    S --> B
+    AY --> B
 ```
-
-[Diagrama](assets/images/diagrama.png)
-
-[Link Diagrama](https://mermaid.ai/d/94ece48e-1112-4477-a783-1d48d7ebf778)
-
-[RESEARCH.md](./RESEARCH.md)
 
 ### AUTOR
 * Renato León
