@@ -60,6 +60,7 @@ flutter:
   assets:
     - assets/images/
     - assets/images/perrito1.png
+    - assets/images/perfil.png
     - assets/icons/
     - assets/icons/Perrito.ico
 

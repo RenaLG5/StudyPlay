@@ -26,10 +26,13 @@ class _MenuScreenState extends State<MenuScreen> {
               child: const Column(
                 crossAxisAlignment: CrossAxisAlignment.start,
                 children: [
-                  Icon(Icons.account_circle, size: 50, color: Colors.white),
+                  CircleAvatar(
+                    radius: 30,
+                    backgroundImage: AssetImage('assets/images/perfil.png'),
+                  ),
                   SizedBox(height: 10),
                   Text(
-                    'Usuario',
+                    'Renato León',
                     style: TextStyle(color: Colors.white, fontSize: 18),
                   ),
                 ],
@@ -57,6 +60,14 @@ class _MenuScreenState extends State<MenuScreen> {
               title: const Text('Notificaciones'),
               onTap: () {
                 // Acción para notificaciones (puede ser una nueva pantalla o un diálogo)
+              },
+            ),
+
+            ListTile(
+              leading: const Icon(Icons.help),
+              title: const Text('Cerrar sesión'),
+              onTap: () {
+                Navigator.pushNamed(context, '/profile');
               },
             ),
           ],

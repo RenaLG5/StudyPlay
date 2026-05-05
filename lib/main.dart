@@ -7,6 +7,7 @@ import 'ui/screens/history_screen.dart';
 import 'ui/screens/profile_screen.dart';
 import 'ui/screens/rewards_screen.dart';
 import 'ui/screens/setting_screen.dart';
+import 'ui/screens/splash_screen.dart';
 import 'ui/screens/about.dart';
 
 void main() {
@@ -37,7 +38,8 @@ class MyApp extends StatelessWidget {
       initialRoute: '/',
 
       routes: {
-        '/': (context) => const MenuScreen(),
+        '/': (context) => const SplashScreen(),
+        '/menu': (context) => const MenuScreen(),
         '/subjects': (context) => const SubjectScreen(),
         '/quiz': (context) => const QuizScreen(),
         '/history': (context) => HistoryScreen(),
