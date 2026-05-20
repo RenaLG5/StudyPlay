@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'firebase_poc_screen.dart';
 
 class ProfileScreen extends StatelessWidget {
   const ProfileScreen({Key? key}) : super(key: key);
@@ -70,6 +71,21 @@ class ProfileScreen extends StatelessWidget {
               onPressed: () {},
               icon: const Icon(Icons.edit),
               label: const Text('Editar perfil'),
+            ),
+
+            const SizedBox(height: 20),
+
+            ElevatedButton.icon(
+              onPressed: () {
+                Navigator.push(
+                  context,
+                  MaterialPageRoute(builder: (_) => const FirebasePocScreen()),
+                );
+              },
+
+              icon: const Icon(Icons.cloud),
+
+              label: const Text('Firebase PoC'),
             ),
           ],
         ),
