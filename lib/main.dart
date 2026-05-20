@@ -1,4 +1,6 @@
 import 'package:flutter/material.dart';
+import 'firebase_options.dart';
+import 'package:firebase_core/firebase_core.dart';
 
 import 'ui/screens/menu_screen.dart';
 import 'ui/screens/subject_screen.dart';
@@ -13,6 +15,9 @@ import 'ui/screens/about.dart';
 import 'ui/screens/help_screen.dart';
 
 void main() {
+  WidgetsFlutterBinding.ensureInitialized();
+
+  await Firebase.initializeApp();
   runApp(const MyApp());
 }
 
