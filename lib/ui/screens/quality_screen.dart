@@ -33,10 +33,18 @@ class _QualityScreenState extends State<QualityScreen> {
     final Uri emailUri = Uri(
       scheme: 'mailto',
       path: 'rleon23@alumnos.utalca.cl',
-      query: 'subject=Encuesta StudyPlay&body=$body',
+      queryParameters: {'subject': 'Encuesta StudyPlay', 'body': body},
     );
 
-    await launchUrl(emailUri);
+    if (await canLaunchUrl(emailUri)) {
+      await launchUrl(emailUri, mode: LaunchMode.externalApplication);
+    } else {
+      if (mounted) {
+        ScaffoldMessenger.of(context).showSnackBar(
+          const SnackBar(content: Text('No hay app de correo instalada')),
+        );
+      }
+    }
   }
 
   @override
