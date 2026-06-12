@@ -9,6 +9,8 @@ class PreferencesService {
   static const String _ageKey = 'age';
   static const String _countryKey = 'country';
 
+  static const String _darkModeKey = 'darkMode';
+
   // Usuario
   Future<void> saveUsername(String username) async {
     final prefs = await SharedPreferences.getInstance();
@@ -31,6 +33,7 @@ class PreferencesService {
     return prefs.getString(_difficultyKey) ?? 'Fácil';
   }
 
+  // correo, edad, país
   Future<void> saveEmail(String email) async {
     final prefs = await SharedPreferences.getInstance();
     await prefs.setString(_emailKey, email);
@@ -70,5 +73,16 @@ class PreferencesService {
   Future<bool> loadNotifications() async {
     final prefs = await SharedPreferences.getInstance();
     return prefs.getBool(_notificationsKey) ?? true;
+  }
+
+  Future<void> saveDarkMode(bool value) async {
+    final prefs = await SharedPreferences.getInstance();
+    await prefs.setBool(_darkModeKey, value);
+  }
+
+  // Cargar el estado del modo oscuro
+  Future<bool> loadDarkMode() async {
+    final prefs = await SharedPreferences.getInstance();
+    return prefs.getBool(_darkModeKey) ?? false;
   }
 }

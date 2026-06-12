@@ -39,6 +39,8 @@ void main() async {
         ChangeNotifierProvider(create: (_) => QualityViewModel()),
 
         ChangeNotifierProvider(create: (_) => FeedbackViewModel()),
+
+        //ChangeNotifierProvider(create: (_) => ProfileViewModel()),
       ],
 
       child: const MyApp(),
@@ -53,37 +55,45 @@ class MyApp extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return MaterialApp(
-      title: 'StudyPlay',
+    return Consumer<SettingsViewModel>(
+      builder: (context, settings, _) {
+        return MaterialApp(
+          title: 'StudyPlay',
 
-      theme: ThemeData(
-        colorScheme: ColorScheme.fromSeed(
-          seedColor: Colors.blue,
-          primary: Colors.blue,
-          secondary: Colors.lightBlueAccent,
-        ),
-        scaffoldBackgroundColor: const Color.fromARGB(255, 230, 245, 255),
-        textTheme: const TextTheme(
-          bodyMedium: TextStyle(fontSize: 16, fontWeight: FontWeight.w500),
-        ),
-        useMaterial3: true,
-      ),
+          theme: ThemeData(
+            brightness: settings.darkMode ? Brightness.dark : Brightness.light,
 
-      initialRoute: '/',
+            colorScheme: ColorScheme.fromSeed(
+              seedColor: Colors.blue,
+              brightness: settings.darkMode
+                  ? Brightness.dark
+                  : Brightness.light,
+            ),
 
-      routes: {
-        '/': (context) => const SplashScreen(),
-        '/menu': (context) => const MenuScreen(),
-        '/subjects': (context) => const SubjectScreen(),
-        '/quiz': (context) => const QuizScreen(),
-        '/history': (context) => HistoryScreen(),
-        '/profile': (context) => const ProfileScreen(),
-        '/rewards': (context) => const RewardsScreen(),
-        '/settings': (context) => const SettingScreen(),
-        '/quality': (context) => const QualityScreen(),
-        '/feedback': (context) => const FeedbackScreen(),
-        '/about': (context) => const AboutScreen(),
-        '/help': (context) => const HelpScreen(),
+            scaffoldBackgroundColor: settings.darkMode
+                ? const Color(0xFF121212)
+                : const Color.fromARGB(255, 230, 245, 255),
+
+            useMaterial3: true,
+          ),
+
+          initialRoute: '/',
+
+          routes: {
+            '/': (context) => const SplashScreen(),
+            '/menu': (context) => const MenuScreen(),
+            '/subjects': (context) => const SubjectScreen(),
+            '/quiz': (context) => const QuizScreen(),
+            '/history': (context) => HistoryScreen(),
+            '/profile': (context) => const ProfileScreen(),
+            '/rewards': (context) => const RewardsScreen(),
+            '/settings': (context) => const SettingScreen(),
+            '/quality': (context) => const QualityScreen(),
+            '/feedback': (context) => const FeedbackScreen(),
+            '/about': (context) => const AboutScreen(),
+            '/help': (context) => const HelpScreen(),
+          },
+        );
       },
     );
   }

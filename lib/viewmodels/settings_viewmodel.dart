@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import '../services/preferences_service.dart';
+import '../services/preferences_services.dart';
 
 class SettingsViewModel extends ChangeNotifier {
   final PreferencesService _service = PreferencesService();
@@ -16,6 +16,20 @@ class SettingsViewModel extends ChangeNotifier {
     loadSettings();
   }
 
+  bool darkMode = false;
+
+  void setDarkMode(bool value) {
+    darkMode = value;
+    notifyListeners();
+  }
+
+  bool sound = true;
+
+  void setSound(bool value) {
+    sound = value;
+    notifyListeners();
+  }
+
   Future<void> loadSettings() async {
     username = await _service.loadUsername();
     difficulty = await _service.loadDifficulty();
@@ -23,6 +37,7 @@ class SettingsViewModel extends ChangeNotifier {
     email = await _service.loadEmail();
     age = await _service.loadAge();
     country = await _service.loadCountry();
+    darkMode = await _service.loadDarkMode();
 
     notifyListeners();
   }
@@ -78,5 +93,7 @@ class SettingsViewModel extends ChangeNotifier {
     await _service.saveEmail(email);
     await _service.saveAge(age);
     await _service.saveCountry(country);
+
+    await _service.saveDarkMode(darkMode);
   }
 }
