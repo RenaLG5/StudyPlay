@@ -29,7 +29,7 @@ class FeedbackViewModel extends ChangeNotifier {
 
     final Uri emailUri = Uri(
       scheme: 'mailto',
-      path: 'profesor@utalca.cl', // cambiar por correo real
+      path: 'rleon23@alumnos.utalca.cl',
       queryParameters: {'subject': 'Valoración StudyPlay', 'body': body},
     );
 
