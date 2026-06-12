@@ -13,10 +13,16 @@ import 'ui/screens/splash_screen.dart';
 import 'ui/screens/about.dart';
 import 'ui/screens/quality_screen.dart';
 
+import 'data/math_questions.dart';
+import 'data/language_questions.dart';
+import 'data/science_questions.dart';
+import 'data/history_questions.dart';
+
 import 'package:provider/provider.dart';
 import 'viewmodels/settings_viewmodel.dart';
 import 'viewmodels/quality_viewmodel.dart';
 import 'viewmodels/feedback_viewmodel.dart';
+import 'viewmodels/history_viewmodel.dart';
 
 import 'ui/screens/feedback_screen.dart';
 
@@ -40,7 +46,7 @@ void main() async {
 
         ChangeNotifierProvider(create: (_) => FeedbackViewModel()),
 
-        //ChangeNotifierProvider(create: (_) => ProfileViewModel()),
+        ChangeNotifierProvider(create: (_) => HistoryViewModel()),
       ],
 
       child: const MyApp(),
@@ -83,7 +89,7 @@ class MyApp extends StatelessWidget {
             '/': (context) => const SplashScreen(),
             '/menu': (context) => const MenuScreen(),
             '/subjects': (context) => const SubjectScreen(),
-            '/quiz': (context) => const QuizScreen(),
+            '/quiz': (context) => QuizScreen(title: '', questions: const []),
             '/history': (context) => HistoryScreen(),
             '/profile': (context) => const ProfileScreen(),
             '/rewards': (context) => const RewardsScreen(),
@@ -92,6 +98,20 @@ class MyApp extends StatelessWidget {
             '/feedback': (context) => const FeedbackScreen(),
             '/about': (context) => const AboutScreen(),
             '/help': (context) => const HelpScreen(),
+
+            '/quiz_math': (_) =>
+                QuizScreen(title: "Matemática", questions: MathQuestions.list),
+
+            '/quiz_language': (_) => QuizScreen(
+              title: "Lenguaje",
+              questions: LanguageQuestions.list,
+            ),
+
+            '/quiz_science': (_) =>
+                QuizScreen(title: "Ciencias", questions: ScienceQuestions.list),
+
+            '/quiz_history': (_) =>
+                QuizScreen(title: "Historia", questions: HistoryQuestions.list),
           },
         );
       },

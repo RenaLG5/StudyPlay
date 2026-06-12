@@ -1,4 +1,9 @@
 import 'package:flutter/material.dart';
+import 'quiz_screen.dart';
+import '/data/math_questions.dart';
+import '/data/language_questions.dart';
+import '/data/science_questions.dart';
+import '/data/history_questions.dart';
 
 class SubjectScreen extends StatelessWidget {
   const SubjectScreen({Key? key}) : super(key: key);
@@ -58,7 +63,53 @@ class SubjectScreen extends StatelessWidget {
   }) {
     return GestureDetector(
       onTap: () {
-        Navigator.pushNamed(context, '/quiz', arguments: {'subject': title});
+        if (title == 'Matemáticas') {
+          Navigator.push(
+            context,
+            MaterialPageRoute(
+              builder: (_) => QuizScreen(
+                title: "Matemática",
+                questions: MathQuestions.list,
+              ),
+            ),
+          );
+        }
+
+        if (title == 'Lenguaje') {
+          Navigator.push(
+            context,
+            MaterialPageRoute(
+              builder: (_) => QuizScreen(
+                title: "Lenguaje",
+                questions: LanguageQuestions.list,
+              ),
+            ),
+          );
+        }
+
+        if (title == 'Ciencias') {
+          Navigator.push(
+            context,
+            MaterialPageRoute(
+              builder: (_) => QuizScreen(
+                title: "Ciencias",
+                questions: ScienceQuestions.list,
+              ),
+            ),
+          );
+        }
+
+        if (title == 'Historia') {
+          Navigator.push(
+            context,
+            MaterialPageRoute(
+              builder: (_) => QuizScreen(
+                title: "Historia",
+                questions: HistoryQuestions.list,
+              ),
+            ),
+          );
+        }
       },
       child: Container(
         margin: const EdgeInsets.all(8),
