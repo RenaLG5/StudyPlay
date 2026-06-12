@@ -17,6 +17,8 @@ import 'ui/screens/quality_screen.dart';
 import 'package:provider/provider.dart';
 import 'viewmodels/settings_viewmodel.dart';
 
+import 'ui/screens/feedback_screen.dart';
+
 import 'ui/screens/help_screen.dart';
 
 void main() async {
@@ -24,13 +26,19 @@ void main() async {
 
   await Firebase.initializeApp(options: DefaultFirebaseOptions.currentPlatform);
 
-  runApp(
-    MultiProvider(
-      providers: [ChangeNotifierProvider(create: (_) => QualityViewModel())],
+  void main() {
+    runApp(
+      MultiProvider(
+        providers: [
+          ChangeNotifierProvider(create: (_) => QualityViewModel()),
 
-      child: const MyApp(),
-    ),
-  );
+          ChangeNotifierProvider(create: (_) => SettingsViewModel()),
+        ],
+
+        child: const MyApp(),
+      ),
+    );
+  }
 }
 
 class MyApp extends StatelessWidget {
@@ -66,6 +74,7 @@ class MyApp extends StatelessWidget {
         '/rewards': (context) => const RewardsScreen(),
         '/settings': (context) => const SettingScreen(),
         '/quality': (context) => const QualityScreen(),
+        '/feedback': (context) => const FeedbackScreen(),
         '/about': (context) => const AboutScreen(),
         '/help': (context) => const HelpScreen(),
       },
