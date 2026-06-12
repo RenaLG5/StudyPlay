@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:url_launcher/url_launcher.dart';
+import 'package:cloud_firestore/cloud_firestore.dart';
 import '../models/feedback_question.dart';
 
 class FeedbackViewModel extends ChangeNotifier {
@@ -21,25 +21,15 @@ class FeedbackViewModel extends ChangeNotifier {
   }
 
   Future<void> sendFeedback() async {
-    String body = '';
+    final answers = questions.map((q) {
+      return {'question': q.text, 'answer': q.answer};
+    }).toList();
 
-    for (final question in questions) {
-      body += '${question.text}: ${question.answer}/5\n';
-    }
+    await FirebaseFirestore.instance.collection('feedback_surveys').add({
+      'answers': answers,
+      'createdAt': FieldValue.serverTimestamp(),
+    });
 
-    final Uri emailUri = Uri(
-      scheme: 'mailto',
-      path: 'rleon23@alumnos.utalca.cl',
-      queryParameters: {'subject': 'Valoración StudyPlay', 'body': body},
-    );
-
-    if (await canLaunchUrl(emailUri)) {
-      await launchUrl(emailUri);
-    }
-    if (await canLaunchUrl(emailUri)) {
-      await launchUrl(emailUri);
-    } else {
-      debugPrint("No se encontró una aplicación de correo");
-    }
+    debugPrint("Feedback enviado a Firebase");
   }
 }
