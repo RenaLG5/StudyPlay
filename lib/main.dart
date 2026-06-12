@@ -12,6 +12,9 @@ import 'ui/screens/setting_screen.dart';
 import 'ui/screens/splash_screen.dart';
 import 'ui/screens/about.dart';
 
+import 'package:provider/provider.dart';
+import 'viewmodels/settings_viewmodel.dart';
+
 import 'ui/screens/help_screen.dart';
 
 void main() async {
@@ -19,7 +22,13 @@ void main() async {
 
   await Firebase.initializeApp(options: DefaultFirebaseOptions.currentPlatform);
 
-  runApp(const MyApp());
+  runApp(
+    MultiProvider(
+      providers: [ChangeNotifierProvider(create: (_) => SettingsViewModel())],
+
+      child: const MyApp(),
+    ),
+  );
 }
 
 class MyApp extends StatelessWidget {
