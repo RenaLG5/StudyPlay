@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:provider/provider.dart';
 import '../../viewmodels/settings_viewmodel.dart';
+import 'package:share_plus/share_plus.dart';
 
 class MenuScreen extends StatefulWidget {
   const MenuScreen({Key? key}) : super(key: key);
@@ -61,42 +62,6 @@ class _MenuScreenState extends State<MenuScreen> {
                 Navigator.pushNamed(context, '/settings');
               },
             ),
-
-            ListTile(
-              leading: const Icon(Icons.notifications),
-              title: const Text('Notificaciones'),
-              onTap: () {
-                showDialog(
-                  context: context,
-                  builder: (context) => AlertDialog(
-                    title: const Text('Notificaciones'),
-                    content: const Text(
-                      '¿Quieres activar o desactivar las notificaciones?',
-                    ),
-                    actions: [
-                      TextButton(
-                        onPressed: () {
-                          Navigator.pop(context);
-                        },
-                        child: const Text('Cancelar'),
-                      ),
-                      TextButton(
-                        onPressed: () {
-                          Navigator.pop(context);
-                        },
-                        child: const Text('Desactivar'),
-                      ),
-                      ElevatedButton(
-                        onPressed: () {
-                          Navigator.pop(context);
-                        },
-                        child: const Text('Activar'),
-                      ),
-                    ],
-                  ),
-                );
-              },
-            ),
             ListTile(
               leading: const Icon(Icons.help),
               title: const Text('Ayuda y soporte'),
@@ -135,7 +100,18 @@ class _MenuScreenState extends State<MenuScreen> {
         ),
       ),
 
-      appBar: AppBar(title: const Text('StudyPlay'), centerTitle: true),
+      appBar: AppBar(
+        title: const Text('StudyPlay'),
+        centerTitle: true,
+        actions: [
+          IconButton(
+            icon: const Icon(Icons.share),
+            onPressed: () {
+              Share.share('Estoy usando StudyPlay');
+            },
+          ),
+        ],
+      ),
 
       body: Center(
         child: Column(

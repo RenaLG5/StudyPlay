@@ -30,6 +30,11 @@ class SettingsViewModel extends ChangeNotifier {
     notifyListeners();
   }
 
+  void setNotifications(bool value) {
+    notifications = value;
+    notifyListeners();
+  }
+
   Future<void> loadSettings() async {
     username = await _service.loadUsername();
     difficulty = await _service.loadDifficulty();
