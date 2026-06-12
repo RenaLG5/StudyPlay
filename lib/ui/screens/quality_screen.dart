@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:provider/provider.dart';
 import 'package:url_launcher/url_launcher.dart';
+import 'package:cloud_firestore/cloud_firestore.dart';
 
 import '../../viewmodels/quality_viewmodel.dart';
 
@@ -24,30 +25,27 @@ class _QualityScreenState extends State<QualityScreen> {
   Future<void> sendSurvey() async {
     final vm = context.read<QualityViewModel>();
 
-    String body = '';
-
-    for (var q in vm.questions) {
-      body += '${q.question}: ${q.answer}/5\n';
-    }
-
-    final Uri emailUri = Uri(
-      scheme: 'mailto',
-      path: 'renatoleongz5@gmail.com',
-      queryParameters: {'subject': 'Valoración StudyPlay', 'body': body},
-    );
+    final List<Map<String, dynamic>> answers = vm.questions.map((q) {
+      return {'question': q.question, 'answer': q.answer};
+    }).toList();
 
     try {
-      if (await canLaunchUrl(emailUri)) {
-        await launchUrl(emailUri, mode: LaunchMode.externalApplication);
-      } else {
-        if (mounted) {
-          ScaffoldMessenger.of(context).showSnackBar(
-            const SnackBar(content: Text('No hay app de correo disponible')),
-          );
-        }
+      await FirebaseFirestore.instance.collection('quality_surveys').add({
+        'answers': answers,
+        'createdAt': FieldValue.serverTimestamp(),
+      });
+
+      if (mounted) {
+        ScaffoldMessenger.of(context).showSnackBar(
+          const SnackBar(content: Text('Encuesta enviada correctamente')),
+        );
       }
     } catch (e) {
-      debugPrint('Error mailto: $e');
+      if (mounted) {
+        ScaffoldMessenger.of(
+          context,
+        ).showSnackBar(SnackBar(content: Text('Error al enviar: $e')));
+      }
     }
   }
 
