@@ -1,48 +1,52 @@
 import 'package:flutter/material.dart';
-import '../services/storage_service.dart';
+import '../services/preferences_service.dart';
 
 class SettingsViewModel extends ChangeNotifier {
-  String _username = '';
+  final PreferencesService _service = PreferencesService();
 
-  String _difficulty = 'Fácil';
-
-  String get username => _username;
-
-  String get difficulty => _difficulty;
-
-  int get gridSize => _difficulty == 'Fácil'
-      ? 8
-      : _difficulty == 'Medio'
-      ? 10
-      : 12;
-
-  SettingsViewModel() {
-    loadSettings();
-  }
+  String username = '';
+  String difficulty = 'Fácil';
+  bool notifications = true;
 
   Future<void> loadSettings() async {
-    _username = await StorageService.getUsername();
+    username = await _service.loadUsername();
+    difficulty = await _service.loadDifficulty();
+    notifications = await _service.loadNotifications();
 
-    _difficulty = await StorageService.getDifficulty();
+    notifyListeners();
+  }
 
+  Future<void> saveUsername(String value) async {
+    username = value;
+    await _service.saveUsername(value);
+    notifyListeners();
+  }
+
+  Future<void> saveDifficulty(String value) async {
+    difficulty = value;
+    await _service.saveDifficulty(value);
+    notifyListeners();
+  }
+
+  Future<void> saveNotifications(bool value) async {
+    notifications = value;
+    await _service.saveNotifications(value);
     notifyListeners();
   }
 
   void setUsername(String value) {
-    _username = value;
-
+    username = value;
     notifyListeners();
   }
 
   void setDifficulty(String value) {
-    _difficulty = value;
-
+    difficulty = value;
     notifyListeners();
   }
 
   Future<void> saveSettings() async {
-    await StorageService.saveUsername(_username);
-
-    await StorageService.saveDifficulty(_difficulty);
+    await _service.saveUsername(username);
+    await _service.saveDifficulty(difficulty);
+    await _service.saveNotifications(notifications);
   }
 }

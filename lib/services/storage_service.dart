@@ -1,27 +1,40 @@
 import 'package:shared_preferences/shared_preferences.dart';
 
-class StorageService {
-  static Future<void> saveUsername(String username) async {
-    final prefs = await SharedPreferences.getInstance();
+class PreferencesService {
+  static const String _difficultyKey = 'difficulty';
+  static const String _notificationsKey = 'notifications';
+  static const String _usernameKey = 'username';
 
-    await prefs.setString('username', username);
+  // Usuario
+  Future<void> saveUsername(String username) async {
+    final prefs = await SharedPreferences.getInstance();
+    await prefs.setString(_usernameKey, username);
   }
 
-  static Future<void> saveDifficulty(String difficulty) async {
+  Future<String> loadUsername() async {
     final prefs = await SharedPreferences.getInstance();
-
-    await prefs.setString('difficulty', difficulty);
+    return prefs.getString(_usernameKey) ?? '';
   }
 
-  static Future<String> getUsername() async {
+  // Dificultad
+  Future<void> saveDifficulty(String difficulty) async {
     final prefs = await SharedPreferences.getInstance();
-
-    return prefs.getString('username') ?? '';
+    await prefs.setString(_difficultyKey, difficulty);
   }
 
-  static Future<String> getDifficulty() async {
+  Future<String> loadDifficulty() async {
     final prefs = await SharedPreferences.getInstance();
+    return prefs.getString(_difficultyKey) ?? 'Fácil';
+  }
 
-    return prefs.getString('difficulty') ?? 'Fácil';
+  // Notificaciones
+  Future<void> saveNotifications(bool enabled) async {
+    final prefs = await SharedPreferences.getInstance();
+    await prefs.setBool(_notificationsKey, enabled);
+  }
+
+  Future<bool> loadNotifications() async {
+    final prefs = await SharedPreferences.getInstance();
+    return prefs.getBool(_notificationsKey) ?? true;
   }
 }
