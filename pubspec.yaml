@@ -82,7 +82,7 @@ flutter:
     - assets/images/Paleta.jpeg
     - assets/icons/
     - assets/icons/Perrito.ico
-    - assets/data/quality_questions.json
+    - assets/data/qa_questions.json
 
 
   # To add assets to your application, add an assets section, like this:
