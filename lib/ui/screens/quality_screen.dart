@@ -1,9 +1,9 @@
 import 'package:flutter/material.dart';
 import 'package:provider/provider.dart';
-import 'package:url_launcher/url_launcher.dart';
 import 'package:cloud_firestore/cloud_firestore.dart';
 
 import '../../viewmodels/quality_viewmodel.dart';
+import '../../viewmodels/settings_viewmodel.dart';
 
 class QualityScreen extends StatefulWidget {
   const QualityScreen({super.key});
@@ -23,13 +23,19 @@ class _QualityScreenState extends State<QualityScreen> {
   }
 
   Future<void> sendSurvey() async {
-    final vm = context.read<QualityViewModel>();
+    final qualityVM = context.read<QualityViewModel>();
+    final settingsVM = context.read<SettingsViewModel>();
 
-    final answers = vm.questions.map((q) {
+    final answers = qualityVM.questions.map((q) {
       return {'question': q.question, 'answer': q.answer};
     }).toList();
 
     await FirebaseFirestore.instance.collection('quality_surveys').add({
+      'userName': settingsVM.username.isNotEmpty
+          ? settingsVM.username
+          : 'Usuario',
+      'email': settingsVM.email,
+      'country': settingsVM.country,
       'answers': answers,
       'createdAt': FieldValue.serverTimestamp(),
     });
@@ -47,7 +53,6 @@ class _QualityScreenState extends State<QualityScreen> {
 
     return Scaffold(
       appBar: AppBar(title: const Text('Encuesta de Calidad')),
-
       body: vm.questions.isEmpty
           ? const Center(child: CircularProgressIndicator())
           : Column(
@@ -55,19 +60,15 @@ class _QualityScreenState extends State<QualityScreen> {
                 Expanded(
                   child: ListView.builder(
                     itemCount: vm.questions.length,
-
                     itemBuilder: (context, index) {
                       final question = vm.questions[index];
 
                       return Card(
                         margin: const EdgeInsets.all(10),
-
                         child: Padding(
                           padding: const EdgeInsets.all(15),
-
                           child: Column(
                             crossAxisAlignment: CrossAxisAlignment.start,
-
                             children: [
                               Text(
                                 question.question,
@@ -76,18 +77,12 @@ class _QualityScreenState extends State<QualityScreen> {
                                   fontWeight: FontWeight.bold,
                                 ),
                               ),
-
                               Slider(
                                 value: question.answer.toDouble(),
-
                                 min: 1,
-
                                 max: 5,
-
                                 divisions: 4,
-
                                 label: question.answer.toString(),
-
                                 onChanged: (value) {
                                   vm.answerQuestion(index, value.toInt());
                                 },
@@ -102,12 +97,9 @@ class _QualityScreenState extends State<QualityScreen> {
 
                 Padding(
                   padding: const EdgeInsets.all(20),
-
                   child: ElevatedButton.icon(
                     onPressed: vm.allAnswered ? sendSurvey : null,
-
                     icon: const Icon(Icons.send),
-
                     label: const Text('Enviar'),
                   ),
                 ),
