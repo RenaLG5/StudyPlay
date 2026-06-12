@@ -10,7 +10,7 @@ class SettingScreen extends StatelessWidget {
     final settingsVM = Provider.of<SettingsViewModel>(context);
 
     return Scaffold(
-      appBar: AppBar(title: const Text('Preferencias')),
+      appBar: AppBar(title: const Text('Configuración')),
 
       body: Padding(
         padding: const EdgeInsets.all(20),

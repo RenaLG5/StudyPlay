@@ -1,4 +1,6 @@
 import 'package:flutter/material.dart';
+import 'package:provider/provider.dart';
+import '../../viewmodels/settings_viewmodel.dart';
 
 class MenuScreen extends StatefulWidget {
   const MenuScreen({Key? key}) : super(key: key);
@@ -12,6 +14,7 @@ class _MenuScreenState extends State<MenuScreen> {
 
   @override
   Widget build(BuildContext context) {
+    final settingsVM = Provider.of<SettingsViewModel>(context);
     final theme = Theme.of(context);
 
     return Scaffold(
@@ -23,17 +26,21 @@ class _MenuScreenState extends State<MenuScreen> {
           children: [
             DrawerHeader(
               decoration: BoxDecoration(color: theme.colorScheme.primary),
-              child: const Column(
+              child: Column(
                 crossAxisAlignment: CrossAxisAlignment.start,
                 children: [
-                  CircleAvatar(
+                  const CircleAvatar(
                     radius: 30,
                     backgroundImage: AssetImage('assets/images/perfil.png'),
                   ),
-                  SizedBox(height: 10),
+
+                  const SizedBox(height: 10),
+
                   Text(
-                    'Renato León',
-                    style: TextStyle(color: Colors.white, fontSize: 18),
+                    settingsVM.username.isEmpty
+                        ? 'Usuario'
+                        : settingsVM.username,
+                    style: const TextStyle(color: Colors.white, fontSize: 18),
                   ),
                 ],
               ),

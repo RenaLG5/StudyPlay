@@ -1,11 +1,31 @@
 import 'package:flutter/material.dart';
 import 'firebase_poc_screen.dart';
+import 'package:provider/provider.dart';
+import '../../viewmodels/settings_viewmodel.dart';
 
 class ProfileScreen extends StatelessWidget {
   const ProfileScreen({Key? key}) : super(key: key);
 
+  String getFlag(String country) {
+    switch (country.toLowerCase()) {
+      case 'chile':
+        return '🇨🇱';
+      case 'argentina':
+        return '🇦🇷';
+      case 'peru':
+        return '🇵🇪';
+      case 'mexico':
+        return '🇲🇽';
+      case 'colombia':
+        return '🇨🇴';
+      default:
+        return '🌍';
+    }
+  }
+
   @override
   Widget build(BuildContext context) {
+    final settingsVM = Provider.of<SettingsViewModel>(context);
     final theme = Theme.of(context);
 
     return Scaffold(
@@ -24,8 +44,8 @@ class ProfileScreen extends StatelessWidget {
 
             const SizedBox(height: 15),
 
-            const Text(
-              'Renato León',
+            Text(
+              settingsVM.username.isEmpty ? 'Usuario' : settingsVM.username,
               style: TextStyle(fontSize: 22, fontWeight: FontWeight.bold),
             ),
 
@@ -43,22 +63,34 @@ class ProfileScreen extends StatelessWidget {
                     ListTile(
                       leading: const Icon(Icons.email),
                       title: const Text('Correo'),
-                      subtitle: const Text('rleon23@alumnos.utalca.cl'),
+                      subtitle: Text(
+                        settingsVM.email.isEmpty
+                            ? 'No definido'
+                            : settingsVM.email,
+                      ),
                     ),
 
                     ListTile(
                       leading: const Icon(Icons.cake),
                       title: const Text('Edad'),
-                      subtitle: const Text('21 años'),
+                      subtitle: Text(
+                        settingsVM.age.isEmpty
+                            ? 'No definido'
+                            : settingsVM.age + ' años',
+                      ),
                     ),
 
                     ListTile(
-                      leading: const Text(
-                        '🇨🇱',
-                        style: TextStyle(fontSize: 24),
+                      leading: Text(
+                        getFlag(settingsVM.country),
+                        style: const TextStyle(fontSize: 24),
                       ),
                       title: const Text('País'),
-                      subtitle: const Text('Chile'),
+                      subtitle: Text(
+                        settingsVM.country.isEmpty
+                            ? 'No definido'
+                            : settingsVM.country,
+                      ),
                     ),
                   ],
                 ),
@@ -68,7 +100,92 @@ class ProfileScreen extends StatelessWidget {
             const SizedBox(height: 30),
 
             ElevatedButton.icon(
-              onPressed: () {},
+              onPressed: () {
+                showDialog(
+                  context: context,
+                  builder: (context) {
+                    final nameController = TextEditingController(
+                      text: settingsVM.username,
+                    );
+
+                    final emailController = TextEditingController(
+                      text: settingsVM.email,
+                    );
+
+                    final ageController = TextEditingController(
+                      text: settingsVM.age,
+                    );
+
+                    final countryController = TextEditingController(
+                      text: settingsVM.country,
+                    );
+
+                    return AlertDialog(
+                      title: const Text('Editar perfil'),
+
+                      content: SingleChildScrollView(
+                        child: Column(
+                          mainAxisSize: MainAxisSize.min,
+                          children: [
+                            TextField(
+                              controller: nameController,
+                              decoration: const InputDecoration(
+                                labelText: 'Nombre',
+                              ),
+                            ),
+
+                            TextField(
+                              controller: emailController,
+                              decoration: const InputDecoration(
+                                labelText: 'Correo',
+                              ),
+                            ),
+
+                            TextField(
+                              controller: ageController,
+                              decoration: const InputDecoration(
+                                labelText: 'Edad',
+                              ),
+                            ),
+
+                            TextField(
+                              controller: countryController,
+                              decoration: const InputDecoration(
+                                labelText: 'País',
+                              ),
+                            ),
+                          ],
+                        ),
+                      ),
+
+                      actions: [
+                        TextButton(
+                          onPressed: () => Navigator.pop(context),
+                          child: const Text('Cancelar'),
+                        ),
+
+                        ElevatedButton(
+                          onPressed: () async {
+                            settingsVM.setUsername(nameController.text);
+
+                            settingsVM.setEmail(emailController.text);
+
+                            settingsVM.setAge(ageController.text);
+
+                            settingsVM.setCountry(countryController.text);
+
+                            await settingsVM.saveSettings();
+
+                            Navigator.pop(context);
+                          },
+
+                          child: const Text('Guardar'),
+                        ),
+                      ],
+                    );
+                  },
+                );
+              },
               icon: const Icon(Icons.edit),
               label: const Text('Editar perfil'),
             ),

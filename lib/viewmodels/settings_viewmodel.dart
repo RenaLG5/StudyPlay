@@ -8,10 +8,21 @@ class SettingsViewModel extends ChangeNotifier {
   String difficulty = 'Fácil';
   bool notifications = true;
 
+  String email = '';
+  String age = '';
+  String country = '';
+
+  SettingsViewModel() {
+    loadSettings();
+  }
+
   Future<void> loadSettings() async {
     username = await _service.loadUsername();
     difficulty = await _service.loadDifficulty();
     notifications = await _service.loadNotifications();
+    email = await _service.loadEmail();
+    age = await _service.loadAge();
+    country = await _service.loadCountry();
 
     notifyListeners();
   }
@@ -44,9 +55,28 @@ class SettingsViewModel extends ChangeNotifier {
     notifyListeners();
   }
 
+  void setEmail(String value) {
+    email = value;
+    notifyListeners();
+  }
+
+  void setAge(String value) {
+    age = value;
+    notifyListeners();
+  }
+
+  void setCountry(String value) {
+    country = value;
+    notifyListeners();
+  }
+
   Future<void> saveSettings() async {
     await _service.saveUsername(username);
     await _service.saveDifficulty(difficulty);
     await _service.saveNotifications(notifications);
+
+    await _service.saveEmail(email);
+    await _service.saveAge(age);
+    await _service.saveCountry(country);
   }
 }

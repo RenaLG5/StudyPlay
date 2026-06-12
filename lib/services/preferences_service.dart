@@ -5,6 +5,10 @@ class PreferencesService {
   static const String _difficultyKey = 'difficulty';
   static const String _notificationsKey = 'notifications';
 
+  static const String _emailKey = 'email';
+  static const String _ageKey = 'age';
+  static const String _countryKey = 'country';
+
   // Usuario
   Future<void> saveUsername(String username) async {
     final prefs = await SharedPreferences.getInstance();
@@ -25,6 +29,36 @@ class PreferencesService {
   Future<String> loadDifficulty() async {
     final prefs = await SharedPreferences.getInstance();
     return prefs.getString(_difficultyKey) ?? 'Fácil';
+  }
+
+  Future<void> saveEmail(String email) async {
+    final prefs = await SharedPreferences.getInstance();
+    await prefs.setString(_emailKey, email);
+  }
+
+  Future<String> loadEmail() async {
+    final prefs = await SharedPreferences.getInstance();
+    return prefs.getString(_emailKey) ?? '';
+  }
+
+  Future<void> saveAge(String age) async {
+    final prefs = await SharedPreferences.getInstance();
+    await prefs.setString(_ageKey, age);
+  }
+
+  Future<String> loadAge() async {
+    final prefs = await SharedPreferences.getInstance();
+    return prefs.getString(_ageKey) ?? '';
+  }
+
+  Future<void> saveCountry(String country) async {
+    final prefs = await SharedPreferences.getInstance();
+    await prefs.setString(_countryKey, country);
+  }
+
+  Future<String> loadCountry() async {
+    final prefs = await SharedPreferences.getInstance();
+    return prefs.getString(_countryKey) ?? '';
   }
 
   // Notificaciones
