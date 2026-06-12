@@ -30,6 +30,10 @@ environment:
 dependencies:
   flutter:
     sdk: flutter
+  provider: ^6.1.2
+  url_launcher: ^6.3.0
+  shared_preferences: ^2.0.15
+  
 
   # The following adds the Cupertino Icons font to your application.
   # Use with the CupertinoIcons class for iOS style icons.
@@ -39,6 +43,7 @@ dependencies:
   cloud_firestore: ^6.4.1
   provider: ^6.1.5+1
   shared_preferences: ^2.5.5
+  url_launcher: ^6.3.2
 
 dev_dependencies:
   flutter_test:
@@ -79,6 +84,7 @@ flutter:
     - assets/images/Paleta.jpeg
     - assets/icons/
     - assets/icons/Perrito.ico
+    - assets/data/quality_questions.json
 
 
   # To add assets to your application, add an assets section, like this:

@@ -11,6 +11,8 @@ import 'ui/screens/rewards_screen.dart';
 import 'ui/screens/setting_screen.dart';
 import 'ui/screens/splash_screen.dart';
 import 'ui/screens/about.dart';
+import 'viewmodels/quality_viewmodel.dart';
+import 'ui/screens/quality_screen.dart';
 
 import 'package:provider/provider.dart';
 import 'viewmodels/settings_viewmodel.dart';
@@ -24,7 +26,7 @@ void main() async {
 
   runApp(
     MultiProvider(
-      providers: [ChangeNotifierProvider(create: (_) => SettingsViewModel())],
+      providers: [ChangeNotifierProvider(create: (_) => QualityViewModel())],
 
       child: const MyApp(),
     ),
@@ -63,6 +65,7 @@ class MyApp extends StatelessWidget {
         '/profile': (context) => const ProfileScreen(),
         '/rewards': (context) => const RewardsScreen(),
         '/settings': (context) => const SettingScreen(),
+        '/quality': (context) => const QualityScreen(),
         '/about': (context) => const AboutScreen(),
         '/help': (context) => const HelpScreen(),
       },
