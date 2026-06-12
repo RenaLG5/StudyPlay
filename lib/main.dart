@@ -11,11 +11,12 @@ import 'ui/screens/rewards_screen.dart';
 import 'ui/screens/setting_screen.dart';
 import 'ui/screens/splash_screen.dart';
 import 'ui/screens/about.dart';
-import 'viewmodels/quality_viewmodel.dart';
 import 'ui/screens/quality_screen.dart';
 
 import 'package:provider/provider.dart';
 import 'viewmodels/settings_viewmodel.dart';
+import 'viewmodels/quality_viewmodel.dart';
+import 'viewmodels/feedback_viewmodel.dart';
 
 import 'ui/screens/feedback_screen.dart';
 
@@ -24,21 +25,27 @@ import 'ui/screens/help_screen.dart';
 void main() async {
   WidgetsFlutterBinding.ensureInitialized();
 
+  print("PASO 1");
+
   await Firebase.initializeApp(options: DefaultFirebaseOptions.currentPlatform);
 
-  void main() {
-    runApp(
-      MultiProvider(
-        providers: [
-          ChangeNotifierProvider(create: (_) => QualityViewModel()),
+  print("PASO 2");
 
-          ChangeNotifierProvider(create: (_) => SettingsViewModel()),
-        ],
+  runApp(
+    MultiProvider(
+      providers: [
+        ChangeNotifierProvider(create: (_) => SettingsViewModel()),
 
-        child: const MyApp(),
-      ),
-    );
-  }
+        ChangeNotifierProvider(create: (_) => QualityViewModel()),
+
+        ChangeNotifierProvider(create: (_) => FeedbackViewModel()),
+      ],
+
+      child: const MyApp(),
+    ),
+  );
+
+  print("PASO 3");
 }
 
 class MyApp extends StatelessWidget {

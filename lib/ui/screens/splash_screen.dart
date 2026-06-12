@@ -12,8 +12,9 @@ class _SplashScreenState extends State<SplashScreen> {
   @override
   void initState() {
     super.initState();
-
+    print("SPLASH");
     Timer(const Duration(seconds: 5), () {
+      print("IR MENU");
       Navigator.pushReplacementNamed(context, '/menu');
     });
   }
