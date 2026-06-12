@@ -25,27 +25,19 @@ class _QualityScreenState extends State<QualityScreen> {
   Future<void> sendSurvey() async {
     final vm = context.read<QualityViewModel>();
 
-    final List<Map<String, dynamic>> answers = vm.questions.map((q) {
+    final answers = vm.questions.map((q) {
       return {'question': q.question, 'answer': q.answer};
     }).toList();
 
-    try {
-      await FirebaseFirestore.instance.collection('quality_surveys').add({
-        'answers': answers,
-        'createdAt': FieldValue.serverTimestamp(),
-      });
+    await FirebaseFirestore.instance.collection('quality_surveys').add({
+      'answers': answers,
+      'createdAt': FieldValue.serverTimestamp(),
+    });
 
-      if (mounted) {
-        ScaffoldMessenger.of(context).showSnackBar(
-          const SnackBar(content: Text('Encuesta enviada correctamente')),
-        );
-      }
-    } catch (e) {
-      if (mounted) {
-        ScaffoldMessenger.of(
-          context,
-        ).showSnackBar(SnackBar(content: Text('Error al enviar: $e')));
-      }
+    if (mounted) {
+      ScaffoldMessenger.of(context).showSnackBar(
+        const SnackBar(content: Text('Encuesta enviada a Firebase')),
+      );
     }
   }
 
