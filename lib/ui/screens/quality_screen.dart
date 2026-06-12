@@ -32,7 +32,7 @@ class _QualityScreenState extends State<QualityScreen> {
 
     final Uri emailUri = Uri(
       scheme: 'mailto',
-      path: 'rleon23@alumnos.utalca.cl',
+      path: 'renatoleongz5@gmail.com',
       queryParameters: {'subject': 'Valoración StudyPlay', 'body': body},
     );
 
