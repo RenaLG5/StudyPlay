@@ -52,7 +52,9 @@ class FeedbackScreen extends StatelessWidget {
                     min: 1,
                     max: 5,
                     divisions: 4,
-                    value: question.answer.toDouble(),
+                    value: question.answer == 0
+                        ? 1
+                        : question.answer.toDouble(),
 
                     label: question.answer.toString(),
 

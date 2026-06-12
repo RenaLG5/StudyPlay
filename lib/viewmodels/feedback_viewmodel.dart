@@ -36,5 +36,10 @@ class FeedbackViewModel extends ChangeNotifier {
     if (await canLaunchUrl(emailUri)) {
       await launchUrl(emailUri);
     }
+    if (await canLaunchUrl(emailUri)) {
+      await launchUrl(emailUri);
+    } else {
+      debugPrint("No se encontró una aplicación de correo");
+    }
   }
 }
