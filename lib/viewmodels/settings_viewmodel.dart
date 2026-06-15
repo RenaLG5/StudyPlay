@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import '../services/preferences_services.dart';
+import 'package:shared_preferences/shared_preferences.dart';
 
 class SettingsViewModel extends ChangeNotifier {
   final PreferencesService _service = PreferencesService();
@@ -7,6 +8,7 @@ class SettingsViewModel extends ChangeNotifier {
   String username = '';
   String difficulty = 'Fácil';
   bool notifications = true;
+  String currentUser = "";
 
   String email = '';
   String age = '';
@@ -33,6 +35,22 @@ class SettingsViewModel extends ChangeNotifier {
   void setNotifications(bool value) {
     notifications = value;
     notifyListeners();
+  }
+
+  Future<void> setCurrentUser(String email) async {
+    currentUser = email;
+
+    final prefs = await SharedPreferences.getInstance();
+
+    await prefs.setString("currentUser", email);
+
+    notifyListeners();
+  }
+
+  Future<void> loadCurrentUser() async {
+    final prefs = await SharedPreferences.getInstance();
+
+    currentUser = prefs.getString("currentUser") ?? "";
   }
 
   Future<void> loadSettings() async {

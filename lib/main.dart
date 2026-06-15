@@ -31,21 +31,7 @@ import 'viewmodels/progress_viewmodel.dart';
 void main() async {
   WidgetsFlutterBinding.ensureInitialized();
 
-  print("PASO 1");
-
   await Firebase.initializeApp(options: DefaultFirebaseOptions.currentPlatform);
-
-  print("PASO 2");
-
-  final progressVM = ProgressViewModel();
-
-  await progressVM.load();
-
-  final historyVM = HistoryViewModel();
-
-  await historyVM.load();
-
-  print("PASO 2.5");
 
   runApp(
     MultiProvider(
@@ -56,16 +42,14 @@ void main() async {
 
         ChangeNotifierProvider(create: (_) => FeedbackViewModel()),
 
-        ChangeNotifierProvider.value(value: historyVM),
+        ChangeNotifierProvider(create: (_) => HistoryViewModel()),
 
-        ChangeNotifierProvider.value(value: progressVM),
+        ChangeNotifierProvider(create: (_) => ProgressViewModel()),
       ],
 
       child: const MyApp(),
     ),
   );
-
-  print("PASO 3");
 }
 
 class MyApp extends StatelessWidget {

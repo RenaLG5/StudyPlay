@@ -2,6 +2,8 @@ import 'package:flutter/material.dart';
 import 'firebase_poc_screen.dart';
 import 'package:provider/provider.dart';
 import '../../viewmodels/settings_viewmodel.dart';
+import '../../viewmodels/progress_viewmodel.dart';
+import '../../viewmodels/history_viewmodel.dart';
 
 class ProfileScreen extends StatelessWidget {
   const ProfileScreen({Key? key}) : super(key: key);
@@ -175,6 +177,20 @@ class ProfileScreen extends StatelessWidget {
                             settingsVM.setCountry(countryController.text);
 
                             await settingsVM.saveSettings();
+
+                            final progressVM = Provider.of<ProgressViewModel>(
+                              context,
+                              listen: false,
+                            );
+
+                            final historyVM = Provider.of<HistoryViewModel>(
+                              context,
+                              listen: false,
+                            );
+
+                            await progressVM.load(emailController.text);
+
+                            await historyVM.load(emailController.text);
 
                             Navigator.pop(context);
                           },

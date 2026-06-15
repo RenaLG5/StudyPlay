@@ -1,112 +1,149 @@
 import 'package:flutter/material.dart';
-//import 'package:share_plus/share_plus.dart';
+import 'package:provider/provider.dart';
+
+import '../../viewmodels/history_viewmodel.dart';
+import '../../viewmodels/progress_viewmodel.dart';
 
 class RewardsScreen extends StatelessWidget {
-  const RewardsScreen({Key? key}) : super(key: key);
-
-  final List<Map<String, dynamic>> achievements = const [
-    {
-      'title': 'Primer paso',
-      'description': 'Completa tu primer quiz',
-      'icon': Icons.flag,
-      'unlocked': true,
-    },
-    {
-      'title': 'Racha 5 días',
-      'description': 'Estudia 5 días seguidos',
-      'icon': Icons.local_fire_department,
-      'unlocked': true,
-    },
-    {
-      'title': 'Racha 10 días',
-      'description': 'Estudia 10 días seguidos',
-      'icon': Icons.local_fire_department,
-      'unlocked': false,
-    },
-    {
-      'title': 'Racha 50 días',
-      'description': 'Estudia 50 días seguidos',
-      'icon': Icons.whatshot,
-      'unlocked': false,
-    },
-    {
-      'title': 'Matemático Pro',
-      'description': 'Completa 10 quizzes de Matemáticas',
-      'icon': Icons.calculate,
-      'unlocked': true,
-    },
-    {
-      'title': 'Científico',
-      'description': 'Completa 10 quizzes de Ciencias',
-      'icon': Icons.science,
-      'unlocked': false,
-    },
-    {
-      'title': 'Historiador',
-      'description': 'Completa 10 quizzes de Historia',
-      'icon': Icons.account_balance,
-      'unlocked': false,
-    },
-    {
-      'title': 'Lector Experto',
-      'description': 'Completa 10 quizzes de Lenguaje',
-      'icon': Icons.menu_book,
-      'unlocked': true,
-    },
-    {
-      'title': 'Aprendiz Constante',
-      'description': 'Completa 50 quizzes en total',
-      'icon': Icons.star,
-      'unlocked': false,
-    },
-    {
-      'title': 'Maestro del Conocimiento',
-      'description': 'Completa 100 quizzes',
-      'icon': Icons.emoji_events,
-      'unlocked': false,
-    },
-  ];
+  const RewardsScreen({super.key});
 
   @override
   Widget build(BuildContext context) {
-    final theme = Theme.of(context);
+    final historyVM = Provider.of<HistoryViewModel>(context);
+
+    final progressVM = Provider.of<ProgressViewModel>(context);
+
+    final totalCompleted = historyVM.results.where((e) => e.isVictory).length;
+
+    final mathLevel = progressVM.progress.mathLevel;
+
+    final languageLevel = progressVM.progress.languageLevel;
+
+    final scienceLevel = progressVM.progress.scienceLevel;
+
+    final historyLevel = progressVM.progress.historyLevel;
+
+    final achievements = [
+      {
+        "title": "Primer Paso",
+        "desc": "Completa tu primer nivel",
+        "icon": Icons.flag,
+        "unlocked": totalCompleted >= 1,
+      },
+
+      {
+        "title": "Aprendiz",
+        "desc": "Completa 5 niveles",
+        "icon": Icons.school,
+        "unlocked": totalCompleted >= 5,
+      },
+
+      {
+        "title": "Estudiante Experto",
+        "desc": "Completa 10 niveles",
+        "icon": Icons.star,
+        "unlocked": totalCompleted >= 10,
+      },
+
+      {
+        "title": "Maestro del Conocimiento",
+        "desc": "Completa 20 niveles",
+        "icon": Icons.emoji_events,
+        "unlocked": totalCompleted >= 20,
+      },
+
+      {
+        "title": "Matemático",
+        "desc": "Llega al nivel 3 en Matemáticas",
+        "icon": Icons.calculate,
+        "unlocked": mathLevel >= 3,
+      },
+
+      {
+        "title": "Genio Matemático",
+        "desc": "Llega al nivel 5 en Matemáticas",
+        "icon": Icons.functions,
+        "unlocked": mathLevel >= 5,
+      },
+
+      {
+        "title": "Lector Experto",
+        "desc": "Llega al nivel 3 en Lenguaje",
+        "icon": Icons.menu_book,
+        "unlocked": languageLevel >= 3,
+      },
+
+      {
+        "title": "Científico",
+        "desc": "Llega al nivel 3 en Ciencias",
+        "icon": Icons.science,
+        "unlocked": scienceLevel >= 3,
+      },
+
+      {
+        "title": "Historiador",
+        "desc": "Llega al nivel 3 en Historia",
+        "icon": Icons.account_balance,
+        "unlocked": historyLevel >= 3,
+      },
+
+      {
+        "title": "Dominador de StudyPlay",
+        "desc": "Llega al nivel 5 en todas las materias",
+        "icon": Icons.workspace_premium,
+        "unlocked":
+            mathLevel >= 5 &&
+            languageLevel >= 5 &&
+            scienceLevel >= 5 &&
+            historyLevel >= 5,
+      },
+    ];
 
     return Scaffold(
-      appBar: AppBar(
-        title: const Text('Recompensas'),
-        backgroundColor: theme.colorScheme.primary,
-      ),
+      appBar: AppBar(title: const Text("Recompensas"), centerTitle: true),
+
       body: ListView.builder(
-        padding: const EdgeInsets.all(10),
+        padding: const EdgeInsets.all(12),
+
         itemCount: achievements.length,
+
         itemBuilder: (context, index) {
           final achievement = achievements[index];
-          final bool unlocked = achievement['unlocked'];
+
+          final unlocked = achievement["unlocked"] as bool;
 
           return Card(
+            elevation: unlocked ? 6 : 1,
+
             color: unlocked ? Colors.amber[100] : Colors.grey[300],
+
             margin: const EdgeInsets.symmetric(vertical: 8),
+
             child: ListTile(
-              leading: Icon(
-                achievement['icon'],
-                size: 40,
-                color: unlocked ? Colors.orange : Colors.grey,
+              leading: CircleAvatar(
+                backgroundColor: unlocked ? Colors.orange : Colors.grey,
+
+                child: Icon(
+                  achievement["icon"] as IconData,
+                  color: Colors.white,
+                ),
               ),
+
               title: Text(
-                achievement['title'],
+                achievement["title"].toString(),
+
                 style: TextStyle(
                   fontWeight: FontWeight.bold,
-                  color: unlocked ? Colors.black : Colors.grey,
+
+                  color: unlocked ? Colors.black : Colors.grey[700],
                 ),
               ),
-              subtitle: Text(
-                achievement['description'],
-                style: TextStyle(
-                  color: unlocked ? Colors.black87 : Colors.grey,
-                ),
-              ),
+
+              subtitle: Text(achievement["desc"].toString()),
+
               trailing: Icon(
                 unlocked ? Icons.check_circle : Icons.lock,
+
                 color: unlocked ? Colors.green : Colors.grey,
               ),
             ),

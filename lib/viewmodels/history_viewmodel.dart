@@ -9,34 +9,40 @@ class HistoryViewModel extends ChangeNotifier {
 
   List<GameResult> get results => _results;
 
-  Future<void> load() async {
+  String? _email;
+
+  Future<void> load(String email) async {
+    _email = email;
+
     final prefs = await SharedPreferences.getInstance();
 
-    final data = prefs.getString("history");
+    final data = prefs.getString("history_$email");
+
+    _results.clear();
 
     if (data != null) {
       final List decoded = jsonDecode(data);
 
-      _results.clear();
-
-      _results.addAll(decoded.map((e) => GameResult.fromJson(e)).toList());
+      _results.addAll(decoded.map((e) => GameResult.fromJson(e)));
     }
 
     notifyListeners();
   }
 
   Future<void> save() async {
+    if (_email == null) return;
+
     final prefs = await SharedPreferences.getInstance();
 
-    final data = _results.map((e) => e.toJson()).toList();
+    final jsonList = _results.map((e) => e.toJson()).toList();
 
-    await prefs.setString("history", jsonEncode(data));
+    await prefs.setString("history_$_email", jsonEncode(jsonList));
   }
 
-  Future<void> addResult(GameResult result) async {
+  void addResult(GameResult result) {
     _results.insert(0, result);
 
-    await save();
+    save();
 
     notifyListeners();
   }

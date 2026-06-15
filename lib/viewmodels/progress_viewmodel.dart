@@ -13,22 +13,35 @@ class ProgressViewModel extends ChangeNotifier {
     historyLevel: 1,
   );
 
-  Future<void> load() async {
+  String _email = "";
+
+  Future<void> load(String email) async {
     final prefs = await SharedPreferences.getInstance();
 
-    final data = prefs.getString("progress");
+    _email = email;
+
+    final data = prefs.getString("progress_$email");
 
     if (data != null) {
       progress = ProgressModel.fromJson(jsonDecode(data));
+    } else {
+      progress = ProgressModel(
+        mathLevel: 1,
+        languageLevel: 1,
+        scienceLevel: 1,
+        historyLevel: 1,
+      );
     }
 
     notifyListeners();
   }
 
   Future<void> save() async {
+    if (_email.isEmpty) return;
+
     final prefs = await SharedPreferences.getInstance();
 
-    await prefs.setString("progress", jsonEncode(progress.toJson()));
+    await prefs.setString("progress_$_email", jsonEncode(progress.toJson()));
   }
 
   int getLevel(String subject) {

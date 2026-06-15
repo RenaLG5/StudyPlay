@@ -2,6 +2,8 @@ import 'package:flutter/material.dart';
 import 'package:provider/provider.dart';
 import '../../viewmodels/settings_viewmodel.dart';
 import 'package:share_plus/share_plus.dart';
+import '../../viewmodels/progress_viewmodel.dart';
+import '../../viewmodels/history_viewmodel.dart';
 
 class MenuScreen extends StatefulWidget {
   const MenuScreen({Key? key}) : super(key: key);
@@ -12,6 +14,26 @@ class MenuScreen extends StatefulWidget {
 
 class _MenuScreenState extends State<MenuScreen> {
   int _selectedIndex = 0;
+
+  void initState() {
+    super.initState();
+
+    WidgetsBinding.instance.addPostFrameCallback((_) async {
+      final settings = Provider.of<SettingsViewModel>(context, listen: false);
+
+      if (settings.email.isNotEmpty) {
+        await Provider.of<ProgressViewModel>(
+          context,
+          listen: false,
+        ).load(settings.email);
+
+        await Provider.of<HistoryViewModel>(
+          context,
+          listen: false,
+        ).load(settings.email);
+      }
+    });
+  }
 
   @override
   Widget build(BuildContext context) {

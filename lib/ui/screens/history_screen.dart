@@ -9,7 +9,7 @@ class HistoryScreen extends StatelessWidget {
 
   Color _getSubjectColor(String subject) {
     switch (subject) {
-      case 'Matemática':
+      case 'Matemáticas':
         return Colors.blue;
       case 'Lenguaje':
         return Colors.red;
@@ -24,7 +24,7 @@ class HistoryScreen extends StatelessWidget {
 
   IconData _getSubjectIcon(String subject) {
     switch (subject) {
-      case 'Matemática':
+      case 'Matemáticas':
         return Icons.calculate;
       case 'Lenguaje':
         return Icons.menu_book;
@@ -58,6 +58,7 @@ class HistoryScreen extends StatelessWidget {
                       _getSubjectIcon(game.subject),
                       color: _getSubjectColor(game.subject),
                     ),
+
                     title: Text(game.subject),
                     subtitle: Text(
                       "Nivel ${game.level}\n"
