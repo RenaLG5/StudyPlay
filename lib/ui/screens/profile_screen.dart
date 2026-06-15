@@ -140,7 +140,81 @@ class ProfileScreen extends StatelessWidget {
                 ],
               ),
             ),
+            ElevatedButton.icon(
+              icon: const Icon(Icons.edit),
+              label: const Text("Editar perfil"),
+              onPressed: () {
+                final nameController = TextEditingController(
+                  text: settingsVM.username,
+                );
+                final ageController = TextEditingController(
+                  text: settingsVM.age,
+                );
+                final countryController = TextEditingController(
+                  text: settingsVM.country,
+                );
 
+                showDialog(
+                  context: context,
+                  builder: (_) => AlertDialog(
+                    title: const Text("Editar perfil"),
+                    content: SingleChildScrollView(
+                      child: Column(
+                        mainAxisSize: MainAxisSize.min,
+                        children: [
+                          TextField(
+                            controller: nameController,
+                            decoration: const InputDecoration(
+                              labelText: "Nombre",
+                            ),
+                          ),
+                          TextField(
+                            controller: ageController,
+                            keyboardType: TextInputType.number,
+                            decoration: const InputDecoration(
+                              labelText: "Edad",
+                            ),
+                          ),
+                          TextField(
+                            controller: countryController,
+                            decoration: const InputDecoration(
+                              labelText: "País",
+                            ),
+                          ),
+                        ],
+                      ),
+                    ),
+                    actions: [
+                      TextButton(
+                        onPressed: () => Navigator.pop(context),
+                        child: const Text("Cancelar"),
+                      ),
+                      ElevatedButton(
+                        onPressed: () async {
+                          if (nameController.text.trim().isNotEmpty) {
+                            settingsVM.username = nameController.text.trim();
+                            await settingsVM.saveUsername(settingsVM.username);
+                          }
+
+                          if (ageController.text.trim().isNotEmpty) {
+                            settingsVM.age = ageController.text.trim();
+                            await settingsVM.saveAge(settingsVM.age);
+                          }
+
+                          if (countryController.text.trim().isNotEmpty) {
+                            settingsVM.country = countryController.text.trim();
+                            await settingsVM.saveCountry(settingsVM.country);
+                          }
+                          settingsVM.notifyListeners();
+                          Navigator.pop(context);
+                        },
+                        child: const Text("Guardar"),
+                      ),
+                    ],
+                  ),
+                );
+              },
+            ),
             const SizedBox(height: 30),
 
             ElevatedButton.icon(
@@ -325,70 +399,24 @@ class ProfileScreen extends StatelessWidget {
 
                 onPressed: () async {
                   await FirebaseAuth.instance.signOut();
+                  final settingsVM = Provider.of<SettingsViewModel>(
+                    context,
+                    listen: false,
+                  );
+                  await settingsVM.clearUserData();
 
                   await progressVM.load("guest");
 
                   await historyVM.load("guest");
+                  if (context.mounted) {
+                    Navigator.pop(context);
+                  }
 
                   ScaffoldMessenger.of(context).showSnackBar(
                     const SnackBar(content: Text("Sesión cerrada")),
                   );
                 },
               ),
-
-            if (user != null)
-              ElevatedButton.icon(
-                icon: const Icon(Icons.edit),
-
-                label: const Text("Cambiar nombre"),
-
-                onPressed: () {
-                  final controller = TextEditingController(
-                    text: settingsVM.username,
-                  );
-
-                  showDialog(
-                    context: context,
-
-                    builder: (_) => AlertDialog(
-                      title: const Text("Cambiar nombre"),
-
-                      content: TextField(
-                        controller: controller,
-
-                        decoration: const InputDecoration(labelText: "Nombre"),
-                      ),
-
-                      actions: [
-                        TextButton(
-                          onPressed: () {
-                            Navigator.pop(context);
-                          },
-
-                          child: const Text("Cancelar"),
-                        ),
-
-                        ElevatedButton(
-                          onPressed: () async {
-                            if (controller.text.trim().isEmpty) {
-                              return;
-                            }
-                            await settingsVM.saveUsername(
-                              controller.text.trim(),
-                            );
-
-                            Navigator.pop(context);
-                          },
-
-                          child: const Text("Guardar"),
-                        ),
-                      ],
-                    ),
-                  );
-                },
-              ),
-
-            const SizedBox(height: 20),
           ],
         ),
       ),

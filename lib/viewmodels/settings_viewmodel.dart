@@ -90,6 +90,13 @@ class SettingsViewModel extends ChangeNotifier {
     profileImagePath = "";
     _userKey = "";
 
+    final prefs = await SharedPreferences.getInstance();
+
+    await prefs.remove("profileImage_$_userKey");
+    await prefs.remove("username_$_userKey");
+    await prefs.remove("age_$_userKey");
+    await prefs.remove("country_$_userKey");
+
     notifyListeners();
   }
 
@@ -115,6 +122,28 @@ class SettingsViewModel extends ChangeNotifier {
 
     final prefs = await SharedPreferences.getInstance();
     await prefs.setString("username_$_userKey", value);
+
+    notifyListeners();
+  }
+
+  Future<void> saveAge(String value) async {
+    if (_userKey.isEmpty) return;
+
+    age = value;
+
+    final prefs = await SharedPreferences.getInstance();
+    await prefs.setString("age_$_userKey", value);
+
+    notifyListeners();
+  }
+
+  Future<void> saveCountry(String value) async {
+    if (_userKey.isEmpty) return;
+
+    country = value;
+
+    final prefs = await SharedPreferences.getInstance();
+    await prefs.setString("country_$_userKey", value);
 
     notifyListeners();
   }

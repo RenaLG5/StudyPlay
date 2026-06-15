@@ -53,26 +53,28 @@ class _MenuScreenState extends State<MenuScreen> {
           children: [
             DrawerHeader(
               decoration: BoxDecoration(color: theme.colorScheme.primary),
-              child: Column(
-                crossAxisAlignment: CrossAxisAlignment.start,
-                children: [
-                  Consumer<SettingsViewModel>(
-                    builder: (context, settingsVM, _) {
-                      return CircleAvatar(
+              child: Consumer<SettingsViewModel>(
+                builder: (context, settingsVM, _) {
+                  return Column(
+                    crossAxisAlignment: CrossAxisAlignment.start,
+                    children: [
+                      CircleAvatar(
                         radius: 30,
                         backgroundImage: settingsVM.profileImagePath.isNotEmpty
                             ? FileImage(File(settingsVM.profileImagePath))
-                            : const AssetImage('assets/images/perfil.png')
-                                  as ImageProvider,
-                      );
-                    },
-                  ),
-                  const SizedBox(height: 10),
-                  Text(
-                    settingsVM.displayName,
-                    style: const TextStyle(color: Colors.white, fontSize: 18),
-                  ),
-                ],
+                            : const AssetImage('assets/images/perfil.png'),
+                      ),
+                      const SizedBox(height: 10),
+                      Text(
+                        settingsVM.displayName,
+                        style: const TextStyle(
+                          color: Colors.white,
+                          fontSize: 18,
+                        ),
+                      ),
+                    ],
+                  );
+                },
               ),
             ),
 
@@ -119,10 +121,11 @@ class _MenuScreenState extends State<MenuScreen> {
                           await settingsVM.clearUserData();
 
                           if (context.mounted) {
-                            Navigator.pop(context);
-                            Navigator.pushNamedAndRemoveUntil(
+                            Navigator.pushAndRemoveUntil(
                               context,
-                              '/login',
+                              MaterialPageRoute(
+                                builder: (_) => const MenuScreen(),
+                              ),
                               (route) => false,
                             );
                           }
