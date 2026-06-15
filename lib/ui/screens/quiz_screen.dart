@@ -2,13 +2,20 @@ import 'package:flutter/material.dart';
 import '/models/quiz_model.dart';
 import '/models/game_result.dart';
 import '../../viewmodels/history_viewmodel.dart';
+import '../../viewmodels/progress_viewmodel.dart';
 import 'package:provider/provider.dart';
 
 class QuizScreen extends StatefulWidget {
   final String title;
   final List<Question> questions;
+  final int level;
 
-  const QuizScreen({super.key, required this.title, required this.questions});
+  const QuizScreen({
+    super.key,
+    required this.title,
+    required this.questions,
+    required this.level,
+  });
 
   @override
   State<QuizScreen> createState() => _QuizScreenState();
@@ -51,48 +58,68 @@ class _QuizScreenState extends State<QuizScreen> {
     }
   }
 
-  void showResult() {
+  void showResult() async {
     final historyVM = Provider.of<HistoryViewModel>(context, listen: false);
 
+    final progressVM = Provider.of<ProgressViewModel>(context, listen: false);
+
     final endTime = DateTime.now();
+
     final duration = endTime.difference(startTime!);
 
     final minutes = duration.inMinutes.remainder(60);
+
     final seconds = duration.inSeconds.remainder(60);
 
     final timeSpent =
         "${minutes.toString().padLeft(2, '0')}:${seconds.toString().padLeft(2, '0')}";
 
+    bool passed = score == widget.questions.length;
+
     final game = GameResult(
       date: DateTime.now().toString().substring(0, 10),
+
       timeSpent: timeSpent,
-      isVictory: score >= widget.questions.length ~/ 2,
-      difficulty: "Normal",
+
+      isVictory: passed,
+
+      difficulty: "Nivel ${widget.level}",
+
       subject: widget.title,
+
       correctAnswers: score,
+
       wrongAnswers: widget.questions.length - score,
+
+      level: widget.level,
     );
 
     historyVM.addResult(game);
+
+    if (passed) {
+      await progressVM.levelUp(widget.title);
+    }
 
     showDialog(
       context: context,
       barrierDismissible: false,
       builder: (_) => AlertDialog(
-        title: const Text("Resultado"),
-        content: Text("Puntaje: $score / ${widget.questions.length}"),
+        title: Text(passed ? "¡Nivel completado!" : "Nivel fallado"),
+
+        content: Text(
+          passed
+              ? "Obtuviste ${score}/${widget.questions.length}\nDesbloqueaste el siguiente nivel."
+              : "Obtuviste ${score}/${widget.questions.length}\nDebes responder TODAS correctamente.",
+        ),
+
         actions: [
           TextButton(
             onPressed: () {
               Navigator.pop(context);
-              setState(() {
-                index = 0;
-                score = 0;
-                selected = null;
-                startTime = DateTime.now(); // reinicia tiempo
-              });
+              Navigator.pop(context);
             },
-            child: const Text("Reintentar"),
+
+            child: const Text("Volver"),
           ),
         ],
       ),
@@ -113,7 +140,7 @@ class _QuizScreenState extends State<QuizScreen> {
     final q = widget.questions[index];
 
     return Scaffold(
-      appBar: AppBar(title: Text(widget.title)),
+      appBar: AppBar(title: Text("${widget.title} - Nivel ${widget.level}")),
       body: Column(
         children: [
           const SizedBox(height: 20),
@@ -123,6 +150,12 @@ class _QuizScreenState extends State<QuizScreen> {
             textAlign: TextAlign.center,
           ),
           const SizedBox(height: 20),
+          Text(
+            "Pregunta ${index + 1}/${widget.questions.length}",
+            style: const TextStyle(fontSize: 18, fontWeight: FontWeight.bold),
+          ),
+
+          const SizedBox(height: 15),
 
           Expanded(
             child: GridView.builder(

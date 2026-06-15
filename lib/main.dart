@@ -12,6 +12,8 @@ import 'ui/screens/setting_screen.dart';
 import 'ui/screens/splash_screen.dart';
 import 'ui/screens/about.dart';
 import 'ui/screens/quality_screen.dart';
+import 'ui/screens/feedback_screen.dart';
+import 'ui/screens/help_screen.dart';
 
 import 'data/math_questions.dart';
 import 'data/language_questions.dart';
@@ -19,14 +21,12 @@ import 'data/science_questions.dart';
 import 'data/history_questions.dart';
 
 import 'package:provider/provider.dart';
+
 import 'viewmodels/settings_viewmodel.dart';
 import 'viewmodels/quality_viewmodel.dart';
 import 'viewmodels/feedback_viewmodel.dart';
 import 'viewmodels/history_viewmodel.dart';
-
-import 'ui/screens/feedback_screen.dart';
-
-import 'ui/screens/help_screen.dart';
+import 'viewmodels/progress_viewmodel.dart';
 
 void main() async {
   WidgetsFlutterBinding.ensureInitialized();
@@ -37,6 +37,16 @@ void main() async {
 
   print("PASO 2");
 
+  final progressVM = ProgressViewModel();
+
+  await progressVM.load();
+
+  final historyVM = HistoryViewModel();
+
+  await historyVM.load();
+
+  print("PASO 2.5");
+
   runApp(
     MultiProvider(
       providers: [
@@ -46,7 +56,9 @@ void main() async {
 
         ChangeNotifierProvider(create: (_) => FeedbackViewModel()),
 
-        ChangeNotifierProvider(create: (_) => HistoryViewModel()),
+        ChangeNotifierProvider.value(value: historyVM),
+
+        ChangeNotifierProvider.value(value: progressVM),
       ],
 
       child: const MyApp(),
@@ -87,31 +99,53 @@ class MyApp extends StatelessWidget {
 
           routes: {
             '/': (context) => const SplashScreen(),
+
             '/menu': (context) => const MenuScreen(),
+
             '/subjects': (context) => const SubjectScreen(),
-            '/quiz': (context) => QuizScreen(title: '', questions: const []),
+
+            '/quiz': (context) =>
+                QuizScreen(title: '', questions: const [], level: 1),
+
             '/history': (context) => HistoryScreen(),
+
             '/profile': (context) => const ProfileScreen(),
+
             '/rewards': (context) => const RewardsScreen(),
+
             '/settings': (context) => const SettingScreen(),
+
             '/quality': (context) => const QualityScreen(),
+
             '/feedback': (context) => const FeedbackScreen(),
+
             '/about': (context) => const AboutScreen(),
+
             '/help': (context) => const HelpScreen(),
 
-            '/quiz_math': (_) =>
-                QuizScreen(title: "Matemática", questions: MathQuestions.list),
+            '/quiz_math': (_) => QuizScreen(
+              title: "Matemática",
+              questions: MathQuestions.levels[1]!,
+              level: 1,
+            ),
 
             '/quiz_language': (_) => QuizScreen(
               title: "Lenguaje",
-              questions: LanguageQuestions.list,
+              questions: LanguageQuestions.levels[1]!,
+              level: 1,
             ),
 
-            '/quiz_science': (_) =>
-                QuizScreen(title: "Ciencias", questions: ScienceQuestions.list),
+            '/quiz_science': (_) => QuizScreen(
+              title: "Ciencias",
+              questions: ScienceQuestions.levels[1]!,
+              level: 1,
+            ),
 
-            '/quiz_history': (_) =>
-                QuizScreen(title: "Historia", questions: HistoryQuestions.list),
+            '/quiz_history': (_) => QuizScreen(
+              title: "Historia",
+              questions: HistoryQuestions.levels[1]!,
+              level: 1,
+            ),
           },
         );
       },

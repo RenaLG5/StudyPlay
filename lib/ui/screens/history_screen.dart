@@ -60,7 +60,10 @@ class HistoryScreen extends StatelessWidget {
                     ),
                     title: Text(game.subject),
                     subtitle: Text(
-                      "✔ ${game.correctAnswers} | ✘ ${game.wrongAnswers}\n${game.date}",
+                      "Nivel ${game.level}\n"
+                      "✔ ${game.correctAnswers} | "
+                      "✘ ${game.wrongAnswers}\n"
+                      "${game.date}",
                     ),
                     trailing: Text(game.timeSpent),
                   ),

@@ -1,29 +1,39 @@
 import 'package:flutter/material.dart';
+import 'package:provider/provider.dart';
+
 import 'quiz_screen.dart';
+
 import '/data/math_questions.dart';
 import '/data/language_questions.dart';
 import '/data/science_questions.dart';
 import '/data/history_questions.dart';
+
+import '/viewmodels/progress_viewmodel.dart';
 
 class SubjectScreen extends StatelessWidget {
   const SubjectScreen({Key? key}) : super(key: key);
 
   @override
   Widget build(BuildContext context) {
+    final progressVM = Provider.of<ProgressViewModel>(context);
+
     return Scaffold(
-      appBar: AppBar(title: const Text('Materias')),
+      appBar: AppBar(title: const Text('Materias'), centerTitle: true),
 
       body: Center(
         child: SizedBox(
-          height: MediaQuery.of(context).size.height * 0.6,
+          height: MediaQuery.of(context).size.height * 0.65,
+
           child: GridView.count(
             crossAxisCount: 2,
             shrinkWrap: true,
             physics: const NeverScrollableScrollPhysics(),
+
             children: [
               _buildSubject(
                 context,
                 title: 'Matemáticas',
+                level: progressVM.progress.mathLevel,
                 color: Colors.blue,
                 icon: Icons.calculate,
               ),
@@ -31,6 +41,7 @@ class SubjectScreen extends StatelessWidget {
               _buildSubject(
                 context,
                 title: 'Lenguaje',
+                level: progressVM.progress.languageLevel,
                 color: Colors.red,
                 icon: Icons.menu_book,
               ),
@@ -38,6 +49,7 @@ class SubjectScreen extends StatelessWidget {
               _buildSubject(
                 context,
                 title: 'Ciencias',
+                level: progressVM.progress.scienceLevel,
                 color: Colors.green,
                 icon: Icons.science,
               ),
@@ -45,6 +57,7 @@ class SubjectScreen extends StatelessWidget {
               _buildSubject(
                 context,
                 title: 'Historia',
+                level: progressVM.progress.historyLevel,
                 color: Colors.orange,
                 icon: Icons.account_balance,
               ),
@@ -58,6 +71,7 @@ class SubjectScreen extends StatelessWidget {
   Widget _buildSubject(
     BuildContext context, {
     required String title,
+    required int level,
     required Color color,
     required IconData icon,
   }) {
@@ -66,10 +80,14 @@ class SubjectScreen extends StatelessWidget {
         if (title == 'Matemáticas') {
           Navigator.push(
             context,
+
             MaterialPageRoute(
               builder: (_) => QuizScreen(
-                title: "Matemática",
-                questions: MathQuestions.list,
+                title: "Matemáticas",
+
+                level: level,
+
+                questions: MathQuestions.levels[level]!,
               ),
             ),
           );
@@ -78,10 +96,14 @@ class SubjectScreen extends StatelessWidget {
         if (title == 'Lenguaje') {
           Navigator.push(
             context,
+
             MaterialPageRoute(
               builder: (_) => QuizScreen(
                 title: "Lenguaje",
-                questions: LanguageQuestions.list,
+
+                level: level,
+
+                questions: LanguageQuestions.levels[level]!,
               ),
             ),
           );
@@ -90,10 +112,14 @@ class SubjectScreen extends StatelessWidget {
         if (title == 'Ciencias') {
           Navigator.push(
             context,
+
             MaterialPageRoute(
               builder: (_) => QuizScreen(
                 title: "Ciencias",
-                questions: ScienceQuestions.list,
+
+                level: level,
+
+                questions: ScienceQuestions.levels[level]!,
               ),
             ),
           );
@@ -102,32 +128,78 @@ class SubjectScreen extends StatelessWidget {
         if (title == 'Historia') {
           Navigator.push(
             context,
+
             MaterialPageRoute(
               builder: (_) => QuizScreen(
                 title: "Historia",
-                questions: HistoryQuestions.list,
+
+                level: level,
+
+                questions: HistoryQuestions.levels[level]!,
               ),
             ),
           );
         }
       },
+
       child: Container(
         margin: const EdgeInsets.all(8),
+
         decoration: BoxDecoration(
           color: color,
-          borderRadius: BorderRadius.circular(16),
+
+          borderRadius: BorderRadius.circular(20),
+
+          boxShadow: [
+            BoxShadow(
+              color: Colors.black.withOpacity(0.2),
+              blurRadius: 8,
+              offset: const Offset(0, 4),
+            ),
+          ],
         ),
+
         child: Column(
           mainAxisAlignment: MainAxisAlignment.center,
+
           children: [
             Icon(icon, size: 60, color: Colors.white),
-            const SizedBox(height: 10),
+
+            const SizedBox(height: 15),
+
             Text(
               title,
+
               style: const TextStyle(
                 color: Colors.white,
-                fontSize: 18,
+
+                fontSize: 20,
+
                 fontWeight: FontWeight.bold,
+              ),
+            ),
+
+            const SizedBox(height: 10),
+
+            Container(
+              padding: const EdgeInsets.symmetric(horizontal: 14, vertical: 6),
+
+              decoration: BoxDecoration(
+                color: Colors.white24,
+
+                borderRadius: BorderRadius.circular(20),
+              ),
+
+              child: Text(
+                "Nivel $level",
+
+                style: const TextStyle(
+                  color: Colors.white,
+
+                  fontSize: 16,
+
+                  fontWeight: FontWeight.bold,
+                ),
               ),
             ),
           ],
