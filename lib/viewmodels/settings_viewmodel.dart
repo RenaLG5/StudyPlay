@@ -13,7 +13,9 @@ class SettingsViewModel extends ChangeNotifier {
   String age = "";
   String country = "";
 
-  String _userKey = ""; // 👈 SOLO referencia interna
+  String _userKey = "";
+
+  String profileImagePath = "";
 
   Future<void> setCurrentUser(String email) async {
     _userKey = email;
@@ -46,7 +48,7 @@ class SettingsViewModel extends ChangeNotifier {
       notifyListeners();
       return;
     }
-
+    profileImagePath = prefs.getString("profileImage_$_userKey") ?? "";
     username = prefs.getString("username_$_userKey") ?? "";
     age = prefs.getString("age_$_userKey") ?? "";
     country = prefs.getString("country_$_userKey") ?? "";
@@ -55,6 +57,18 @@ class SettingsViewModel extends ChangeNotifier {
     notifications = prefs.getBool("notifications") ?? true;
     darkMode = prefs.getBool("darkMode") ?? false;
     sound = prefs.getBool("sound") ?? true;
+
+    notifyListeners();
+  }
+
+  Future<void> setProfileImage(String path) async {
+    profileImagePath = path;
+
+    final prefs = await SharedPreferences.getInstance();
+
+    if (_userKey.isNotEmpty) {
+      await prefs.setString("profileImage_$_userKey", path);
+    }
 
     notifyListeners();
   }

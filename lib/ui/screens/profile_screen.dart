@@ -1,5 +1,6 @@
 import 'package:firebase_auth/firebase_auth.dart';
-
+import 'dart:io';
+import 'package:image_picker/image_picker.dart';
 import 'package:flutter/material.dart';
 import 'package:provider/provider.dart';
 
@@ -50,10 +51,36 @@ class ProfileScreen extends StatelessWidget {
 
         child: Column(
           children: [
-            const CircleAvatar(
-              radius: 50,
+            Consumer<SettingsViewModel>(
+              builder: (context, settingsVM, _) {
+                return CircleAvatar(
+                  radius: 50,
+                  backgroundImage: settingsVM.profileImagePath.isNotEmpty
+                      ? FileImage(File(settingsVM.profileImagePath))
+                      : const AssetImage("assets/images/perfil.png")
+                            as ImageProvider,
+                );
+              },
+            ),
+            ElevatedButton.icon(
+              icon: const Icon(Icons.image),
+              label: const Text("Cambiar foto"),
+              onPressed: () async {
+                final picker = ImagePicker();
 
-              backgroundImage: AssetImage("assets/images/perfil.png"),
+                final pickedFile = await picker.pickImage(
+                  source: ImageSource.gallery,
+                );
+
+                if (pickedFile != null) {
+                  final settingsVM = Provider.of<SettingsViewModel>(
+                    context,
+                    listen: false,
+                  );
+
+                  await settingsVM.setProfileImage(pickedFile.path);
+                }
+              },
             ),
 
             const SizedBox(height: 15),
