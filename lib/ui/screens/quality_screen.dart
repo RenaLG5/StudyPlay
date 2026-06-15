@@ -27,7 +27,7 @@ class _QualityScreenState extends State<QualityScreen> {
     final settingsVM = context.read<SettingsViewModel>();
 
     final answers = qualityVM.questions.map((q) {
-      return {'question': q.question, 'answer': q.answer};
+      return {'question': q.titulo, 'answer': q.valor};
     }).toList();
 
     await FirebaseFirestore.instance.collection('quality_surveys').add({
@@ -71,18 +71,18 @@ class _QualityScreenState extends State<QualityScreen> {
                             crossAxisAlignment: CrossAxisAlignment.start,
                             children: [
                               Text(
-                                question.question,
+                                question.titulo,
                                 style: const TextStyle(
                                   fontSize: 16,
                                   fontWeight: FontWeight.bold,
                                 ),
                               ),
                               Slider(
-                                value: question.answer.toDouble(),
+                                value: question.valor.toDouble(),
                                 min: 1,
                                 max: 5,
                                 divisions: 4,
-                                label: question.answer.toString(),
+                                label: question.valor.toString(),
                                 onChanged: (value) {
                                   vm.answerQuestion(index, value.toInt());
                                 },

@@ -1,6 +1,5 @@
 import 'package:firebase_auth/firebase_auth.dart';
 
-import 'firebase_poc_screen.dart';
 import 'package:flutter/material.dart';
 import 'package:provider/provider.dart';
 
@@ -358,20 +357,6 @@ class ProfileScreen extends StatelessWidget {
               ),
 
             const SizedBox(height: 20),
-
-            ElevatedButton.icon(
-              onPressed: () {
-                Navigator.push(
-                  context,
-
-                  MaterialPageRoute(builder: (_) => const FirebasePocScreen()),
-                );
-              },
-
-              icon: const Icon(Icons.cloud),
-
-              label: const Text("Firebase PoC"),
-            ),
           ],
         ),
       ),

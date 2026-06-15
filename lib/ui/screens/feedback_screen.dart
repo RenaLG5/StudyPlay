@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:provider/provider.dart';
 import '../../viewmodels/feedback_viewmodel.dart';
+import 'package:firebase_auth/firebase_auth.dart';
 
 class FeedbackScreen extends StatelessWidget {
   const FeedbackScreen({super.key});
@@ -8,6 +9,21 @@ class FeedbackScreen extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     final vm = Provider.of<FeedbackViewModel>(context);
+
+    final user = FirebaseAuth.instance.currentUser;
+
+    if (user == null) {
+      return Scaffold(
+        appBar: AppBar(title: const Text("Encuesta")),
+
+        body: const Center(
+          child: Text(
+            "Debes iniciar sesión para responder la encuesta",
+            style: TextStyle(fontSize: 18),
+          ),
+        ),
+      );
+    }
 
     return Scaffold(
       appBar: AppBar(title: const Text('Valoración de Calidad')),
@@ -22,7 +38,18 @@ class FeedbackScreen extends StatelessWidget {
               padding: const EdgeInsets.only(top: 20),
 
               child: ElevatedButton.icon(
-                onPressed: vm.allAnswered ? () => vm.sendFeedback() : null,
+                onPressed: vm.allAnswered
+                    ? () {
+                        final user = FirebaseAuth.instance.currentUser;
+
+                        if (user != null) {
+                          vm.sendFeedback(
+                            user.displayName ?? "Usuario",
+                            user.email ?? "",
+                          );
+                        }
+                      }
+                    : null,
 
                 icon: const Icon(Icons.send),
 
@@ -44,7 +71,7 @@ class FeedbackScreen extends StatelessWidget {
 
                 children: [
                   Text(
-                    question.text,
+                    question.titulo,
                     style: const TextStyle(fontWeight: FontWeight.bold),
                   ),
 
@@ -52,11 +79,9 @@ class FeedbackScreen extends StatelessWidget {
                     min: 1,
                     max: 5,
                     divisions: 4,
-                    value: question.answer == 0
-                        ? 1
-                        : question.answer.toDouble(),
+                    value: question.valor == 0 ? 1 : question.valor.toDouble(),
 
-                    label: question.answer.toString(),
+                    label: question.valor.toString(),
 
                     onChanged: (value) {
                       vm.updateAnswer(index, value.toInt());

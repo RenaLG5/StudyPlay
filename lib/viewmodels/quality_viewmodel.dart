@@ -13,20 +13,32 @@ class QualityViewModel extends ChangeNotifier {
       'assets/data/quality_questions.json',
     );
 
-    final List<dynamic> data = jsonDecode(jsonString);
+    final Map<String, dynamic> data = jsonDecode(jsonString);
 
-    questions = data.map((e) => QuestionModel.fromJson(e)).toList();
+    questions = [];
+
+    for (final q in data["usabilidad"]) {
+      questions.add(QuestionModel.fromJson(q));
+    }
+
+    for (final q in data["contenido"]) {
+      questions.add(QuestionModel.fromJson(q));
+    }
+
+    for (final q in data["compartir"]) {
+      questions.add(QuestionModel.fromJson(q));
+    }
 
     notifyListeners();
   }
 
   void answerQuestion(int index, int value) {
-    questions[index].answer = value;
+    questions[index].valor = value;
 
     notifyListeners();
   }
 
   bool get allAnswered {
-    return questions.every((q) => q.answer > 0);
+    return questions.every((q) => q.valor > 0);
   }
 }
