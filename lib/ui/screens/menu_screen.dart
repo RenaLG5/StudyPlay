@@ -5,6 +5,8 @@ import 'package:share_plus/share_plus.dart';
 import '../../viewmodels/progress_viewmodel.dart';
 import '../../viewmodels/history_viewmodel.dart';
 import 'package:firebase_auth/firebase_auth.dart';
+import 'dart:io';
+import 'package:image_picker/image_picker.dart';
 
 class MenuScreen extends StatefulWidget {
   const MenuScreen({Key? key}) : super(key: key);
@@ -54,9 +56,16 @@ class _MenuScreenState extends State<MenuScreen> {
               child: Column(
                 crossAxisAlignment: CrossAxisAlignment.start,
                 children: [
-                  const CircleAvatar(
-                    radius: 30,
-                    backgroundImage: AssetImage('assets/images/perfil.png'),
+                  Consumer<SettingsViewModel>(
+                    builder: (context, settingsVM, _) {
+                      return CircleAvatar(
+                        radius: 30,
+                        backgroundImage: settingsVM.profileImagePath.isNotEmpty
+                            ? FileImage(File(settingsVM.profileImagePath))
+                            : const AssetImage('assets/images/perfil.png')
+                                  as ImageProvider,
+                      );
+                    },
                   ),
                   const SizedBox(height: 10),
                   Text(
@@ -101,7 +110,13 @@ class _MenuScreenState extends State<MenuScreen> {
                       ),
                       TextButton(
                         onPressed: () async {
+                          final settingsVM = Provider.of<SettingsViewModel>(
+                            context,
+                            listen: false,
+                          );
+
                           await FirebaseAuth.instance.signOut();
+                          await settingsVM.clearUserData();
 
                           if (context.mounted) {
                             Navigator.pop(context);

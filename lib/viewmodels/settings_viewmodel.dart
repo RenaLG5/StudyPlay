@@ -17,6 +17,16 @@ class SettingsViewModel extends ChangeNotifier {
 
   String profileImagePath = "";
 
+  String get displayName {
+    final user = FirebaseAuth.instance.currentUser;
+
+    if (user == null) return "Invitado";
+
+    if (username.isNotEmpty) return username;
+
+    return user.email!.split("@")[0];
+  }
+
   Future<void> setCurrentUser(String email) async {
     _userKey = email;
 
@@ -73,6 +83,16 @@ class SettingsViewModel extends ChangeNotifier {
     notifyListeners();
   }
 
+  Future<void> clearUserData() async {
+    username = "";
+    age = "";
+    country = "";
+    profileImagePath = "";
+    _userKey = "";
+
+    notifyListeners();
+  }
+
   Future<void> saveUserData() async {
     if (_userKey.isEmpty) return;
 
@@ -86,18 +106,6 @@ class SettingsViewModel extends ChangeNotifier {
     await prefs.setBool("notifications", notifications);
     await prefs.setBool("darkMode", darkMode);
     await prefs.setBool("sound", sound);
-  }
-
-  String get displayName {
-    final user = FirebaseAuth.instance.currentUser;
-
-    if (username.isNotEmpty) return username;
-
-    if (user != null && user.email != null) {
-      return user.email!.split("@")[0];
-    }
-
-    return "Usuario";
   }
 
   Future<void> saveUsername(String value) async {
