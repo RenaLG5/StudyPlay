@@ -27,6 +27,7 @@ import 'viewmodels/quality_viewmodel.dart';
 import 'viewmodels/feedback_viewmodel.dart';
 import 'viewmodels/history_viewmodel.dart';
 import 'viewmodels/progress_viewmodel.dart';
+import 'viewmodels/auth_viewmodel.dart';
 
 void main() async {
   WidgetsFlutterBinding.ensureInitialized();
@@ -45,6 +46,7 @@ void main() async {
         ChangeNotifierProvider(create: (_) => HistoryViewModel()),
 
         ChangeNotifierProvider(create: (_) => ProgressViewModel()),
+        ChangeNotifierProvider(create: (_) => AuthViewModel()),
       ],
 
       child: const MyApp(),

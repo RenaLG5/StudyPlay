@@ -1,25 +1,33 @@
-import 'package:flutter/material.dart';
+import 'package:firebase_auth/firebase_auth.dart';
+
 import 'firebase_poc_screen.dart';
+import 'package:flutter/material.dart';
 import 'package:provider/provider.dart';
+
 import '../../viewmodels/settings_viewmodel.dart';
 import '../../viewmodels/progress_viewmodel.dart';
 import '../../viewmodels/history_viewmodel.dart';
 
 class ProfileScreen extends StatelessWidget {
-  const ProfileScreen({Key? key}) : super(key: key);
+  const ProfileScreen({super.key});
 
   String getFlag(String country) {
     switch (country.toLowerCase()) {
       case 'chile':
         return '🇨🇱';
+
       case 'argentina':
         return '🇦🇷';
+
       case 'peru':
         return '🇵🇪';
+
       case 'mexico':
         return '🇲🇽';
+
       case 'colombia':
         return '🇨🇴';
+
       default:
         return '🌍';
     }
@@ -28,183 +36,326 @@ class ProfileScreen extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     final settingsVM = Provider.of<SettingsViewModel>(context);
-    final theme = Theme.of(context);
+
+    final progressVM = Provider.of<ProgressViewModel>(context);
+
+    final historyVM = Provider.of<HistoryViewModel>(context);
+
+    final user = FirebaseAuth.instance.currentUser;
 
     return Scaffold(
-      appBar: AppBar(
-        title: const Text('Perfil'),
-        backgroundColor: theme.colorScheme.primary,
-      ),
+      appBar: AppBar(title: const Text("Perfil")),
+
       body: Padding(
         padding: const EdgeInsets.all(20),
+
         child: Column(
           children: [
             const CircleAvatar(
               radius: 50,
-              backgroundImage: AssetImage('assets/images/perfil.png'),
+
+              backgroundImage: AssetImage("assets/images/perfil.png"),
             ),
 
             const SizedBox(height: 15),
 
             Text(
-              settingsVM.username.isEmpty ? 'Usuario' : settingsVM.username,
-              style: TextStyle(fontSize: 22, fontWeight: FontWeight.bold),
+              user == null
+                  ? "Invitado"
+                  : (settingsVM.username.isEmpty
+                        ? user.email!.split("@")[0]
+                        : settingsVM.username),
+
+              style: const TextStyle(fontSize: 22, fontWeight: FontWeight.bold),
             ),
 
             const SizedBox(height: 20),
 
             Card(
-              shape: RoundedRectangleBorder(
-                borderRadius: BorderRadius.circular(15),
-              ),
-              elevation: 4,
-              child: Padding(
-                padding: const EdgeInsets.all(15),
-                child: Column(
-                  children: [
-                    ListTile(
-                      leading: const Icon(Icons.email),
-                      title: const Text('Correo'),
-                      subtitle: Text(
-                        settingsVM.email.isEmpty
-                            ? 'No definido'
-                            : settingsVM.email,
-                      ),
+              child: Column(
+                children: [
+                  ListTile(
+                    leading: const Icon(Icons.email),
+
+                    title: const Text("Correo"),
+
+                    subtitle: Text(
+                      user == null ? "No has iniciado sesión" : user.email!,
+                    ),
+                  ),
+
+                  ListTile(
+                    leading: const Icon(Icons.cake),
+
+                    title: const Text("Edad"),
+
+                    subtitle: Text(
+                      settingsVM.age.isEmpty
+                          ? "No definido"
+                          : "${settingsVM.age} años",
+                    ),
+                  ),
+
+                  ListTile(
+                    leading: Text(
+                      getFlag(settingsVM.country),
+
+                      style: const TextStyle(fontSize: 24),
                     ),
 
-                    ListTile(
-                      leading: const Icon(Icons.cake),
-                      title: const Text('Edad'),
-                      subtitle: Text(
-                        settingsVM.age.isEmpty
-                            ? 'No definido'
-                            : settingsVM.age + ' años',
-                      ),
-                    ),
+                    title: const Text("País"),
 
-                    ListTile(
-                      leading: Text(
-                        getFlag(settingsVM.country),
-                        style: const TextStyle(fontSize: 24),
-                      ),
-                      title: const Text('País'),
-                      subtitle: Text(
-                        settingsVM.country.isEmpty
-                            ? 'No definido'
-                            : settingsVM.country,
-                      ),
+                    subtitle: Text(
+                      settingsVM.country.isEmpty
+                          ? "No definido"
+                          : settingsVM.country,
                     ),
-                  ],
-                ),
+                  ),
+                ],
               ),
             ),
 
             const SizedBox(height: 30),
 
             ElevatedButton.icon(
+              icon: const Icon(Icons.login),
+
+              label: Text(user == null ? "Iniciar sesión" : "Cambiar cuenta"),
+
               onPressed: () {
+                final emailController = TextEditingController();
+
+                final passwordController = TextEditingController();
+
                 showDialog(
                   context: context,
-                  builder: (context) {
-                    final nameController = TextEditingController(
-                      text: settingsVM.username,
-                    );
 
-                    final emailController = TextEditingController(
-                      text: settingsVM.email,
-                    );
-
-                    final ageController = TextEditingController(
-                      text: settingsVM.age,
-                    );
-
-                    final countryController = TextEditingController(
-                      text: settingsVM.country,
-                    );
-
+                  builder: (_) {
                     return AlertDialog(
-                      title: const Text('Editar perfil'),
+                      title: const Text("Iniciar sesión"),
 
-                      content: SingleChildScrollView(
-                        child: Column(
-                          mainAxisSize: MainAxisSize.min,
-                          children: [
-                            TextField(
-                              controller: nameController,
-                              decoration: const InputDecoration(
-                                labelText: 'Nombre',
-                              ),
-                            ),
+                      content: Column(
+                        mainAxisSize: MainAxisSize.min,
 
-                            TextField(
-                              controller: emailController,
-                              decoration: const InputDecoration(
-                                labelText: 'Correo',
-                              ),
-                            ),
+                        children: [
+                          TextField(
+                            controller: emailController,
 
-                            TextField(
-                              controller: ageController,
-                              decoration: const InputDecoration(
-                                labelText: 'Edad',
-                              ),
+                            decoration: const InputDecoration(
+                              labelText: "Correo",
                             ),
+                          ),
 
-                            TextField(
-                              controller: countryController,
-                              decoration: const InputDecoration(
-                                labelText: 'País',
-                              ),
+                          const SizedBox(height: 10),
+
+                          TextField(
+                            controller: passwordController,
+
+                            obscureText: true,
+
+                            decoration: const InputDecoration(
+                              labelText: "Contraseña",
                             ),
-                          ],
-                        ),
+                          ),
+                        ],
                       ),
 
                       actions: [
                         TextButton(
-                          onPressed: () => Navigator.pop(context),
-                          child: const Text('Cancelar'),
+                          onPressed: () {
+                            Navigator.pop(context);
+                          },
+                          child: const Text("Cancelar"),
                         ),
 
                         ElevatedButton(
+                          child: const Text("Entrar"),
+
                           onPressed: () async {
-                            settingsVM.setUsername(nameController.text);
+                            try {
+                              final credential = await FirebaseAuth.instance
+                                  .signInWithEmailAndPassword(
+                                    email: emailController.text.trim(),
+                                    password: passwordController.text.trim(),
+                                  );
 
-                            settingsVM.setEmail(emailController.text);
+                              final email = credential.user!.email!;
 
-                            settingsVM.setAge(ageController.text);
+                              await progressVM.load(email);
 
-                            settingsVM.setCountry(countryController.text);
+                              await historyVM.load(email);
 
-                            await settingsVM.saveSettings();
+                              Navigator.pop(context);
 
-                            final progressVM = Provider.of<ProgressViewModel>(
-                              context,
-                              listen: false,
-                            );
+                              ScaffoldMessenger.of(context).showSnackBar(
+                                const SnackBar(
+                                  content: Text("Sesión iniciada"),
+                                ),
+                              );
+                            } on FirebaseAuthException catch (e) {
+                              String msg = "Error al iniciar sesión";
 
-                            final historyVM = Provider.of<HistoryViewModel>(
-                              context,
-                              listen: false,
-                            );
+                              if (e.code == 'user-not-found') {
+                                msg = "No existe una cuenta con ese correo";
+                              }
 
-                            await progressVM.load(emailController.text);
+                              if (e.code == 'wrong-password') {
+                                msg = "Contraseña incorrecta";
+                              }
 
-                            await historyVM.load(emailController.text);
+                              if (e.code == 'invalid-email') {
+                                msg = "Correo inválido";
+                              }
 
-                            Navigator.pop(context);
+                              ScaffoldMessenger.of(
+                                context,
+                              ).showSnackBar(SnackBar(content: Text(msg)));
+                            }
                           },
+                        ),
 
-                          child: const Text('Guardar'),
+                        ElevatedButton(
+                          child: const Text("Crear cuenta"),
+
+                          onPressed: () async {
+                            try {
+                              final email = emailController.text.trim();
+
+                              final password = passwordController.text.trim();
+
+                              if (email.isEmpty || password.isEmpty) {
+                                ScaffoldMessenger.of(context).showSnackBar(
+                                  const SnackBar(
+                                    content: Text(
+                                      "Debes ingresar correo y contraseña",
+                                    ),
+                                  ),
+                                );
+
+                                return;
+                              }
+
+                              await FirebaseAuth.instance
+                                  .createUserWithEmailAndPassword(
+                                    email: email,
+                                    password: password,
+                                  );
+
+                              await progressVM.load(email);
+
+                              await historyVM.load(email);
+
+                              Navigator.pop(context);
+
+                              ScaffoldMessenger.of(context).showSnackBar(
+                                const SnackBar(
+                                  content: Text("Cuenta creada correctamente"),
+                                ),
+                              );
+                            } on FirebaseAuthException catch (e) {
+                              String msg = "No se pudo crear la cuenta";
+
+                              if (e.code == 'email-already-in-use') {
+                                msg = "Ese correo ya está registrado";
+                              }
+
+                              if (e.code == 'weak-password') {
+                                msg =
+                                    "La contraseña debe tener al menos 6 caracteres";
+                              }
+
+                              if (e.code == 'invalid-email') {
+                                msg = "Correo inválido";
+                              }
+
+                              ScaffoldMessenger.of(
+                                context,
+                              ).showSnackBar(SnackBar(content: Text(msg)));
+                            }
+                          },
                         ),
                       ],
                     );
                   },
                 );
               },
-              icon: const Icon(Icons.edit),
-              label: const Text('Editar perfil'),
             ),
+
+            const SizedBox(height: 20),
+
+            if (user != null)
+              ElevatedButton.icon(
+                icon: const Icon(Icons.logout),
+
+                label: const Text("Cerrar sesión"),
+
+                style: ElevatedButton.styleFrom(backgroundColor: Colors.red),
+
+                onPressed: () async {
+                  await FirebaseAuth.instance.signOut();
+
+                  await progressVM.load("guest");
+
+                  await historyVM.load("guest");
+
+                  ScaffoldMessenger.of(context).showSnackBar(
+                    const SnackBar(content: Text("Sesión cerrada")),
+                  );
+                },
+              ),
+
+            if (user != null)
+              ElevatedButton.icon(
+                icon: const Icon(Icons.edit),
+
+                label: const Text("Cambiar nombre"),
+
+                onPressed: () {
+                  final controller = TextEditingController(
+                    text: settingsVM.username,
+                  );
+
+                  showDialog(
+                    context: context,
+
+                    builder: (_) => AlertDialog(
+                      title: const Text("Cambiar nombre"),
+
+                      content: TextField(
+                        controller: controller,
+
+                        decoration: const InputDecoration(labelText: "Nombre"),
+                      ),
+
+                      actions: [
+                        TextButton(
+                          onPressed: () {
+                            Navigator.pop(context);
+                          },
+
+                          child: const Text("Cancelar"),
+                        ),
+
+                        ElevatedButton(
+                          onPressed: () async {
+                            if (controller.text.trim().isEmpty) {
+                              return;
+                            }
+
+                            settingsVM.setUsername(controller.text.trim());
+
+                            await settingsVM.saveSettings();
+
+                            Navigator.pop(context);
+                          },
+
+                          child: const Text("Guardar"),
+                        ),
+                      ],
+                    ),
+                  );
+                },
+              ),
 
             const SizedBox(height: 20),
 
@@ -212,13 +363,14 @@ class ProfileScreen extends StatelessWidget {
               onPressed: () {
                 Navigator.push(
                   context,
+
                   MaterialPageRoute(builder: (_) => const FirebasePocScreen()),
                 );
               },
 
               icon: const Icon(Icons.cloud),
 
-              label: const Text('Firebase PoC'),
+              label: const Text("Firebase PoC"),
             ),
           ],
         ),

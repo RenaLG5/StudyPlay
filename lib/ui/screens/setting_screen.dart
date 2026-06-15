@@ -15,23 +15,6 @@ class SettingScreen extends StatelessWidget {
       body: ListView(
         padding: const EdgeInsets.all(20),
         children: [
-          Card(
-            child: ListTile(
-              title: const Text('Dificultad'),
-              trailing: DropdownButton<String>(
-                value: settingsVM.difficulty,
-                items: const [
-                  DropdownMenuItem(value: 'Fácil', child: Text('Fácil')),
-                  DropdownMenuItem(value: 'Medio', child: Text('Medio')),
-                  DropdownMenuItem(value: 'Difícil', child: Text('Difícil')),
-                ],
-                onChanged: (value) {
-                  settingsVM.setDifficulty(value!);
-                },
-              ),
-            ),
-          ),
-
           const SizedBox(height: 10),
 
           SwitchListTile(
