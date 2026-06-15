@@ -180,6 +180,12 @@ class ProfileScreen extends StatelessWidget {
 
                               final email = credential.user!.email!;
 
+                              final settingsVM = Provider.of<SettingsViewModel>(
+                                context,
+                                listen: false,
+                              );
+                              settingsVM.setCurrentUser(email);
+
                               await progressVM.load(email);
 
                               await historyVM.load(email);
@@ -340,10 +346,9 @@ class ProfileScreen extends StatelessWidget {
                             if (controller.text.trim().isEmpty) {
                               return;
                             }
-
-                            settingsVM.setUsername(controller.text.trim());
-
-                            await settingsVM.saveSettings();
+                            await settingsVM.saveUsername(
+                              controller.text.trim(),
+                            );
 
                             Navigator.pop(context);
                           },

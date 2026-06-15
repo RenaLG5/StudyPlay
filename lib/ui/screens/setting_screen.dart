@@ -21,8 +21,8 @@ class SettingScreen extends StatelessWidget {
             title: const Text('Modo oscuro'),
             subtitle: const Text('Cambia el tema de la aplicación'),
             value: settingsVM.darkMode,
-            onChanged: (value) {
-              settingsVM.setDarkMode(value);
+            onChanged: (value) async {
+              await settingsVM.setDarkMode(value);
             },
           ),
 
@@ -30,8 +30,8 @@ class SettingScreen extends StatelessWidget {
             title: const Text('Notificaciones'),
             subtitle: const Text('Mostrar avisos en la app'),
             value: settingsVM.notifications,
-            onChanged: (value) {
-              settingsVM.setNotifications(value);
+            onChanged: (value) async {
+              await settingsVM.saveNotifications(value);
             },
           ),
 
@@ -39,8 +39,8 @@ class SettingScreen extends StatelessWidget {
             title: const Text('Sonido'),
             subtitle: const Text('Efectos de audio en la app'),
             value: settingsVM.sound,
-            onChanged: (value) {
-              settingsVM.setSound(value);
+            onChanged: (value) async {
+              await settingsVM.setSound(value);
             },
           ),
 
@@ -50,8 +50,6 @@ class SettingScreen extends StatelessWidget {
             width: double.infinity,
             child: ElevatedButton.icon(
               onPressed: () async {
-                await settingsVM.saveSettings();
-
                 ScaffoldMessenger.of(context).showSnackBar(
                   const SnackBar(content: Text('Configuración guardada')),
                 );

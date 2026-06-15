@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:provider/provider.dart';
 import 'package:cloud_firestore/cloud_firestore.dart';
+import 'package:firebase_auth/firebase_auth.dart';
 
 import '../../viewmodels/quality_viewmodel.dart';
 import '../../viewmodels/settings_viewmodel.dart';
@@ -25,6 +26,7 @@ class _QualityScreenState extends State<QualityScreen> {
   Future<void> sendSurvey() async {
     final qualityVM = context.read<QualityViewModel>();
     final settingsVM = context.read<SettingsViewModel>();
+    final userEmail = FirebaseAuth.instance.currentUser?.email ?? '';
 
     final answers = qualityVM.questions.map((q) {
       return {'question': q.titulo, 'answer': q.valor};
@@ -34,7 +36,7 @@ class _QualityScreenState extends State<QualityScreen> {
       'userName': settingsVM.username.isNotEmpty
           ? settingsVM.username
           : 'Usuario',
-      'email': settingsVM.email,
+      'email': userEmail,
       'country': settingsVM.country,
       'answers': answers,
       'createdAt': FieldValue.serverTimestamp(),

@@ -4,6 +4,7 @@ import '../../viewmodels/settings_viewmodel.dart';
 import 'package:share_plus/share_plus.dart';
 import '../../viewmodels/progress_viewmodel.dart';
 import '../../viewmodels/history_viewmodel.dart';
+import 'package:firebase_auth/firebase_auth.dart';
 
 class MenuScreen extends StatefulWidget {
   const MenuScreen({Key? key}) : super(key: key);
@@ -15,22 +16,23 @@ class MenuScreen extends StatefulWidget {
 class _MenuScreenState extends State<MenuScreen> {
   int _selectedIndex = 0;
 
+  @override
   void initState() {
     super.initState();
 
     WidgetsBinding.instance.addPostFrameCallback((_) async {
-      final settings = Provider.of<SettingsViewModel>(context, listen: false);
+      final user = FirebaseAuth.instance.currentUser;
 
-      if (settings.email.isNotEmpty) {
+      if (user != null && user.email != null) {
         await Provider.of<ProgressViewModel>(
           context,
           listen: false,
-        ).load(settings.email);
+        ).load(user.email!);
 
         await Provider.of<HistoryViewModel>(
           context,
           listen: false,
-        ).load(settings.email);
+        ).load(user.email!);
       }
     });
   }
@@ -56,13 +58,9 @@ class _MenuScreenState extends State<MenuScreen> {
                     radius: 30,
                     backgroundImage: AssetImage('assets/images/perfil.png'),
                   ),
-
                   const SizedBox(height: 10),
-
                   Text(
-                    settingsVM.username.isEmpty
-                        ? 'Usuario'
-                        : settingsVM.username,
+                    settingsVM.displayName,
                     style: const TextStyle(color: Colors.white, fontSize: 18),
                   ),
                 ],
@@ -72,24 +70,19 @@ class _MenuScreenState extends State<MenuScreen> {
             ListTile(
               leading: const Icon(Icons.person),
               title: const Text('Perfil'),
-              onTap: () {
-                Navigator.pushNamed(context, '/profile');
-              },
+              onTap: () => Navigator.pushNamed(context, '/profile'),
             ),
 
             ListTile(
               leading: const Icon(Icons.settings),
               title: const Text('Configuración'),
-              onTap: () {
-                Navigator.pushNamed(context, '/settings');
-              },
+              onTap: () => Navigator.pushNamed(context, '/settings'),
             ),
+
             ListTile(
               leading: const Icon(Icons.help),
               title: const Text('Ayuda y soporte'),
-              onTap: () {
-                Navigator.pushNamed(context, '/help');
-              },
+              onTap: () => Navigator.pushNamed(context, '/help'),
             ),
 
             ListTile(
@@ -107,9 +100,17 @@ class _MenuScreenState extends State<MenuScreen> {
                         child: const Text('Cancelar'),
                       ),
                       TextButton(
-                        onPressed: () {
-                          Navigator.pop(context);
-                          Navigator.pushReplacementNamed(context, '/menu');
+                        onPressed: () async {
+                          await FirebaseAuth.instance.signOut();
+
+                          if (context.mounted) {
+                            Navigator.pop(context);
+                            Navigator.pushNamedAndRemoveUntil(
+                              context,
+                              '/login',
+                              (route) => false,
+                            );
+                          }
                         },
                         child: const Text('Salir'),
                       ),
@@ -148,9 +149,6 @@ class _MenuScreenState extends State<MenuScreen> {
               style: TextStyle(fontSize: 20, fontWeight: FontWeight.bold),
             ),
 
-            const SizedBox(height: 10),
-
-            //const Text('Selecciona una opción para comenzar'),
             const SizedBox(height: 30),
 
             ElevatedButton.icon(
@@ -170,6 +168,7 @@ class _MenuScreenState extends State<MenuScreen> {
         },
         child: const Icon(Icons.emoji_events),
       ),
+
       floatingActionButtonLocation: FloatingActionButtonLocation.centerDocked,
 
       bottomNavigationBar: BottomAppBar(
@@ -183,7 +182,7 @@ class _MenuScreenState extends State<MenuScreen> {
               onPressed: () => Navigator.pushNamed(context, '/history'),
             ),
 
-            const SizedBox(width: 40), // espacio FAB
+            const SizedBox(width: 40),
 
             IconButton(
               icon: const Icon(Icons.person),
