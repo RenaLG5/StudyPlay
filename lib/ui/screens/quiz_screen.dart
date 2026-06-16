@@ -116,7 +116,7 @@ class _QuizScreenState extends State<QuizScreen> {
       final beforeLanguage = progressVM.progress.languageLevel;
       final beforeHistory = progressVM.progress.historyLevel;
 
-      await progressVM.levelUp(widget.title);
+      await progressVM.levelUp(widget.title, passed);
 
       await Future.delayed(const Duration(milliseconds: 50));
 
@@ -262,12 +262,44 @@ class _QuizScreenState extends State<QuizScreen> {
     return Colors.grey;
   }
 
+  String _levelText(ProgressViewModel progressVM) {
+    int level;
+    bool completed;
+
+    switch (widget.title) {
+      case "Matemáticas":
+        level = progressVM.progress.mathLevel;
+        completed = progressVM.progress.mathCompleted;
+        break;
+      case "Lenguaje":
+        level = progressVM.progress.languageLevel;
+        completed = progressVM.progress.languageCompleted;
+        break;
+      case "Ciencias":
+        level = progressVM.progress.scienceLevel;
+        completed = progressVM.progress.scienceCompleted;
+        break;
+      case "Historia":
+        level = progressVM.progress.historyLevel;
+        completed = progressVM.progress.historyCompleted;
+        break;
+      default:
+        level = 1;
+        completed = false;
+    }
+
+    return completed ? "Completado" : "Nivel $level";
+  }
+
   @override
   Widget build(BuildContext context) {
     final q = widget.questions[index];
+    final progressVM = Provider.of<ProgressViewModel>(context);
 
     return Scaffold(
-      appBar: AppBar(title: Text("${widget.title} - Nivel ${widget.level}")),
+      appBar: AppBar(
+        title: Text("${widget.title} - ${_levelText(progressVM)}"),
+      ),
       body: Column(
         children: [
           const SizedBox(height: 20),

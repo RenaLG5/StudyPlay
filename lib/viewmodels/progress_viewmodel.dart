@@ -11,6 +11,11 @@ class ProgressViewModel extends ChangeNotifier {
     languageLevel: 1,
     scienceLevel: 1,
     historyLevel: 1,
+
+    mathCompleted: false,
+    languageCompleted: false,
+    scienceCompleted: false,
+    historyCompleted: false,
   );
 
   String _email = "";
@@ -30,6 +35,10 @@ class ProgressViewModel extends ChangeNotifier {
         languageLevel: 1,
         scienceLevel: 1,
         historyLevel: 1,
+        mathCompleted: false,
+        languageCompleted: false,
+        scienceCompleted: false,
+        historyCompleted: false,
       );
     }
 
@@ -63,39 +72,58 @@ class ProgressViewModel extends ChangeNotifier {
     }
   }
 
-  Future<void> levelUp(String subject) async {
+  Future<void> levelUp(String subject, bool passed) async {
     switch (subject) {
       case "Matemáticas":
-        if (progress.mathLevel < 5) {
-          progress.mathLevel++;
-        }
+        if (passed) {
+          if (progress.mathLevel < 5) {
+            progress.mathLevel++;
+          }
 
+          if (progress.mathLevel == 5 && passed) {
+            progress.mathCompleted = true;
+          }
+        }
         break;
 
       case "Lenguaje":
-        if (progress.languageLevel < 5) {
-          progress.languageLevel++;
-        }
+        if (passed) {
+          if (progress.languageLevel < 5) {
+            progress.languageLevel++;
+          }
 
+          if (progress.languageLevel == 5 && passed) {
+            progress.languageCompleted = true;
+          }
+        }
         break;
 
       case "Ciencias":
-        if (progress.scienceLevel < 5) {
-          progress.scienceLevel++;
-        }
+        if (passed) {
+          if (progress.scienceLevel < 5) {
+            progress.scienceLevel++;
+          }
 
+          if (progress.scienceLevel == 5 && passed) {
+            progress.scienceCompleted = true;
+          }
+        }
         break;
 
       case "Historia":
-        if (progress.historyLevel < 5) {
-          progress.historyLevel++;
-        }
+        if (passed) {
+          if (progress.historyLevel < 5) {
+            progress.historyLevel++;
+          }
 
+          if (progress.historyLevel == 5 && passed) {
+            progress.historyCompleted = true;
+          }
+        }
         break;
     }
 
     await save();
-
     notifyListeners();
   }
 }

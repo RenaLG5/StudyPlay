@@ -32,6 +32,7 @@ class SubjectScreen extends StatelessWidget {
             children: [
               _buildSubject(
                 context,
+                progressVM,
                 title: 'Matemáticas',
                 level: progressVM.progress.mathLevel,
                 color: Colors.blue,
@@ -40,6 +41,7 @@ class SubjectScreen extends StatelessWidget {
 
               _buildSubject(
                 context,
+                progressVM,
                 title: 'Lenguaje',
                 level: progressVM.progress.languageLevel,
                 color: Colors.red,
@@ -48,6 +50,7 @@ class SubjectScreen extends StatelessWidget {
 
               _buildSubject(
                 context,
+                progressVM,
                 title: 'Ciencias',
                 level: progressVM.progress.scienceLevel,
                 color: Colors.green,
@@ -56,6 +59,7 @@ class SubjectScreen extends StatelessWidget {
 
               _buildSubject(
                 context,
+                progressVM,
                 title: 'Historia',
                 level: progressVM.progress.historyLevel,
                 color: Colors.orange,
@@ -69,7 +73,8 @@ class SubjectScreen extends StatelessWidget {
   }
 
   Widget _buildSubject(
-    BuildContext context, {
+    BuildContext context,
+    ProgressViewModel progressVM, {
     required String title,
     required int level,
     required Color color,
@@ -198,13 +203,24 @@ class SubjectScreen extends StatelessWidget {
               ),
 
               child: Text(
-                "Nivel $level",
-
+                title == "Matemáticas"
+                    ? (progressVM.progress.mathCompleted
+                          ? "Completado"
+                          : "Nivel $level")
+                    : title == "Lenguaje"
+                    ? (progressVM.progress.languageCompleted
+                          ? "Completado"
+                          : "Nivel $level")
+                    : title == "Ciencias"
+                    ? (progressVM.progress.scienceCompleted
+                          ? "Completado"
+                          : "Nivel $level")
+                    : (progressVM.progress.historyCompleted
+                          ? "Completado"
+                          : "Nivel $level"),
                 style: const TextStyle(
                   color: Colors.white,
-
                   fontSize: 16,
-
                   fontWeight: FontWeight.bold,
                 ),
               ),
