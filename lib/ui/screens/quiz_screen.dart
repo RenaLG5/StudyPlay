@@ -5,7 +5,10 @@ import '../../viewmodels/history_viewmodel.dart';
 import '../../viewmodels/progress_viewmodel.dart';
 import 'package:provider/provider.dart';
 
+import '/controller/achievement_controller.dart';
+
 import '/services/sound_service.dart';
+import '/services/achviement_service.dart';
 
 class QuizScreen extends StatefulWidget {
   final String title;
@@ -105,10 +108,74 @@ class _QuizScreenState extends State<QuizScreen> {
 
     if (passed) {
       await progressVM.levelUp(widget.title);
+    }
 
-      await SoundService.victory();
+    final totalVictories = historyVM.results.where((e) => e.isVictory).length;
 
-      await HapticsService.victory();
+    final mathLevel = progressVM.progress.mathLevel;
+    final scienceLevel = progressVM.progress.scienceLevel;
+    final languageLevel = progressVM.progress.languageLevel;
+    final historyLevel = progressVM.progress.historyLevel;
+
+    final globalAchievements = <String>[
+      if (totalVictories == 1) "Primer Paso",
+      if (totalVictories == 5) "Aprendiz",
+      if (totalVictories == 10) "Estudiante Experto",
+      if (totalVictories == 20) "Maestro del Conocimiento",
+    ];
+
+    final subjectAchievements = <String>[];
+
+    if (widget.title == "Matemáticas") {
+      if (mathLevel == 3) {
+        subjectAchievements.add("Matemático");
+      }
+
+      if (mathLevel == 5) {
+        subjectAchievements.add("Genio Matemático");
+      }
+    }
+
+    if (widget.title == "Lenguaje") {
+      if (languageLevel == 3) {
+        subjectAchievements.add("Lector Experto");
+      }
+
+      if (languageLevel == 5) {
+        subjectAchievements.add("Maestro del Lenguaje");
+      }
+    }
+
+    if (widget.title == "Ciencias") {
+      if (scienceLevel == 3) {
+        subjectAchievements.add("Científico");
+      }
+
+      if (scienceLevel == 5) {
+        subjectAchievements.add("Científico Experto");
+      }
+    }
+
+    if (widget.title == "Historia") {
+      if (historyLevel == 3) {
+        subjectAchievements.add("Historiador");
+      }
+
+      if (historyLevel == 5) {
+        subjectAchievements.add("Historiador Experto");
+      }
+    }
+    if (mathLevel == 5 &&
+        languageLevel == 5 &&
+        scienceLevel == 5 &&
+        historyLevel == 5) {
+      subjectAchievements.add("Dominador de StudyPlay");
+    }
+
+    final allAchievements = [...globalAchievements, ...subjectAchievements];
+
+    for (final title in allAchievements) {
+      AchievementService.show(context, title);
     }
 
     if (!mounted) return;
@@ -120,8 +187,8 @@ class _QuizScreenState extends State<QuizScreen> {
         title: Text(passed ? "¡Nivel completado!" : "Nivel fallado"),
         content: Text(
           passed
-              ? "Obtuviste ${score}/${widget.questions.length}\nDesbloqueaste el siguiente nivel."
-              : "Obtuviste ${score}/${widget.questions.length}\nDebes responder TODAS correctamente.",
+              ? "Obtuviste ${score}/${widget.questions.length}"
+              : "Obtuviste ${score}/${widget.questions.length}",
         ),
         actions: [
           TextButton(
@@ -134,6 +201,20 @@ class _QuizScreenState extends State<QuizScreen> {
         ],
       ),
     );
+  }
+
+  List<Map<String, dynamic>> buildAchievements(
+    HistoryViewModel historyVM,
+    ProgressViewModel progressVM,
+  ) {
+    final totalCompleted = historyVM.results.where((e) => e.isVictory).length;
+
+    return [
+      {"title": "Primer Paso", "unlocked": totalCompleted >= 1},
+      {"title": "Aprendiz", "unlocked": totalCompleted >= 5},
+      {"title": "Estudiante Experto", "unlocked": totalCompleted >= 10},
+      {"title": "Matemático", "unlocked": progressVM.progress.mathLevel >= 3},
+    ];
   }
 
   Color color(int i) {

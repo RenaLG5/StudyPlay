@@ -14,6 +14,8 @@ class SoundService {
   static Future<void> wrong() => play('wrong.mp3');
 
   static Future<void> victory() => play('victory1.mp3');
+
+  static Future<void> reward() => play('reward.mp3');
 }
 
 class HapticsService {

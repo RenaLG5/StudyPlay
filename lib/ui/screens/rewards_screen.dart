@@ -151,11 +151,6 @@ class _RewardsScreenState extends State<RewardsScreen> {
       },
     ];
 
-    // 👇 Detecta nuevos logros automáticamente
-    WidgetsBinding.instance.addPostFrameCallback((_) {
-      checkNewAchievements(achievements);
-    });
-
     return Scaffold(
       appBar: AppBar(title: const Text("Recompensas"), centerTitle: true),
       body: ListView.builder(
