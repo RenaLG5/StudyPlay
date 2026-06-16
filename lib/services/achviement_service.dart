@@ -1,13 +1,11 @@
 import 'package:flutter/material.dart';
-import 'sound_service.dart';
-import 'sound_service.dart';
+import '/services/sound_service.dart';
 
 class AchievementService {
   static final Set<String> _shown = {};
 
   static void show(BuildContext context, String title) {
     if (_shown.contains(title)) return;
-
     _shown.add(title);
 
     SoundService.reward();

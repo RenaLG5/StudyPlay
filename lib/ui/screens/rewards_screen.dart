@@ -79,10 +79,21 @@ class _RewardsScreenState extends State<RewardsScreen> {
 
     final totalCompleted = historyVM.results.where((e) => e.isVictory).length;
 
-    final mathLevel = progressVM.progress.mathLevel;
-    final languageLevel = progressVM.progress.languageLevel;
-    final scienceLevel = progressVM.progress.scienceLevel;
-    final historyLevel = progressVM.progress.historyLevel;
+    final mathWins = historyVM.results
+        .where((e) => e.isVictory && e.subject == "Matemáticas")
+        .length;
+
+    final languageWins = historyVM.results
+        .where((e) => e.isVictory && e.subject == "Lenguaje")
+        .length;
+
+    final scienceWins = historyVM.results
+        .where((e) => e.isVictory && e.subject == "Ciencias")
+        .length;
+
+    final historyWins = historyVM.results
+        .where((e) => e.isVictory && e.subject == "Historia")
+        .length;
 
     final achievements = [
       {
@@ -113,41 +124,59 @@ class _RewardsScreenState extends State<RewardsScreen> {
         "title": "Matemático",
         "desc": "Llega al nivel 3 en Matemáticas",
         "icon": Icons.calculate,
-        "unlocked": mathLevel >= 3,
+        "unlocked": mathWins >= 3,
       },
       {
         "title": "Genio Matemático",
         "desc": "Llega al nivel 5 en Matemáticas",
         "icon": Icons.functions,
-        "unlocked": mathLevel >= 5,
+        "unlocked": mathWins >= 5,
+      },
+      {
+        "title": "Lector",
+        "desc": "Llega al nivel 3 en Lenguaje",
+        "icon": Icons.menu_book,
+        "unlocked": languageWins >= 3,
       },
       {
         "title": "Lector Experto",
-        "desc": "Llega al nivel 3 en Lenguaje",
-        "icon": Icons.menu_book,
-        "unlocked": languageLevel >= 3,
+        "desc": "Llega al nivel 5 en Lenguaje",
+        "icon": Icons.auto_stories,
+        "unlocked": languageWins >= 5,
       },
       {
         "title": "Científico",
         "desc": "Llega al nivel 3 en Ciencias",
         "icon": Icons.science,
-        "unlocked": scienceLevel >= 3,
+        "unlocked": scienceWins >= 3,
+      },
+      {
+        "title": "Científico Experto",
+        "desc": "Llega al nivel 5 en Ciencias",
+        "icon": Icons.biotech,
+        "unlocked": scienceWins >= 5,
       },
       {
         "title": "Historiador",
         "desc": "Llega al nivel 3 en Historia",
         "icon": Icons.account_balance,
-        "unlocked": historyLevel >= 3,
+        "unlocked": historyWins >= 3,
+      },
+      {
+        "title": "Historiador Experto",
+        "desc": "Llega al nivel 5 en Historia",
+        "icon": Icons.history_edu,
+        "unlocked": historyWins >= 5,
       },
       {
         "title": "Dominador de StudyPlay",
         "desc": "Llega al nivel 5 en todas las materias",
         "icon": Icons.workspace_premium,
         "unlocked":
-            mathLevel >= 5 &&
-            languageLevel >= 5 &&
-            scienceLevel >= 5 &&
-            historyLevel >= 5,
+            mathWins >= 5 &&
+            languageWins >= 5 &&
+            scienceWins >= 5 &&
+            historyWins >= 5,
       },
     ];
 
