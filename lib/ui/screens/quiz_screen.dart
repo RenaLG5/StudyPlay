@@ -29,34 +29,39 @@ class _QuizScreenState extends State<QuizScreen> {
   int index = 0;
   int score = 0;
   int? selected;
+  bool _waitingNext = false;
 
   @override
   void initState() {
     super.initState();
-    startTime = DateTime.now(); // ⏱ inicia el tiempo
+    startTime = DateTime.now();
   }
 
-  void answer(int i) {
-    if (selected != null) return;
+  void answer(int i) async {
+    if (selected != null || _waitingNext) return;
 
     final isCorrect = i == widget.questions[index].correctIndex;
 
     setState(() {
       selected = i;
-      if (isCorrect) {
-        score++;
-      }
+      _waitingNext = true;
+      if (isCorrect) score++;
     });
 
     if (isCorrect) {
-      SoundService.correct();
-      HapticsService.correct();
+      await SoundService.correct();
+      await HapticsService.correct();
     } else {
-      SoundService.wrong();
-      HapticsService.wrong();
+      await SoundService.wrong();
+      await HapticsService.wrong();
     }
 
-    Future.delayed(const Duration(seconds: 1), next);
+    Future.delayed(const Duration(seconds: 1), () {
+      if (!mounted) return;
+
+      _waitingNext = false;
+      next();
+    });
   }
 
   void next() {

@@ -8,6 +8,9 @@ import '../../viewmodels/settings_viewmodel.dart';
 import '../../viewmodels/progress_viewmodel.dart';
 import '../../viewmodels/history_viewmodel.dart';
 
+import 'package:permission_handler/permission_handler.dart';
+import 'package:image_picker/image_picker.dart';
+
 class ProfileScreen extends StatelessWidget {
   const ProfileScreen({super.key});
 

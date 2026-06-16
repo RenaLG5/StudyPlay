@@ -45,7 +45,8 @@ dependencies:
   share_plus: ^10.0.0
   image_picker: ^1.0.7
   audioplayers: ^6.0.0
-  vibration: ^1.9.0
+  vibration: ^3.1.0
+  permission_handler: ^11.0.0
 
 dev_dependencies:
   flutter_test:
@@ -90,6 +91,7 @@ flutter:
     - assets/sounds/
     - assets/sounds/correct.mp3
     - assets/sounds/wrong.mp3
+    - assets/sounds/victory1.mp3
 
 
   # To add assets to your application, add an assets section, like this:
