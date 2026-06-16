@@ -3,18 +3,20 @@ import '/services/sound_service.dart';
 
 class AchievementService {
   static final Set<String> _shown = {};
+  static final List<OverlayEntry> _active = [];
 
   static void show(BuildContext context, String title) {
     if (_shown.contains(title)) return;
     _shown.add(title);
 
-    SoundService.reward();
-
     final overlay = Overlay.of(context);
+    final index = _active.length;
 
-    final entry = OverlayEntry(
+    late OverlayEntry entry;
+
+    entry = OverlayEntry(
       builder: (_) => Positioned(
-        top: 60,
+        top: 60.0 + (index * 70),
         left: 20,
         right: 20,
         child: Material(
@@ -24,6 +26,9 @@ class AchievementService {
             decoration: BoxDecoration(
               color: Colors.black.withOpacity(0.9),
               borderRadius: BorderRadius.circular(15),
+              boxShadow: const [
+                BoxShadow(color: Colors.black45, blurRadius: 10),
+              ],
             ),
             child: Row(
               children: [
@@ -32,7 +37,10 @@ class AchievementService {
                 Expanded(
                   child: Text(
                     "Logro desbloqueado: $title",
-                    style: const TextStyle(color: Colors.white),
+                    style: const TextStyle(
+                      color: Colors.white,
+                      fontWeight: FontWeight.bold,
+                    ),
                   ),
                 ),
               ],
@@ -42,10 +50,12 @@ class AchievementService {
       ),
     );
 
+    _active.add(entry);
     overlay.insert(entry);
 
     Future.delayed(const Duration(seconds: 2), () {
       entry.remove();
+      _active.remove(entry);
     });
   }
 }

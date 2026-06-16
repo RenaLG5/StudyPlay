@@ -125,42 +125,52 @@ class _QuizScreenState extends State<QuizScreen> {
       final afterLanguage = progressVM.progress.languageLevel;
       final afterHistory = progressVM.progress.historyLevel;
 
-      if (beforeMath == 3 && afterMath == 4) {
-        achievements.add("Matemático");
-      }
+      if (widget.title == "Matemáticas") {
+        if (beforeMath == 3 && afterMath == 4) {
+          achievements.add("Matemático");
+          //await SoundService.reward();
+        }
 
-      if (beforeMath == 5 && afterMath == 5) {
-        achievements.add("Genio Matemático");
-        await SoundService.victory();
+        if (beforeMath == 5 && afterMath == 5) {
+          achievements.add("Genio Matemático");
+          //await SoundService.victory();
+        }
       }
 
       if (widget.title == "Lenguaje") {
-        if (beforeLanguage < 3 && afterLanguage == 3) {
+        if (beforeLanguage == 3 && afterLanguage == 4) {
           achievements.add("Lector Experto");
+          //await SoundService.reward();
         }
 
-        if (beforeLanguage < 5 && afterLanguage == 5) {
+        if (beforeLanguage == 5 && afterLanguage == 5) {
           achievements.add("Maestro del Lenguaje");
-          await SoundService.victory();
+          //await SoundService.victory();
         }
       }
 
-      if (beforeScience == 3 && afterScience == 4) {
-        achievements.add("Científico");
+      if (widget.title == "Ciencias") {
+        if (beforeScience == 3 && afterScience == 4) {
+          achievements.add("Científico");
+          //await SoundService.reward();
+        }
+
+        if (beforeScience == 5 && afterScience == 5) {
+          achievements.add("Científico Experto");
+          //await SoundService.victory();
+        }
       }
 
-      if (beforeScience == 5 && afterScience == 5) {
-        achievements.add("Científico Experto");
-        await SoundService.victory();
-      }
+      if (widget.title == "Historia") {
+        if (beforeHistory == 3 && afterHistory == 4) {
+          achievements.add("Historiador");
+          //await SoundService.reward();
+        }
 
-      if (beforeHistory == 3 && afterHistory == 4) {
-        achievements.add("Historiador");
-      }
-
-      if (beforeHistory == 5 && afterHistory == 5) {
-        achievements.add("Historiador Experto");
-        await SoundService.victory();
+        if (beforeHistory == 5 && afterHistory == 5) {
+          achievements.add("Historiador Experto");
+          //await SoundService.victory();
+        }
       }
 
       if (afterMath >= 5 &&
@@ -168,16 +178,28 @@ class _QuizScreenState extends State<QuizScreen> {
           afterScience >= 5 &&
           afterHistory >= 5) {
         achievements.add("Dominador de StudyPlay");
-        await SoundService.victory();
+        //await SoundService.victory();
       }
     }
 
     final totalVictories = historyVM.results.where((e) => e.isVictory).length;
 
-    if (totalVictories == 1) achievements.add("Primer Paso");
-    if (totalVictories == 5) achievements.add("Aprendiz");
-    if (totalVictories == 10) achievements.add("Estudiante Experto");
-    if (totalVictories == 20) achievements.add("Maestro del Conocimiento");
+    if (totalVictories == 1) {
+      achievements.add("Primer Paso");
+      //await SoundService.reward();
+    }
+    if (totalVictories == 5) {
+      achievements.add("Aprendiz");
+      //await SoundService.reward();
+    }
+    if (totalVictories == 10) {
+      achievements.add("Estudiante Experto");
+      //await SoundService.reward();
+    }
+    if (totalVictories == 20) {
+      achievements.add("Maestro del Conocimiento");
+      //await SoundService.reward();
+    }
 
     for (final title in achievements) {
       AchievementService.show(context, title);
@@ -201,6 +223,19 @@ class _QuizScreenState extends State<QuizScreen> {
           ),
         ],
       ),
+    );
+
+    final subjectWins = historyVM.results
+        .where((e) => e.isVictory && e.subject == widget.title)
+        .length;
+
+    AchievementController.check(
+      context: context,
+      achievements: achievements
+          .map((e) => {"title": e, "unlocked": true})
+          .toList(),
+      subject: widget.title,
+      subjectWins: subjectWins,
     );
   }
 

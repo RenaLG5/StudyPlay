@@ -18,7 +18,7 @@ class ScienceQuestions {
 
       Question(
         text: "Estado del agua:",
-        options: ["Sólido", "Luz", "Fuego", "Sonido"],
+        options: ["Líquido", "Luz", "Fuego", "Sonido"],
         correctIndex: 0,
       ),
 

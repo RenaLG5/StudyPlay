@@ -5,10 +5,15 @@ class AchievementController {
   static final Set<String> _shown = {};
   static final AudioPlayer _player = AudioPlayer();
 
-  static void check({
+  static Future<void> check({
     required BuildContext context,
     required List<Map<String, dynamic>> achievements,
-  }) {
+    required String subject,
+    required int subjectWins,
+  }) async {
+    bool hasVictory = false;
+    bool hasReward = false;
+
     for (final a in achievements) {
       final title = a["title"].toString();
       final unlocked = a["unlocked"] == true;
@@ -17,8 +22,28 @@ class AchievementController {
         _shown.add(title);
 
         _showBanner(context, title);
-        _playSound();
+
+        hasReward = true;
       }
+    }
+
+    if (subjectWins == 5) {
+      hasVictory = true;
+    }
+
+    await _playSound(hasVictory, hasReward);
+  }
+
+  static Future<void> _playSound(bool victory, bool reward) async {
+    await _player.stop();
+
+    if (victory) {
+      await _player.play(AssetSource('sounds/victory1.mp3'));
+      return;
+    }
+
+    if (reward) {
+      await _player.play(AssetSource('sounds/reward.mp3'));
     }
   }
 
@@ -60,10 +85,5 @@ class AchievementController {
     Future.delayed(const Duration(seconds: 2), () {
       entry.remove();
     });
-  }
-
-  static Future<void> _playSound() async {
-    await _player.stop();
-    await _player.play(AssetSource('sounds/reward.mp3'));
   }
 }
