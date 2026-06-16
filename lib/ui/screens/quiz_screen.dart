@@ -95,7 +95,7 @@ class _QuizScreenState extends State<QuizScreen> {
     final timeSpent =
         "${minutes.toString().padLeft(2, '0')}:${seconds.toString().padLeft(2, '0')}";
 
-    final passed = score == widget.questions.length;
+    final passed = score >= (widget.questions.length * 0.7).ceil();
 
     final game = GameResult(
       date: DateTime.now().toString().substring(0, 10),
@@ -116,7 +116,7 @@ class _QuizScreenState extends State<QuizScreen> {
       final beforeLanguage = progressVM.progress.languageLevel;
       final beforeHistory = progressVM.progress.historyLevel;
 
-      await progressVM.levelUp(widget.title, passed);
+      await progressVM.registerQuizResult(widget.title, passed);
 
       await Future.delayed(const Duration(milliseconds: 50));
 

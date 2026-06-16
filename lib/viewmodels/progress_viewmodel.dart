@@ -72,52 +72,44 @@ class ProgressViewModel extends ChangeNotifier {
     }
   }
 
-  Future<void> levelUp(String subject, bool passed) async {
+  Future<void> registerQuizResult(String subject, bool passed) async {
     switch (subject) {
       case "Matemáticas":
         if (passed) {
-          if (progress.mathLevel < 5) {
-            progress.mathLevel++;
-          }
-
-          if (progress.mathLevel == 5 && passed) {
+          if (progress.mathLevel == 5) {
             progress.mathCompleted = true;
+          } else {
+            progress.mathLevel++;
           }
         }
         break;
 
       case "Lenguaje":
         if (passed) {
-          if (progress.languageLevel < 5) {
-            progress.languageLevel++;
-          }
-
-          if (progress.languageLevel == 5 && passed) {
+          if (progress.languageLevel == 5) {
             progress.languageCompleted = true;
+          } else {
+            progress.languageLevel++;
           }
         }
         break;
 
       case "Ciencias":
         if (passed) {
-          if (progress.scienceLevel < 5) {
-            progress.scienceLevel++;
-          }
-
-          if (progress.scienceLevel == 5 && passed) {
+          if (progress.scienceLevel == 5) {
             progress.scienceCompleted = true;
+          } else {
+            progress.scienceLevel++;
           }
         }
         break;
 
       case "Historia":
         if (passed) {
-          if (progress.historyLevel < 5) {
-            progress.historyLevel++;
-          }
-
-          if (progress.historyLevel == 5 && passed) {
+          if (progress.historyLevel == 5) {
             progress.historyCompleted = true;
+          } else {
+            progress.historyLevel++;
           }
         }
         break;
