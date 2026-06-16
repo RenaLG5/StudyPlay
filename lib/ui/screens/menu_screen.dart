@@ -45,7 +45,7 @@ class _MenuScreenState extends State<MenuScreen> {
     final theme = Theme.of(context);
 
     return Scaffold(
-      backgroundColor: theme.colorScheme.secondary,
+      backgroundColor: Colors.lightBlue.shade100,
 
       drawer: Drawer(
         child: ListView(

@@ -60,22 +60,4 @@ class NotificationService {
   static Future<void> cancelAll() async {
     await _plugin.cancelAll();
   }
-
-  Future<void> showTestNotification() async {
-    const androidDetails = AndroidNotificationDetails(
-      'test_channel',
-      'Test Notifications',
-      importance: Importance.max,
-      priority: Priority.high,
-    );
-
-    const details = NotificationDetails(android: androidDetails);
-
-    await flutterLocalNotificationsPlugin.show(
-      0,
-      '🔥 Notificación de prueba',
-      'Esto ya funciona como Duolingo',
-      details,
-    );
-  }
 }
