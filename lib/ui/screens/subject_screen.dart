@@ -87,7 +87,8 @@ class SubjectScreen extends StatelessWidget {
 
                 level: level,
 
-                questions: MathQuestions.levels[level]!,
+                questions:
+                    MathQuestions.levels[level] ?? MathQuestions.levels[1]!,
               ),
             ),
           );
@@ -103,7 +104,9 @@ class SubjectScreen extends StatelessWidget {
 
                 level: level,
 
-                questions: LanguageQuestions.levels[level]!,
+                questions:
+                    LanguageQuestions.levels[level] ??
+                    LanguageQuestions.levels[1]!,
               ),
             ),
           );
@@ -119,7 +122,9 @@ class SubjectScreen extends StatelessWidget {
 
                 level: level,
 
-                questions: ScienceQuestions.levels[level]!,
+                questions:
+                    ScienceQuestions.levels[level] ??
+                    ScienceQuestions.levels[1]!,
               ),
             ),
           );
@@ -135,7 +140,9 @@ class SubjectScreen extends StatelessWidget {
 
                 level: level,
 
-                questions: HistoryQuestions.levels[level]!,
+                questions:
+                    HistoryQuestions.levels[level] ??
+                    HistoryQuestions.levels[1]!,
               ),
             ),
           );

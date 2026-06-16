@@ -44,6 +44,8 @@ dependencies:
   url_launcher: ^6.3.2
   share_plus: ^10.0.0
   image_picker: ^1.0.7
+  audioplayers: ^6.0.0
+  vibration: ^1.9.0
 
 dev_dependencies:
   flutter_test:
@@ -85,6 +87,9 @@ flutter:
     - assets/icons/
     - assets/icons/Perrito.ico
     - assets/data/qa_questions.json
+    - assets/sounds/
+    - assets/sounds/correct.mp3
+    - assets/sounds/wrong.mp3
 
 
   # To add assets to your application, add an assets section, like this:

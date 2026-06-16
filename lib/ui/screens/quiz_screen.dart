@@ -5,6 +5,8 @@ import '../../viewmodels/history_viewmodel.dart';
 import '../../viewmodels/progress_viewmodel.dart';
 import 'package:provider/provider.dart';
 
+import '/services/sound_service.dart';
+
 class QuizScreen extends StatefulWidget {
   final String title;
   final List<Question> questions;
@@ -37,12 +39,22 @@ class _QuizScreenState extends State<QuizScreen> {
   void answer(int i) {
     if (selected != null) return;
 
+    final isCorrect = i == widget.questions[index].correctIndex;
+
     setState(() {
       selected = i;
-      if (i == widget.questions[index].correctIndex) {
+      if (isCorrect) {
         score++;
       }
     });
+
+    if (isCorrect) {
+      SoundService.correct();
+      HapticsService.correct();
+    } else {
+      SoundService.wrong();
+      HapticsService.wrong();
+    }
 
     Future.delayed(const Duration(seconds: 1), next);
   }
