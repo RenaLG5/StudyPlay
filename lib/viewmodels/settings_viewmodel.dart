@@ -66,11 +66,10 @@ class SettingsViewModel extends ChangeNotifier {
     age = prefs.getString("age_$_userKey") ?? "";
     country = prefs.getString("country_$_userKey") ?? "";
 
-    difficulty = prefs.getString("difficulty") ?? "Fácil";
-    notifications = prefs.getBool("notifications") ?? true;
-    darkMode = prefs.getBool("darkMode") ?? false;
-    sound = prefs.getBool("sound") ?? true;
-
+    difficulty = prefs.getString("difficulty_$_userKey") ?? "Fácil";
+    notifications = prefs.getBool("notifications_$_userKey") ?? true;
+    darkMode = prefs.getBool("darkMode_$_userKey") ?? false;
+    sound = prefs.getBool("sound_$_userKey") ?? true;
     notifyListeners();
   }
 
@@ -87,18 +86,23 @@ class SettingsViewModel extends ChangeNotifier {
   }
 
   Future<void> clearUserData() async {
+    final prefs = await SharedPreferences.getInstance();
+    final key = _userKey;
+
     username = "";
     age = "";
     country = "";
     profileImagePath = "";
     _userKey = "";
 
-    final prefs = await SharedPreferences.getInstance();
-
-    await prefs.remove("profileImage_$_userKey");
-    await prefs.remove("username_$_userKey");
-    await prefs.remove("age_$_userKey");
-    await prefs.remove("country_$_userKey");
+    await prefs.remove("profileImage_$key");
+    await prefs.remove("username_$key");
+    await prefs.remove("age_$key");
+    await prefs.remove("country_$key");
+    await prefs.remove("difficulty_$key");
+    await prefs.remove("notifications_$key");
+    await prefs.remove("darkMode_$key");
+    await prefs.remove("sound_$key");
 
     notifyListeners();
   }
@@ -112,10 +116,10 @@ class SettingsViewModel extends ChangeNotifier {
     await prefs.setString("age_$_userKey", age);
     await prefs.setString("country_$_userKey", country);
 
-    await prefs.setString("difficulty", difficulty);
-    await prefs.setBool("notifications", notifications);
-    await prefs.setBool("darkMode", darkMode);
-    await prefs.setBool("sound", sound);
+    await prefs.setString("difficulty_$_userKey", difficulty);
+    await prefs.setBool("notifications_$_userKey", notifications);
+    await prefs.setBool("darkMode_$_userKey", darkMode);
+    await prefs.setBool("sound_$_userKey", sound);
   }
 
   Future<void> saveUsername(String value) async {
@@ -155,7 +159,7 @@ class SettingsViewModel extends ChangeNotifier {
     darkMode = value;
 
     final prefs = await SharedPreferences.getInstance();
-    await prefs.setBool("darkMode", value);
+    await prefs.setBool("darkMode_$_userKey", value);
 
     notifyListeners();
   }
@@ -175,7 +179,7 @@ class SettingsViewModel extends ChangeNotifier {
     notifications = value;
 
     final prefs = await SharedPreferences.getInstance();
-    await prefs.setBool("notifications", value);
+    await prefs.setBool("notifications_$_userKey", value);
 
     if (value) {
       await NotificationService.scheduleDaily();
