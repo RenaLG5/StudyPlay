@@ -10,7 +10,10 @@ class SoundService {
   }
 
   static Future<void> correct() => play('correct.mp3');
+
   static Future<void> wrong() => play('wrong.mp3');
+
+  static Future<void> victory() => play('victory1.mp3');
 }
 
 class HapticsService {
@@ -28,5 +31,13 @@ class HapticsService {
     if (!hasVibrator) return;
 
     Vibration.vibrate(pattern: [0, 100, 50, 200]);
+  }
+
+  static Future<void> victory() async {
+    final hasVibrator = await Vibration.hasVibrator();
+
+    if (!hasVibrator) return;
+
+    Vibration.vibrate(pattern: [0, 200, 100, 200, 100, 300]);
   }
 }

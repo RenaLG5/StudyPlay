@@ -77,37 +77,27 @@ class _QuizScreenState extends State<QuizScreen> {
 
   void showResult() async {
     final historyVM = Provider.of<HistoryViewModel>(context, listen: false);
-
     final progressVM = Provider.of<ProgressViewModel>(context, listen: false);
 
     final endTime = DateTime.now();
-
     final duration = endTime.difference(startTime!);
 
     final minutes = duration.inMinutes.remainder(60);
-
     final seconds = duration.inSeconds.remainder(60);
 
     final timeSpent =
         "${minutes.toString().padLeft(2, '0')}:${seconds.toString().padLeft(2, '0')}";
 
-    bool passed = score == widget.questions.length;
+    final passed = score == widget.questions.length;
 
     final game = GameResult(
       date: DateTime.now().toString().substring(0, 10),
-
       timeSpent: timeSpent,
-
       isVictory: passed,
-
       difficulty: "Nivel ${widget.level}",
-
       subject: widget.title,
-
       correctAnswers: score,
-
       wrongAnswers: widget.questions.length - score,
-
       level: widget.level,
     );
 
@@ -115,27 +105,30 @@ class _QuizScreenState extends State<QuizScreen> {
 
     if (passed) {
       await progressVM.levelUp(widget.title);
+
+      await SoundService.victory();
+
+      await HapticsService.victory();
     }
+
+    if (!mounted) return;
 
     showDialog(
       context: context,
       barrierDismissible: false,
       builder: (_) => AlertDialog(
         title: Text(passed ? "¡Nivel completado!" : "Nivel fallado"),
-
         content: Text(
           passed
               ? "Obtuviste ${score}/${widget.questions.length}\nDesbloqueaste el siguiente nivel."
               : "Obtuviste ${score}/${widget.questions.length}\nDebes responder TODAS correctamente.",
         ),
-
         actions: [
           TextButton(
             onPressed: () {
               Navigator.pop(context);
               Navigator.pop(context);
             },
-
             child: const Text("Volver"),
           ),
         ],
