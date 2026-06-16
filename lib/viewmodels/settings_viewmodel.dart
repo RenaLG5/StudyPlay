@@ -1,6 +1,8 @@
 import 'package:flutter/material.dart';
 import 'package:shared_preferences/shared_preferences.dart';
 import 'package:firebase_auth/firebase_auth.dart';
+import '/services/sound_service.dart';
+import '/controller/achievement_controller.dart';
 
 class SettingsViewModel extends ChangeNotifier {
   String username = "";
@@ -160,8 +162,10 @@ class SettingsViewModel extends ChangeNotifier {
   Future<void> setSound(bool value) async {
     sound = value;
 
+    SoundService.setEnabled(value);
+
     final prefs = await SharedPreferences.getInstance();
-    await prefs.setBool("sound", value);
+    await prefs.setBool('sound', value);
 
     notifyListeners();
   }

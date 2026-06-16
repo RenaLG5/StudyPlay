@@ -4,17 +4,22 @@ import 'package:vibration/vibration.dart';
 class SoundService {
   static final AudioPlayer _player = AudioPlayer();
 
+  static bool _enabled = true;
+
+  static void setEnabled(bool value) {
+    _enabled = value;
+  }
+
   static Future<void> play(String file) async {
+    if (!_enabled) return;
+
     await _player.stop();
     await _player.play(AssetSource('sounds/$file'));
   }
 
   static Future<void> correct() => play('correct.mp3');
-
   static Future<void> wrong() => play('wrong.mp3');
-
   static Future<void> victory() => play('victory1.mp3');
-
   static Future<void> reward() => play('reward.mp3');
 }
 

@@ -1,9 +1,12 @@
 import 'package:flutter/material.dart';
 import 'package:audioplayers/audioplayers.dart';
+import '../../viewmodels/settings_viewmodel.dart';
+import 'package:provider/provider.dart';
 
 class AchievementController {
   static final Set<String> _shown = {};
   static final AudioPlayer _player = AudioPlayer();
+  static bool _soundEnabled = true;
 
   static Future<void> check({
     required BuildContext context,
@@ -11,6 +14,10 @@ class AchievementController {
     required String subject,
     required int subjectWins,
   }) async {
+    final settings = Provider.of<SettingsViewModel>(context, listen: false);
+
+    _soundEnabled = settings.sound;
+
     bool hasVictory = false;
     bool hasReward = false;
 
@@ -20,9 +27,7 @@ class AchievementController {
 
       if (unlocked && !_shown.contains(title)) {
         _shown.add(title);
-
         _showBanner(context, title);
-
         hasReward = true;
       }
     }
@@ -35,6 +40,8 @@ class AchievementController {
   }
 
   static Future<void> _playSound(bool victory, bool reward) async {
+    if (!_soundEnabled) return;
+
     await _player.stop();
 
     if (victory) {
