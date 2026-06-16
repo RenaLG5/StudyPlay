@@ -21,6 +21,8 @@ import 'data/language_questions.dart';
 import 'data/science_questions.dart';
 import 'data/history_questions.dart';
 
+import 'services/notification_service.dart';
+
 import 'package:provider/provider.dart';
 
 import 'viewmodels/settings_viewmodel.dart';
@@ -32,6 +34,9 @@ import 'viewmodels/auth_viewmodel.dart';
 
 void main() async {
   WidgetsFlutterBinding.ensureInitialized();
+
+  await NotificationService.init();
+  await NotificationService.requestPermission();
 
   await Firebase.initializeApp(options: DefaultFirebaseOptions.currentPlatform);
 

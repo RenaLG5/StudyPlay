@@ -3,6 +3,7 @@ import 'package:shared_preferences/shared_preferences.dart';
 import 'package:firebase_auth/firebase_auth.dart';
 import '/services/sound_service.dart';
 import '/controller/achievement_controller.dart';
+import '/services/notification_service.dart';
 
 class SettingsViewModel extends ChangeNotifier {
   String username = "";
@@ -170,11 +171,17 @@ class SettingsViewModel extends ChangeNotifier {
     notifyListeners();
   }
 
-  Future<void> saveNotifications(bool value) async {
+  Future<void> setNotifications(bool value) async {
     notifications = value;
 
     final prefs = await SharedPreferences.getInstance();
     await prefs.setBool("notifications", value);
+
+    if (value) {
+      await NotificationService.scheduleDaily();
+    } else {
+      await NotificationService.cancelAll();
+    }
 
     notifyListeners();
   }

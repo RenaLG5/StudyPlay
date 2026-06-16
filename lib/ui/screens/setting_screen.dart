@@ -31,7 +31,7 @@ class SettingScreen extends StatelessWidget {
             subtitle: const Text('Mostrar avisos en la app'),
             value: settingsVM.notifications,
             onChanged: (value) async {
-              await settingsVM.saveNotifications(value);
+              await settingsVM.setNotifications(value);
             },
           ),
 
