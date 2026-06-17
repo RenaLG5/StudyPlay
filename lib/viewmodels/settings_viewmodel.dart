@@ -69,7 +69,11 @@ class SettingsViewModel extends ChangeNotifier {
     difficulty = prefs.getString("difficulty_$_userKey") ?? "Fácil";
     notifications = prefs.getBool("notifications_$_userKey") ?? true;
     darkMode = prefs.getBool("darkMode_$_userKey") ?? false;
+
     sound = prefs.getBool("sound_$_userKey") ?? true;
+
+    SoundService.setEnabled(sound);
+
     notifyListeners();
   }
 
