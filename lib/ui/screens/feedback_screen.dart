@@ -109,6 +109,25 @@ class _FeedbackScreenState extends State<FeedbackScreen> {
                             user.displayName ?? "Usuario",
                             user.email ?? "",
                           );
+                          if (context.mounted) {
+                            ScaffoldMessenger.of(context).showSnackBar(
+                              SnackBar(
+                                content: const Row(
+                                  children: [
+                                    Icon(
+                                      Icons.check_circle,
+                                      color: Colors.white,
+                                    ),
+                                    SizedBox(width: 10),
+                                    Text("Encuesta enviada"),
+                                  ],
+                                ),
+                                backgroundColor: Colors.green,
+                                behavior: SnackBarBehavior.floating,
+                                duration: const Duration(seconds: 2),
+                              ),
+                            );
+                          }
                         }
                       : null,
                   icon: const Icon(Icons.send),
