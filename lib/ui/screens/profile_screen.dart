@@ -58,10 +58,19 @@ class ProfileScreen extends StatelessWidget {
               builder: (context, settingsVM, _) {
                 return CircleAvatar(
                   radius: 50,
+                  backgroundColor: Colors.grey.shade300,
+
                   backgroundImage: settingsVM.profileImagePath.isNotEmpty
                       ? FileImage(File(settingsVM.profileImagePath))
-                      : const AssetImage("assets/images/perfil.png")
-                            as ImageProvider,
+                      : null,
+
+                  child: settingsVM.profileImagePath.isEmpty
+                      ? Icon(
+                          Icons.person,
+                          size: 55,
+                          color: Colors.grey.shade700,
+                        )
+                      : null,
                 );
               },
             ),
@@ -195,20 +204,21 @@ class ProfileScreen extends StatelessWidget {
                       ElevatedButton(
                         onPressed: () async {
                           if (nameController.text.trim().isNotEmpty) {
-                            settingsVM.username = nameController.text.trim();
-                            await settingsVM.saveUsername(settingsVM.username);
+                            await settingsVM.saveUsername(
+                              nameController.text.trim(),
+                            );
                           }
 
                           if (ageController.text.trim().isNotEmpty) {
-                            settingsVM.age = ageController.text.trim();
-                            await settingsVM.saveAge(settingsVM.age);
+                            await settingsVM.saveAge(ageController.text.trim());
                           }
 
                           if (countryController.text.trim().isNotEmpty) {
-                            settingsVM.country = countryController.text.trim();
-                            await settingsVM.saveCountry(settingsVM.country);
+                            await settingsVM.saveCountry(
+                              countryController.text.trim(),
+                            );
                           }
-                          settingsVM.notifyListeners();
+
                           Navigator.pop(context);
                         },
                         child: const Text("Guardar"),
@@ -288,7 +298,7 @@ class ProfileScreen extends StatelessWidget {
                                 context,
                                 listen: false,
                               );
-                              settingsVM.setCurrentUser(email);
+                              await settingsVM.setCurrentUser(email);
 
                               await progressVM.load(email);
 
@@ -329,20 +339,7 @@ class ProfileScreen extends StatelessWidget {
                           onPressed: () async {
                             try {
                               final email = emailController.text.trim();
-
                               final password = passwordController.text.trim();
-
-                              if (email.isEmpty || password.isEmpty) {
-                                ScaffoldMessenger.of(context).showSnackBar(
-                                  const SnackBar(
-                                    content: Text(
-                                      "Debes ingresar correo y contraseña",
-                                    ),
-                                  ),
-                                );
-
-                                return;
-                              }
 
                               await FirebaseAuth.instance
                                   .createUserWithEmailAndPassword(
@@ -350,16 +347,20 @@ class ProfileScreen extends StatelessWidget {
                                     password: password,
                                   );
 
-                              await progressVM.load(email);
+                              final settingsVM = Provider.of<SettingsViewModel>(
+                                context,
+                                listen: false,
+                              );
 
+                              await settingsVM.setCurrentUser(email);
+
+                              await progressVM.load(email);
                               await historyVM.load(email);
 
                               Navigator.pop(context);
 
                               ScaffoldMessenger.of(context).showSnackBar(
-                                const SnackBar(
-                                  content: Text("Cuenta creada correctamente"),
-                                ),
+                                const SnackBar(content: Text("Cuenta creada")),
                               );
                             } on FirebaseAuthException catch (e) {
                               String msg = "No se pudo crear la cuenta";

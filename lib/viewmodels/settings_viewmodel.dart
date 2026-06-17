@@ -86,23 +86,17 @@ class SettingsViewModel extends ChangeNotifier {
   }
 
   Future<void> clearUserData() async {
-    final prefs = await SharedPreferences.getInstance();
-    final key = _userKey;
-
     username = "";
     age = "";
     country = "";
     profileImagePath = "";
-    _userKey = "";
 
-    await prefs.remove("profileImage_$key");
-    await prefs.remove("username_$key");
-    await prefs.remove("age_$key");
-    await prefs.remove("country_$key");
-    await prefs.remove("difficulty_$key");
-    await prefs.remove("notifications_$key");
-    await prefs.remove("darkMode_$key");
-    await prefs.remove("sound_$key");
+    difficulty = "Fácil";
+    notifications = true;
+    darkMode = false;
+    sound = true;
+
+    _userKey = "";
 
     notifyListeners();
   }
@@ -170,7 +164,7 @@ class SettingsViewModel extends ChangeNotifier {
     SoundService.setEnabled(value);
 
     final prefs = await SharedPreferences.getInstance();
-    await prefs.setBool('sound', value);
+    await prefs.setBool("sound_$_userKey", value);
 
     notifyListeners();
   }

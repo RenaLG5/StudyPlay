@@ -40,17 +40,18 @@ void main() async {
 
   await Firebase.initializeApp(options: DefaultFirebaseOptions.currentPlatform);
 
+  final settingsVM = SettingsViewModel();
+
+  await settingsVM.loadCurrentUser();
+
   runApp(
     MultiProvider(
       providers: [
-        ChangeNotifierProvider(create: (_) => SettingsViewModel()),
+        ChangeNotifierProvider.value(value: settingsVM),
 
         ChangeNotifierProvider(create: (_) => QualityViewModel()),
-
         ChangeNotifierProvider(create: (_) => FeedbackViewModel()),
-
         ChangeNotifierProvider(create: (_) => HistoryViewModel()),
-
         ChangeNotifierProvider(create: (_) => ProgressViewModel()),
         ChangeNotifierProvider(create: (_) => AuthViewModel()),
       ],
