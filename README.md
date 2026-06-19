@@ -185,3 +185,5 @@ flowchart TD
 
 ### AUTOR
 * Renato León
+#### Nuevo colaborador
+* María José Paredes @MariaJoseParedes
