@@ -173,14 +173,35 @@ La aplicación utiliza múltiples sistemas de navegación:
 
 ---
 
+## SISTEMA DE AUTENTICACIÓN
+
+### La aplicación permite:
+
+* Crear una cuenta mediante correo y contraseña.
+* Iniciar sesión.
+* Cambiar de cuenta.
+* Cerrar sesión.
+* Mantener configuraciones independientes para * cada usuario.
+
+Los datos personales y preferencias se restauran automáticamente al volver a iniciar sesión.
+
 ## GAMIFICACIÓN
 
 La aplicación incluye un sistema de logros:
 
-* Rachas de estudio (5, 10, 50 días)
-* Logros por asignatura
-* Progreso por cantidad de quizzes
-* Logros bloqueados/desbloqueados
+### Logros por progreso
+* Primer quiz completado.
+* 5 quizzes completados.
+* 10 quizzes completados.
+### Logros por asignatura
+* Matemáticas.
+* Lenguaje.
+* Ciencias.
+* Historia.
+### Recompensas visuales
+* Banners emergentes.
+* Sonidos de recompensa.
+* Vibración.
 
 ---
 
