@@ -7,12 +7,14 @@ StudyPlay es una aplicación móvil que transforma el aprendizaje en una experie
 
 ## CARACTERÍSTICAS PROPIAS DEL MÓVIL
 
-* Notificaciones push (simuladas en maqueta)
-* Acceso ubicuo (uso en cualquier momento y lugar)
-* Interfaz táctil intuitiva
-* Interacción dinámica mediante quizzes
-* Navegación fluida entre pantallas
-* Uso de recursos visuales (iconos, imágenes, tarjetas)
+* Notificaciones locales programadas.
+* Acceso ubicuo (uso en cualquier momento y lugar).
+* Interfaz táctil intuitiva.
+* Interacción dinámica mediante quizzes.
+* Navegación fluida entre pantallas.
+* Uso de recursos visuales (iconos, imágenes y tarjetas).
+* Efectos de sonido y vibración.
+* Selección de imagen de perfil desde la galería.
 
 ---
 
@@ -35,6 +37,10 @@ StudyPlay es una aplicación móvil que transforma el aprendizaje en una experie
 * RF5: El sistema debe permitir navegación entre pantallas.
 * RF6: El sistema debe mostrar información del perfil del usuario.
 * RF7: El sistema debe mostrar ayuda y soporte.
+* RF8: El sistema debe permitir iniciar y cerrar sesión.
+* RF9: El sistema debe guardar configuraciones personalizadas.
+* RF10: El sistema debe permitir cambiar la foto de perfil.
+* RF11: El sistema debe almacenar respuestas de encuestas en Firebase.
 
 ---
 
@@ -45,6 +51,8 @@ StudyPlay es una aplicación móvil que transforma el aprendizaje en una experie
 * RNF3: La interfaz debe ser intuitiva.
 * RNF4: Tiempo de respuesta rápido.
 * RNF5: Arquitectura escalable y modular.
+* RNF6: Persistencia de datos entre sesiones.
+* RNF7: Compatibilidad con Firebase.
 
 ---
 
@@ -53,22 +61,79 @@ StudyPlay es una aplicación móvil que transforma el aprendizaje en una experie
 La aplicación sigue una estructura modular:
 
 lib/
+├── controller/
+├── data/
 ├── models/
+├── services/
 ├── ui/
-│ ├── screens/
-│ ├── widgets/
-├── main.dart
+│   ├── screens/
+│   └── widgets/
+├── utils/
+├── viewmodels/
+└── main.dart
 
 
-Se utiliza el patrón de navegación basado en rutas Navigator.pushNamed y el patrón **Lista-Detalle** en el historial de partidas.
+## Patrón MVVM
+* Model: Representa los datos y entidades del sistema.
+* View: Pantallas e interfaces gráficas.
+* ViewModel: Gestiona la lógica y el estado de la aplicación.
+
+## Gestión de estado
+
+Se utiliza Provider para:
+
+* Compartir datos entre pantallas.
+* Actualizar la interfaz automáticamente.
+* Gestionar el estado global de la aplicación.
+
+## Persistencia local
+
+Se utiliza SharedPreferences para almacenar:
+
+* Nombre del usuario.
+* Edad.
+* País.
+* Foto de perfil.
+* Configuración de sonido.
+* Configuración de notificaciones.
+* Tema oscuro.
+* Usuario actual.
+
+## Persistencia en la nube
+
+Se utiliza Firebase:
+
+* Firebase Authentication para inicio de sesión.
+* Cloud Firestore para:
+  * Historial de partidas.
+  * Progreso del usuario.
+  * Logros.
+  * Encuestas de calidad.
+  * Encuestas de satisfacción.
 
 ---
 
 ## TECNOLOGÍAS UTILIZADAS
 
+### Framework
 * Flutter
 * Dart
-* Material Design
+### Gestión de estado
+* Provider
+### Base de datos y autenticación
+* Firebase Core
+* Firebase Authentication
+* Cloud Firestore
+### Persistencia local
+* SharedPreferences
+### Multimedia
+* Audioplayers
+* Vibration
+* Image Picker
+### Compartir contenido
+* Share Plus
+### Diseño
+* Material Design 3
 
 ---
 
@@ -79,7 +144,8 @@ La aplicación utiliza múltiples sistemas de navegación:
 ### Bottom Navigation Bar
 * Historial
 * Perfil
-
+### Floating Action Button
+* Recompensas y logros
 ### Floating Action Button (centro)
 * Iniciar juego (JUGAR)
 
@@ -107,14 +173,35 @@ La aplicación utiliza múltiples sistemas de navegación:
 
 ---
 
+## SISTEMA DE AUTENTICACIÓN
+
+### La aplicación permite:
+
+* Crear una cuenta mediante correo y contraseña.
+* Iniciar sesión.
+* Cambiar de cuenta.
+* Cerrar sesión.
+* Mantener configuraciones independientes para * cada usuario.
+
+Los datos personales y preferencias se restauran automáticamente al volver a iniciar sesión.
+
 ## GAMIFICACIÓN
 
 La aplicación incluye un sistema de logros:
 
-* Rachas de estudio (5, 10, 50 días)
-* Logros por asignatura
-* Progreso por cantidad de quizzes
-* Logros bloqueados/desbloqueados
+### Logros por progreso
+* Primer quiz completado.
+* 5 quizzes completados.
+* 10 quizzes completados.
+### Logros por asignatura
+* Matemáticas.
+* Lenguaje.
+* Ciencias.
+* Historia.
+### Recompensas visuales
+* Banners emergentes.
+* Sonidos de recompensa.
+* Vibración.
 
 ---
 

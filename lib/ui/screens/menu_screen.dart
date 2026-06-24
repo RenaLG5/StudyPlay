@@ -1,4 +1,12 @@
 import 'package:flutter/material.dart';
+import 'package:provider/provider.dart';
+import '../../viewmodels/settings_viewmodel.dart';
+import 'package:share_plus/share_plus.dart';
+import '../../viewmodels/progress_viewmodel.dart';
+import '../../viewmodels/history_viewmodel.dart';
+import 'package:firebase_auth/firebase_auth.dart';
+import 'dart:io';
+import 'package:image_picker/image_picker.dart';
 
 class MenuScreen extends StatefulWidget {
   const MenuScreen({Key? key}) : super(key: key);
@@ -11,11 +19,33 @@ class _MenuScreenState extends State<MenuScreen> {
   int _selectedIndex = 0;
 
   @override
+  void initState() {
+    super.initState();
+
+    WidgetsBinding.instance.addPostFrameCallback((_) async {
+      final user = FirebaseAuth.instance.currentUser;
+
+      if (user != null && user.email != null) {
+        await Provider.of<ProgressViewModel>(
+          context,
+          listen: false,
+        ).load(user.email!);
+
+        await Provider.of<HistoryViewModel>(
+          context,
+          listen: false,
+        ).load(user.email!);
+      }
+    });
+  }
+
+  @override
   Widget build(BuildContext context) {
+    final settingsVM = Provider.of<SettingsViewModel>(context);
     final theme = Theme.of(context);
 
     return Scaffold(
-      backgroundColor: theme.colorScheme.secondary,
+      backgroundColor: Colors.lightBlue.shade100,
 
       drawer: Drawer(
         child: ListView(
@@ -23,79 +53,47 @@ class _MenuScreenState extends State<MenuScreen> {
           children: [
             DrawerHeader(
               decoration: BoxDecoration(color: theme.colorScheme.primary),
-              child: const Column(
-                crossAxisAlignment: CrossAxisAlignment.start,
-                children: [
-                  CircleAvatar(
-                    radius: 30,
-                    backgroundImage: AssetImage('assets/images/perfil.png'),
-                  ),
-                  SizedBox(height: 10),
-                  Text(
-                    'Renato León',
-                    style: TextStyle(color: Colors.white, fontSize: 18),
-                  ),
-                ],
+              child: Consumer<SettingsViewModel>(
+                builder: (context, settingsVM, _) {
+                  return Column(
+                    crossAxisAlignment: CrossAxisAlignment.start,
+                    children: [
+                      CircleAvatar(
+                        radius: 30,
+                        backgroundImage: settingsVM.profileImagePath.isNotEmpty
+                            ? FileImage(File(settingsVM.profileImagePath))
+                            : const AssetImage('assets/images/perfil.png'),
+                      ),
+                      const SizedBox(height: 10),
+                      Text(
+                        settingsVM.displayName,
+                        style: const TextStyle(
+                          color: Colors.white,
+                          fontSize: 18,
+                        ),
+                      ),
+                    ],
+                  );
+                },
               ),
             ),
 
             ListTile(
               leading: const Icon(Icons.person),
               title: const Text('Perfil'),
-              onTap: () {
-                Navigator.pushNamed(context, '/profile');
-              },
+              onTap: () => Navigator.pushNamed(context, '/profile'),
             ),
 
             ListTile(
               leading: const Icon(Icons.settings),
               title: const Text('Configuración'),
-              onTap: () {
-                Navigator.pushNamed(context, '/settings');
-              },
+              onTap: () => Navigator.pushNamed(context, '/settings'),
             ),
 
             ListTile(
-              leading: const Icon(Icons.notifications),
-              title: const Text('Notificaciones'),
-              onTap: () {
-                showDialog(
-                  context: context,
-                  builder: (context) => AlertDialog(
-                    title: const Text('Notificaciones'),
-                    content: const Text(
-                      '¿Quieres activar o desactivar las notificaciones?',
-                    ),
-                    actions: [
-                      TextButton(
-                        onPressed: () {
-                          Navigator.pop(context);
-                        },
-                        child: const Text('Cancelar'),
-                      ),
-                      TextButton(
-                        onPressed: () {
-                          Navigator.pop(context);
-                        },
-                        child: const Text('Desactivar'),
-                      ),
-                      ElevatedButton(
-                        onPressed: () {
-                          Navigator.pop(context);
-                        },
-                        child: const Text('Activar'),
-                      ),
-                    ],
-                  ),
-                );
-              },
-            ),
-            ListTile(
               leading: const Icon(Icons.help),
               title: const Text('Ayuda y soporte'),
-              onTap: () {
-                Navigator.pushNamed(context, '/help');
-              },
+              onTap: () => Navigator.pushNamed(context, '/help'),
             ),
 
             ListTile(
@@ -113,9 +111,24 @@ class _MenuScreenState extends State<MenuScreen> {
                         child: const Text('Cancelar'),
                       ),
                       TextButton(
-                        onPressed: () {
-                          Navigator.pop(context);
-                          Navigator.pushReplacementNamed(context, '/menu');
+                        onPressed: () async {
+                          final settingsVM = Provider.of<SettingsViewModel>(
+                            context,
+                            listen: false,
+                          );
+
+                          await FirebaseAuth.instance.signOut();
+                          await settingsVM.clearUserData();
+
+                          if (context.mounted) {
+                            Navigator.pushAndRemoveUntil(
+                              context,
+                              MaterialPageRoute(
+                                builder: (_) => const MenuScreen(),
+                              ),
+                              (route) => false,
+                            );
+                          }
                         },
                         child: const Text('Salir'),
                       ),
@@ -128,7 +141,18 @@ class _MenuScreenState extends State<MenuScreen> {
         ),
       ),
 
-      appBar: AppBar(title: const Text('StudyPlay'), centerTitle: true),
+      appBar: AppBar(
+        title: const Text('StudyPlay'),
+        centerTitle: true,
+        actions: [
+          IconButton(
+            icon: const Icon(Icons.share),
+            onPressed: () {
+              Share.share('Estoy usando StudyPlay');
+            },
+          ),
+        ],
+      ),
 
       body: Center(
         child: Column(
@@ -143,9 +167,6 @@ class _MenuScreenState extends State<MenuScreen> {
               style: TextStyle(fontSize: 20, fontWeight: FontWeight.bold),
             ),
 
-            const SizedBox(height: 10),
-
-            //const Text('Selecciona una opción para comenzar'),
             const SizedBox(height: 30),
 
             ElevatedButton.icon(
@@ -165,6 +186,7 @@ class _MenuScreenState extends State<MenuScreen> {
         },
         child: const Icon(Icons.emoji_events),
       ),
+
       floatingActionButtonLocation: FloatingActionButtonLocation.centerDocked,
 
       bottomNavigationBar: BottomAppBar(
@@ -178,7 +200,7 @@ class _MenuScreenState extends State<MenuScreen> {
               onPressed: () => Navigator.pushNamed(context, '/history'),
             ),
 
-            const SizedBox(width: 40), // espacio FAB
+            const SizedBox(width: 40),
 
             IconButton(
               icon: const Icon(Icons.person),

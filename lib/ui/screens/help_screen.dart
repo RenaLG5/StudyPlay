@@ -79,6 +79,15 @@ class HelpScreen extends StatelessWidget {
               subtitle: const Text('StudyPlay v1.0'),
             ),
           ),
+          const SizedBox(height: 20),
+
+          ElevatedButton.icon(
+            onPressed: () {
+              Navigator.pushNamed(context, '/feedback');
+            },
+            icon: const Icon(Icons.star_rate),
+            label: const Text('Valorar aplicación'),
+          ),
         ],
       ),
     );
