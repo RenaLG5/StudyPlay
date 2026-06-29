@@ -2,7 +2,10 @@ import 'package:flutter/material.dart';
 import 'firebase_options.dart';
 import 'package:firebase_core/firebase_core.dart';
 import 'package:firebase_auth/firebase_auth.dart';
+import 'package:provider/provider.dart';
+import 'l10n/app_localizations.dart';
 
+// UI Screens
 import 'ui/screens/menu_screen.dart';
 import 'ui/screens/subject_screen.dart';
 import 'ui/screens/quiz_screen.dart';
@@ -16,15 +19,14 @@ import 'ui/screens/quality_screen.dart';
 import 'ui/screens/feedback_screen.dart';
 import 'ui/screens/help_screen.dart';
 
+// Data
 import 'data/math_questions.dart';
 import 'data/language_questions.dart';
 import 'data/science_questions.dart';
 import 'data/history_questions.dart';
 
+// Services & ViewModels
 import 'services/notification_service.dart';
-
-import 'package:provider/provider.dart';
-
 import 'viewmodels/settings_viewmodel.dart';
 import 'viewmodels/quality_viewmodel.dart';
 import 'viewmodels/feedback_viewmodel.dart';
@@ -41,21 +43,18 @@ void main() async {
   await Firebase.initializeApp(options: DefaultFirebaseOptions.currentPlatform);
 
   final settingsVM = SettingsViewModel();
-
   await settingsVM.loadCurrentUser();
 
   runApp(
     MultiProvider(
       providers: [
         ChangeNotifierProvider.value(value: settingsVM),
-
         ChangeNotifierProvider(create: (_) => QualityViewModel()),
         ChangeNotifierProvider(create: (_) => FeedbackViewModel()),
         ChangeNotifierProvider(create: (_) => HistoryViewModel()),
         ChangeNotifierProvider(create: (_) => ProgressViewModel()),
         ChangeNotifierProvider(create: (_) => AuthViewModel()),
       ],
-
       child: const MyApp(),
     ),
   );
@@ -70,6 +69,11 @@ class MyApp extends StatelessWidget {
       builder: (context, settings, _) {
         return MaterialApp(
           title: 'StudyPlay',
+
+          //CONFIG DE INTERNACIONALIZACIÓN
+          localizationsDelegates: AppLocalizations.localizationsDelegates,
+          supportedLocales: AppLocalizations.supportedLocales,
+          locale: settings.currentLocale,
 
           theme: ThemeData(
             brightness: settings.darkMode ? Brightness.dark : Brightness.light,
@@ -93,12 +97,6 @@ class MyApp extends StatelessWidget {
                   body: Center(child: CircularProgressIndicator()),
                 );
               }
-
-              if (snapshot.hasData) {
-                return const MenuScreen();
-              }
-
-              // 👇 invitado (sin login screen)
               return const MenuScreen();
             },
           ),

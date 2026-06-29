@@ -11,12 +11,30 @@ class SettingScreen extends StatelessWidget {
 
     return Scaffold(
       appBar: AppBar(title: const Text('Configuración')),
-
       body: ListView(
         padding: const EdgeInsets.all(20),
         children: [
+          // Selector de Idioma (Única parte con lógica de internacionalización)
+          ListTile(
+            leading: const Icon(Icons.language),
+            title: const Text('Idioma'),
+            trailing: DropdownButton<Locale>(
+              value: settingsVM.currentLocale,
+              items: const [
+                DropdownMenuItem(value: Locale('es'), child: Text('Español')),
+                DropdownMenuItem(value: Locale('en'), child: Text('English')),
+              ],
+              onChanged: (Locale? newLocale) {
+                if (newLocale != null) {
+                  settingsVM.setLocale(newLocale);
+                }
+              },
+            ),
+          ),
+          const Divider(),
           const SizedBox(height: 10),
 
+          // Resto de la pantalla original (sin cambios)
           SwitchListTile(
             title: const Text('Modo oscuro'),
             subtitle: const Text('Cambia el tema de la aplicación'),

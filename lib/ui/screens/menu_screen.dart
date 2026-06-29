@@ -1,12 +1,14 @@
 import 'package:flutter/material.dart';
 import 'package:provider/provider.dart';
-import '../../viewmodels/settings_viewmodel.dart';
+import 'package:firebase_auth/firebase_auth.dart';
 import 'package:share_plus/share_plus.dart';
+import 'dart:io';
+import 'package:image_picker/image_picker.dart'; //para las traducciones generadas
+import '../../l10n/app_localizations.dart';
+
+import '../../viewmodels/settings_viewmodel.dart';
 import '../../viewmodels/progress_viewmodel.dart';
 import '../../viewmodels/history_viewmodel.dart';
-import 'package:firebase_auth/firebase_auth.dart';
-import 'dart:io';
-import 'package:image_picker/image_picker.dart';
 
 class MenuScreen extends StatefulWidget {
   const MenuScreen({Key? key}) : super(key: key);
@@ -16,8 +18,6 @@ class MenuScreen extends StatefulWidget {
 }
 
 class _MenuScreenState extends State<MenuScreen> {
-  int _selectedIndex = 0;
-
   @override
   void initState() {
     super.initState();
@@ -43,10 +43,11 @@ class _MenuScreenState extends State<MenuScreen> {
   Widget build(BuildContext context) {
     final settingsVM = Provider.of<SettingsViewModel>(context);
     final theme = Theme.of(context);
+    // Instancia de localizaciones para acceder a las traducciones
+    final l10n = AppLocalizations.of(context)!;
 
     return Scaffold(
       backgroundColor: Colors.lightBlue.shade100,
-
       drawer: Drawer(
         child: ListView(
           padding: EdgeInsets.zero,
@@ -62,7 +63,8 @@ class _MenuScreenState extends State<MenuScreen> {
                         radius: 30,
                         backgroundImage: settingsVM.profileImagePath.isNotEmpty
                             ? FileImage(File(settingsVM.profileImagePath))
-                            : const AssetImage('assets/images/perfil.png'),
+                            : const AssetImage('assets/images/perfil.png')
+                                  as ImageProvider,
                       ),
                       const SizedBox(height: 10),
                       Text(
@@ -77,38 +79,34 @@ class _MenuScreenState extends State<MenuScreen> {
                 },
               ),
             ),
-
             ListTile(
               leading: const Icon(Icons.person),
-              title: const Text('Perfil'),
+              title: Text(l10n.profile),
               onTap: () => Navigator.pushNamed(context, '/profile'),
             ),
-
             ListTile(
               leading: const Icon(Icons.settings),
-              title: const Text('Configuración'),
+              title: Text(l10n.settings),
               onTap: () => Navigator.pushNamed(context, '/settings'),
             ),
-
             ListTile(
               leading: const Icon(Icons.help),
-              title: const Text('Ayuda y soporte'),
+              title: Text(l10n.helpAndSupport),
               onTap: () => Navigator.pushNamed(context, '/help'),
             ),
-
             ListTile(
               leading: const Icon(Icons.logout),
-              title: const Text('Cerrar sesión'),
+              title: Text(l10n.logout),
               onTap: () {
                 showDialog(
                   context: context,
                   builder: (context) => AlertDialog(
-                    title: const Text('Cerrar sesión'),
-                    content: const Text('¿Estás seguro?'),
+                    title: Text(l10n.logout),
+                    content: Text(l10n.areYouSure),
                     actions: [
                       TextButton(
                         onPressed: () => Navigator.pop(context),
-                        child: const Text('Cancelar'),
+                        child: Text(l10n.cancel),
                       ),
                       TextButton(
                         onPressed: () async {
@@ -130,7 +128,7 @@ class _MenuScreenState extends State<MenuScreen> {
                             );
                           }
                         },
-                        child: const Text('Salir'),
+                        child: Text(l10n.exit),
                       ),
                     ],
                   ),
@@ -140,7 +138,6 @@ class _MenuScreenState extends State<MenuScreen> {
           ],
         ),
       ),
-
       appBar: AppBar(
         title: const Text('StudyPlay'),
         centerTitle: true,
@@ -148,47 +145,39 @@ class _MenuScreenState extends State<MenuScreen> {
           IconButton(
             icon: const Icon(Icons.share),
             onPressed: () {
-              Share.share('Estoy usando StudyPlay');
+              Share.share(l10n.shareMessage);
             },
           ),
         ],
       ),
-
       body: Center(
         child: Column(
           mainAxisAlignment: MainAxisAlignment.center,
           children: [
             Image.asset('assets/images/perrito1.png', width: 200, height: 200),
-
             const SizedBox(height: 10),
-
-            const Text(
-              'Aprende jugando',
-              style: TextStyle(fontSize: 20, fontWeight: FontWeight.bold),
+            Text(
+              l10n.learnWhilePlaying,
+              style: const TextStyle(fontSize: 20, fontWeight: FontWeight.bold),
             ),
-
             const SizedBox(height: 30),
-
             ElevatedButton.icon(
               onPressed: () {
                 Navigator.pushNamed(context, '/subjects');
               },
               icon: const Icon(Icons.play_arrow),
-              label: const Text('JUGAR'),
+              label: Text(l10n.play),
             ),
           ],
         ),
       ),
-
       floatingActionButton: FloatingActionButton(
         onPressed: () {
           Navigator.pushNamed(context, '/rewards');
         },
         child: const Icon(Icons.emoji_events),
       ),
-
       floatingActionButtonLocation: FloatingActionButtonLocation.centerDocked,
-
       bottomNavigationBar: BottomAppBar(
         shape: const CircularNotchedRectangle(),
         notchMargin: 8,
@@ -199,9 +188,7 @@ class _MenuScreenState extends State<MenuScreen> {
               icon: const Icon(Icons.history),
               onPressed: () => Navigator.pushNamed(context, '/history'),
             ),
-
             const SizedBox(width: 40),
-
             IconButton(
               icon: const Icon(Icons.person),
               onPressed: () => Navigator.pushNamed(context, '/profile'),
