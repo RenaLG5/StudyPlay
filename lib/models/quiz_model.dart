@@ -1,5 +1,3 @@
-import 'package:provider/provider.dart';
-
 class Question {
   final String text;
   final List<String> options;
@@ -10,4 +8,12 @@ class Question {
     required this.options,
     required this.correctIndex,
   });
+
+  factory Question.fromFirestore(Map<String, dynamic> data) {
+    return Question(
+      text: data["text"] ?? "",
+      options: List<String>.from(data["options"] ?? []),
+      correctIndex: data["correctIndex"] ?? 0,
+    );
+  }
 }
