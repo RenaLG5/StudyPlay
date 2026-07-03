@@ -8,6 +8,9 @@ import 'package:firebase_auth/firebase_auth.dart';
 import 'dart:io';
 import 'package:image_picker/image_picker.dart';
 
+import 'dart:async';
+import 'package:connectivity_plus/connectivity_plus.dart';
+
 class MenuScreen extends StatefulWidget {
   const MenuScreen({Key? key}) : super(key: key);
 
@@ -18,9 +21,39 @@ class MenuScreen extends StatefulWidget {
 class _MenuScreenState extends State<MenuScreen> {
   int _selectedIndex = 0;
 
+  StreamSubscription<List<ConnectivityResult>>? _connectivitySubscription;
+
+  bool _wasOffline = false;
+
   @override
   void initState() {
     super.initState();
+
+    _connectivitySubscription = Connectivity().onConnectivityChanged.listen((
+      results,
+    ) {
+      final hasInternet = !results.contains(ConnectivityResult.none);
+
+      if (!hasInternet) {
+        _wasOffline = true;
+
+        ScaffoldMessenger.of(context).showSnackBar(
+          const SnackBar(
+            content: Text("Sin conexión. Se utilizará la copia local."),
+            backgroundColor: Colors.orange,
+          ),
+        );
+      } else if (_wasOffline) {
+        _wasOffline = false;
+
+        ScaffoldMessenger.of(context).showSnackBar(
+          const SnackBar(
+            content: Text("Vuelves a tener conexión."),
+            backgroundColor: Colors.green,
+          ),
+        );
+      }
+    });
 
     WidgetsBinding.instance.addPostFrameCallback((_) async {
       final user = FirebaseAuth.instance.currentUser;
@@ -210,5 +243,10 @@ class _MenuScreenState extends State<MenuScreen> {
         ),
       ),
     );
+  }
+
+  void dispose() {
+    _connectivitySubscription?.cancel();
+    super.dispose();
   }
 }

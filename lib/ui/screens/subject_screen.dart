@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:provider/provider.dart';
+import 'package:connectivity_plus/connectivity_plus.dart';
 
 import 'quiz_screen.dart';
 
@@ -90,6 +91,19 @@ class SubjectScreen extends StatelessWidget {
             context,
             listen: false,
           );
+
+          final connectivityResult = await Connectivity().checkConnectivity();
+
+          if (connectivityResult.contains(ConnectivityResult.none)) {
+            ScaffoldMessenger.of(context).showSnackBar(
+              const SnackBar(
+                content: Text(
+                  "Sin conexión a Internet. Se intentará usar la copia local.",
+                ),
+                backgroundColor: Colors.orange,
+              ),
+            );
+          }
 
           await quizVM.loadQuestions(subject: title, level: level);
 
