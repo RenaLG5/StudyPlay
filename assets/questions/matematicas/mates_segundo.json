@@ -1,0 +1,144 @@
+{
+  "questions": [
+    {
+      "text": "¿Cuál es el número que sigue a 199?",
+      "options": ["200", "201", "198", "190"],
+      "correctIndex": 0
+    },
+    {
+      "text": "Ordena de menor a mayor: 145, 154, 415. ¿Cuál es el menor?",
+      "options": ["145", "154", "415", "Son iguales"],
+      "correctIndex": 0
+    },
+    {
+      "text": "45 + 38 = ?",
+      "options": ["73", "83", "93", "63"],
+      "correctIndex": 1
+    },
+    {
+      "text": "72 − 29 = ?",
+      "options": ["43", "53", "33", "41"],
+      "correctIndex": 0
+    },
+    {
+      "text": "Si tengo 3 grupos de 4 caramelos, ¿cuántos caramelos tengo en total?",
+      "options": ["7", "12", "9", "10"],
+      "correctIndex": 1
+    },
+    {
+      "text": "¿Cuántas centenas tiene el número 456?",
+      "options": ["4", "5", "6", "45"],
+      "correctIndex": 0
+    },
+    {
+      "text": "¿Cuál número representa 'seis centenas, dos decenas y tres unidades'?",
+      "options": ["623", "632", "263", "236"],
+      "correctIndex": 0
+    },
+    {
+      "text": "100 − 45 = ?",
+      "options": ["45", "55", "65", "50"],
+      "correctIndex": 1
+    },
+    {
+      "text": "En la secuencia 5, 10, 15, 20, __ ¿qué número sigue?",
+      "options": ["22", "25", "30", "21"],
+      "correctIndex": 1
+    },
+    {
+      "text": "¿Qué número falta en el patrón 3, 6, 9, __, 15?",
+      "options": ["10", "11", "12", "13"],
+      "correctIndex": 2
+    },
+    {
+      "text": "En el patrón ABAB, si A = 🔺 y B = ⬛, ¿qué figura corresponde a la posición 5?",
+      "options": ["🔺", "⬛", "⚪", "Ninguna"],
+      "correctIndex": 0
+    },
+    {
+      "text": "¿Cuál es la regla del patrón 2, 4, 6, 8?",
+      "options": [
+        "Sumar 1",
+        "Sumar 2",
+        "Restar 2",
+        "Multiplicar por 2"
+      ],
+      "correctIndex": 1
+    },
+    {
+      "text": "¿Cuántos lados tiene un pentágono?",
+      "options": ["4", "5", "6", "3"],
+      "correctIndex": 1
+    },
+    {
+      "text": "¿Cuál cuerpo geométrico tiene todas sus caras iguales y forma de cuadrado?",
+      "options": ["Esfera", "Cubo", "Cono", "Cilindro"],
+      "correctIndex": 1
+    },
+    {
+      "text": "¿Cuántos vértices tiene un triángulo?",
+      "options": ["2", "3", "4", "5"],
+      "correctIndex": 1
+    },
+    {
+      "text": "¿Cuál de estas figuras es simétrica?",
+      "options": ["Una letra F", "Una mariposa", "Un número 7", "Una letra L"],
+      "correctIndex": 1
+    },
+    {
+      "text": "¿Cuál de estas figuras es un cuerpo redondo?",
+      "options": ["Cubo", "Prisma", "Esfera", "Pirámide"],
+      "correctIndex": 2
+    },
+    {
+      "text": "Si el reloj marca las 3 y media, ¿cómo se escribe?",
+      "options": ["3:00", "3:30", "2:30", "3:45"],
+      "correctIndex": 1
+    },
+    {
+      "text": "¿Qué unidad usamos para medir el peso de una sandía?",
+      "options": ["Metros", "Litros", "Kilogramos", "Centímetros"],
+      "correctIndex": 2
+    },
+    {
+      "text": "¿Qué instrumento usamos para medir la longitud de un lápiz?",
+      "options": ["Balanza", "Regla", "Reloj", "Jarra"],
+      "correctIndex": 1
+    },
+    {
+      "text": "¿Cuántos centímetros hay en un metro?",
+      "options": ["10", "100", "1.000", "50"],
+      "correctIndex": 1
+    },
+    {
+      "text": "En un gráfico de barras, ¿qué representa la altura de cada barra?",
+      "options": ["El color", "La cantidad", "El nombre", "La forma"],
+      "correctIndex": 1
+    },
+    {
+      "text": "Si lanzamos un dado, ¿cuál es el menor número que puede salir?",
+      "options": ["0", "1", "2", "6"],
+      "correctIndex": 1
+    },
+    {
+      "text": "Al sacar una bolita de una bolsa con solo bolitas azules, ¿es posible sacar una roja?",
+      "options": [
+        "Sí, es seguro",
+        "No, es imposible",
+        "Sí, es posible",
+        "No se sabe"
+      ],
+      "correctIndex": 1
+    },
+    {
+      "text": "¿Qué gráfico usa dibujos para representar cantidades?",
+      "options": [
+        "Gráfico de barras",
+        "Pictograma",
+        "Gráfico de línea",
+        "Tabla"
+      ],
+      "correctIndex": 1
+    }
+  ]
+}

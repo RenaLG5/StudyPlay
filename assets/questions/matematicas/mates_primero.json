@@ -1,0 +1,129 @@
+{
+  "questions": [
+    {
+      "text": "¿Cuál es el número que sigue después del 47 al contar de 1 en 1?",
+      "options": ["46", "48", "57", "40"],
+      "correctIndex": 1
+    },
+    {
+      "text": "Contando de 5 en 5, ¿qué número viene después del 20?",
+      "options": ["21", "22", "25", "30"],
+      "correctIndex": 2
+    },
+    {
+      "text": "¿Cuántas decenas tiene el número 30?",
+      "options": ["3", "30", "0", "13"],
+      "correctIndex": 0
+    },
+    {
+      "text": "8 + 5 = ?",
+      "options": ["12", "13", "14", "3"],
+      "correctIndex": 1
+    },
+    {
+      "text": "12 − 4 = ?",
+      "options": ["16", "8", "7", "9"],
+      "correctIndex": 1
+    },
+    {
+      "text": "¿Cuál número es mayor: 56 o 65?",
+      "options": ["56", "65", "Son iguales", "No se puede saber"],
+      "correctIndex": 1
+    },
+    {
+      "text": "¿Qué número está entre el 24 y el 26?",
+      "options": ["23", "25", "27", "20"],
+      "correctIndex": 1
+    },
+    {
+      "text": "Si tengo 6 manzanas y me regalan 3 más, ¿cuántas tengo en total?",
+      "options": ["3", "9", "8", "10"],
+      "correctIndex": 1
+    },
+    {
+      "text": "En la secuencia 🔴🔵🔴🔵🔴__, ¿qué figura sigue?",
+      "options": ["🔴", "🔵", "🟢", "Ninguna"],
+      "correctIndex": 1
+    },
+    {
+      "text": "¿Cuál patrón de sonido continúa la serie: palmada-pie-palmada-pie-__?",
+      "options": ["Palmada", "Pie", "Silencio", "Salto"],
+      "correctIndex": 0
+    },
+    {
+      "text": "En la serie 2, 4, 6, 8, __ ¿qué número sigue?",
+      "options": ["9", "10", "12", "11"],
+      "correctIndex": 1
+    },
+    {
+      "text": "En el patrón cuadrado, cuadrado, triángulo, cuadrado, cuadrado, triángulo, __ ¿qué figura sigue?",
+      "options": ["Cuadrado", "Triángulo", "Círculo", "Rectángulo"],
+      "correctIndex": 0
+    },
+    {
+      "text": "¿Qué figura tiene 3 lados?",
+      "options": ["Cuadrado", "Triángulo", "Círculo", "Rectángulo"],
+      "correctIndex": 1
+    },
+    {
+      "text": "¿Cuál de estas figuras es un cuerpo 3D?",
+      "options": ["Círculo", "Cubo", "Triángulo", "Cuadrado"],
+      "correctIndex": 1
+    },
+    {
+      "text": "¿Cuántos lados tiene un cuadrado?",
+      "options": ["3", "4", "5", "6"],
+      "correctIndex": 1
+    },
+    {
+      "text": "¿Qué figura no tiene lados rectos?",
+      "options": ["Triángulo", "Círculo", "Cuadrado", "Rectángulo"],
+      "correctIndex": 1
+    },
+    {
+      "text": "¿Cuál de estos objetos tiene forma de esfera?",
+      "options": ["Una pelota", "Una caja", "Un libro", "Una regla"],
+      "correctIndex": 0
+    },
+    {
+      "text": "¿Cuántos días tiene una semana?",
+      "options": ["5", "6", "7", "8"],
+      "correctIndex": 2
+    },
+    {
+      "text": "¿Qué instrumento se usa para saber la hora?",
+      "options": ["Calendario", "Reloj", "Regla", "Balanza"],
+      "correctIndex": 1
+    },
+    {
+      "text": "¿Cuál mes viene después de enero?",
+      "options": ["Marzo", "Diciembre", "Febrero", "Abril"],
+      "correctIndex": 2
+    },
+    {
+      "text": "Para medir cuál lápiz es más largo, ¿qué unidad no estandarizada podríamos usar?",
+      "options": ["Kilogramos", "Clips", "Litros", "Grados"],
+      "correctIndex": 1
+    },
+    {
+      "text": "Si preguntamos a nuestros compañeros cuál es su fruta favorita y anotamos las respuestas, ¿qué estamos haciendo?",
+      "options": ["Una suma", "Una encuesta", "Un dibujo", "Una resta"],
+      "correctIndex": 1
+    },
+    {
+      "text": "En un pictograma, cada dibujo representa...",
+      "options": ["Un color", "Una cantidad", "Una letra", "Un sonido"],
+      "correctIndex": 1
+    },
+    {
+      "text": "Si lanzo una moneda, ¿cuántos resultados posibles hay?",
+      "options": ["1", "2", "3", "4"],
+      "correctIndex": 1
+    },
+    {
+      "text": "Si en una bolsa solo hay bolitas rojas, al sacar una, ¿de qué color será seguro que sea?",
+      "options": ["Azul", "Verde", "Roja", "Amarilla"],
+      "correctIndex": 2
+    }
+  ]
+}

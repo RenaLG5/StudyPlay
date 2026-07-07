@@ -1,0 +1,149 @@
+{
+  "questions": [
+    {
+      "text": "¿Cuál es el número que corresponde a 500.000.000 + 3.000?",
+      "options": ["500.003.000", "503.000.000", "500.300.000", "5.003.000"],
+      "correctIndex": 0
+    },
+    {
+      "text": "Ordena de menor a mayor: 0,5 - 0,25 - 0,75. ¿Cuál es el menor?",
+      "options": ["0,5", "0,25", "0,75", "Son iguales"],
+      "correctIndex": 1
+    },
+    {
+      "text": "¿Cuál es el resultado de 3,45 + 2,3?",
+      "options": ["5,75", "5,65", "6,75", "5,55"],
+      "correctIndex": 0
+    },
+    {
+      "text": "¿Entre qué números enteros se ubica 2 y 3/4 en la recta numérica?",
+      "options": ["Entre 1 y 2", "Entre 2 y 3", "Entre 3 y 4", "Entre 0 y 1"],
+      "correctIndex": 1
+    },
+    {
+      "text": "¿Cuál decimal es equivalente a 3/10?",
+      "options": ["0,3", "0,03", "3,0", "0,3333"],
+      "correctIndex": 0
+    },
+    {
+      "text": "12,345 redondeado a la centésima es:",
+      "options": ["12,34", "12,35", "12,3", "12,4"],
+      "correctIndex": 1
+    },
+    {
+      "text": "¿Cuál es el resultado de 4,5 × 2?",
+      "options": ["8", "9", "8,5", "9,5"],
+      "correctIndex": 1
+    },
+    {
+      "text": "Un número está formado por 2 unidades de millón, 5 centenas de mil y 3 decenas. ¿Cómo se escribe?",
+      "options": ["2.500.030", "2.005.030", "2.050.030", "2.500.300"],
+      "correctIndex": 0
+    },
+    {
+      "text": "Si 3x + 2 = 14, ¿cuál es el valor de x?",
+      "options": ["2", "4", "6", "3"],
+      "correctIndex": 1
+    },
+    {
+      "text": "Completa el patrón: 2, 4, 8, 16, __",
+      "options": ["18", "24", "32", "20"],
+      "correctIndex": 2
+    },
+    {
+      "text": "¿Cuál inecuación representa 'un número más 5 es mayor que 10'?",
+      "options": ["x+5<10", "x+5>10", "x-5>10", "x+5=10"],
+      "correctIndex": 1
+    },
+    {
+      "text": "¿Cuál es la regla que genera la secuencia 1, 4, 9, 16?",
+      "options": [
+        "Sumar números impares consecutivos (cuadrados)",
+        "Sumar 3",
+        "Multiplicar por 4",
+        "Restar 1"
+      ],
+      "correctIndex": 0
+    },
+    {
+      "text": "¿Qué instrumento usamos para medir ángulos?",
+      "options": ["Regla", "Transportador", "Compás", "Balanza"],
+      "correctIndex": 1
+    },
+    {
+      "text": "¿En qué cuadrante del plano cartesiano se ubican los puntos con coordenadas positivas (x,y)?",
+      "options": [
+        "Primer cuadrante",
+        "Segundo cuadrante",
+        "Tercer cuadrante",
+        "Cuarto cuadrante"
+      ],
+      "correctIndex": 0
+    },
+    {
+      "text": "¿Cuáles son las coordenadas del punto ubicado 3 unidades a la derecha y 2 hacia arriba del origen?",
+      "options": ["(2,3)", "(3,2)", "(-3,2)", "(3,-2)"],
+      "correctIndex": 1
+    },
+    {
+      "text": "¿Cómo se llama un ángulo que mide exactamente 90°?",
+      "options": ["Agudo", "Recto", "Obtuso", "Llano"],
+      "correctIndex": 1
+    },
+    {
+      "text": "Un ángulo que mide más de 90° pero menos de 180° se llama:",
+      "options": ["Agudo", "Recto", "Obtuso", "Completo"],
+      "correctIndex": 2
+    },
+    {
+      "text": "¿Cuál es el área de un triángulo con base 8 cm y altura 5 cm?",
+      "options": ["40 cm²", "20 cm²", "13 cm²", "80 cm²"],
+      "correctIndex": 1
+    },
+    {
+      "text": "Un trapecio tiene bases de 6 cm y 10 cm, y altura de 4 cm. ¿Cuál es su área?",
+      "options": ["32 cm²", "64 cm²", "16 cm²", "40 cm²"],
+      "correctIndex": 0
+    },
+    {
+      "text": "Si un cuerpo está formado por 24 cubos pequeños de 1 cm³ cada uno, ¿cuál es su volumen?",
+      "options": ["12 cm³", "24 cm³", "48 cm³", "8 cm³"],
+      "correctIndex": 1
+    },
+    {
+      "text": "¿Qué unidad se usa para medir el volumen de un cuerpo formado por cubos?",
+      "options": ["cm", "cm²", "cm³", "Litros exclusivamente"],
+      "correctIndex": 2
+    },
+    {
+      "text": "Si se lanza un dado, ¿cuál es la probabilidad de obtener un número par?",
+      "options": ["1/6", "2/6", "3/6", "4/6"],
+      "correctIndex": 2
+    },
+    {
+      "text": "¿Qué gráfico permite comparar la evolución de una variable a lo largo del tiempo?",
+      "options": [
+        "Gráfico circular",
+        "Gráfico de línea",
+        "Pictograma",
+        "Tabla de conteo"
+      ],
+      "correctIndex": 1
+    },
+    {
+      "text": "En una encuesta a 40 personas sobre su color favorito, ¿qué gráfico es más apropiado para mostrar el porcentaje de cada color?",
+      "options": [
+        "Gráfico de línea",
+        "Gráfico circular",
+        "Tabla de conteo",
+        "Diagrama de tallo"
+      ],
+      "correctIndex": 1
+    },
+    {
+      "text": "En una bolsa con 10 bolitas: 4 rojas, 3 azules y 3 verdes, ¿cuál color tiene mayor probabilidad de salir?",
+      "options": ["Rojo", "Azul", "Verde", "Todas iguales"],
+      "correctIndex": 0
+    }
+  ]
+}

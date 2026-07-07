@@ -1,0 +1,149 @@
+{
+  "questions": [
+    {
+      "text": "¿Cuál es el porcentaje que representa 25/100?",
+      "options": ["2,5%", "25%", "250%", "0,25%"],
+      "correctIndex": 1
+    },
+    {
+      "text": "Si un producto cuesta $8.000 y tiene un descuento del 25%, ¿cuánto dinero se descuenta?",
+      "options": ["$1.000", "$2.000", "$2.500", "$4.000"],
+      "correctIndex": 1
+    },
+    {
+      "text": "La razón entre 4 y 8 se puede simplificar como:",
+      "options": ["1:2", "2:1", "4:8", "8:4"],
+      "correctIndex": 0
+    },
+    {
+      "text": "¿Cuál es el resultado de 0,75 + 0,125?",
+      "options": ["0,875", "0,975", "0,75", "0,825"],
+      "correctIndex": 0
+    },
+    {
+      "text": "¿Cómo se expresa 3/5 como porcentaje?",
+      "options": ["35%", "60%", "53%", "30%"],
+      "correctIndex": 1
+    },
+    {
+      "text": "¿Cuál es el resultado de 2,5 × 1,2?",
+      "options": ["3", "3,5", "2,7", "3,2"],
+      "correctIndex": 0
+    },
+    {
+      "text": "En una receta, la razón de harina a azúcar es 3:1. Si uso 9 tazas de harina, ¿cuántas tazas de azúcar necesito?",
+      "options": ["1", "3", "9", "27"],
+      "correctIndex": 1
+    },
+    {
+      "text": "¿Cuál decimal es mayor: 0,45 o 0,405?",
+      "options": ["0,45", "0,405", "Son iguales", "No se puede comparar"],
+      "correctIndex": 0
+    },
+    {
+      "text": "Si la regla de un patrón es 'n × 2 + 1', ¿cuál es el valor cuando n = 5?",
+      "options": ["10", "11", "6", "15"],
+      "correctIndex": 1
+    },
+    {
+      "text": "Resuelve la ecuación: 5x − 3 = 22",
+      "options": ["x = 4", "x = 5", "x = 19", "x = 25"],
+      "correctIndex": 1
+    },
+    {
+      "text": "¿Cuál expresión algebraica representa 'el doble de un número más 3'?",
+      "options": ["2n + 3", "n + 3", "2(n + 3)", "3n + 2"],
+      "correctIndex": 0
+    },
+    {
+      "text": "Si a = 4, ¿cuál es el valor de 3a − 2?",
+      "options": ["10", "12", "14", "9"],
+      "correctIndex": 0
+    },
+    {
+      "text": "¿Cuál transformación isométrica gira una figura en torno a un punto?",
+      "options": ["Traslación", "Rotación", "Reflexión", "Dilatación"],
+      "correctIndex": 1
+    },
+    {
+      "text": "¿Cuántas caras tiene un prisma triangular?",
+      "options": ["3", "4", "5", "6"],
+      "correctIndex": 2
+    },
+    {
+      "text": "¿Cuál es la suma de los ángulos interiores de un triángulo?",
+      "options": ["90°", "180°", "270°", "360°"],
+      "correctIndex": 1
+    },
+    {
+      "text": "Si un ángulo mide 45°, ¿cómo se clasifica?",
+      "options": ["Recto", "Agudo", "Obtuso", "Llano"],
+      "correctIndex": 1
+    },
+    {
+      "text": "¿Qué figura se obtiene al desplegar la red de un cubo?",
+      "options": [
+        "6 cuadrados unidos",
+        "4 triángulos",
+        "1 círculo",
+        "2 rectángulos"
+      ],
+      "correctIndex": 0
+    },
+    {
+      "text": "Se necesita calcular el volumen de un cuerpo rectangular de 4 cm × 3 cm × 2 cm. ¿Cuál es su volumen?",
+      "options": ["9 cm³", "24 cm³", "20 cm³", "14 cm³"],
+      "correctIndex": 1
+    },
+    {
+      "text": "¿Cuál es el área de un trapecio con bases de 5 cm y 9 cm, y altura de 6 cm?",
+      "options": ["42 cm²", "84 cm²", "21 cm²", "45 cm²"],
+      "correctIndex": 0
+    },
+    {
+      "text": "¿Cuál es la unidad adecuada para medir el volumen de una piscina?",
+      "options": ["cm", "cm²", "m³", "m"],
+      "correctIndex": 2
+    },
+    {
+      "text": "¿Cuál es el área de un triángulo con base 10 cm y altura 6 cm?",
+      "options": ["60 cm²", "30 cm²", "16 cm²", "20 cm²"],
+      "correctIndex": 1
+    },
+    {
+      "text": "En un diagrama de tallo y hojas, ¿qué representa el 'tallo'?",
+      "options": [
+        "Las unidades",
+        "Las decenas o el valor mayor",
+        "El total de datos",
+        "La moda"
+      ],
+      "correctIndex": 1
+    },
+    {
+      "text": "¿Qué tipo de gráfico permite comparar la distribución de datos mediante puntos apilados sobre una recta numérica?",
+      "options": [
+        "Gráfico circular",
+        "Diagrama de puntos",
+        "Gráfico de barras",
+        "Pictograma"
+      ],
+      "correctIndex": 1
+    },
+    {
+      "text": "Si se lanza un dado dos veces, ¿cuál es la probabilidad de obtener un 6 en el primer lanzamiento?",
+      "options": ["1/2", "1/6", "1/3", "1/12"],
+      "correctIndex": 1
+    },
+    {
+      "text": "En un grupo de datos, la moda corresponde a:",
+      "options": [
+        "El valor que más se repite",
+        "El promedio",
+        "El valor máximo",
+        "El valor mínimo"
+      ],
+      "correctIndex": 0
+    }
+  ]
+}
