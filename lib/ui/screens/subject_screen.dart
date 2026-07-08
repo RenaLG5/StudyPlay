@@ -1,12 +1,15 @@
 import 'package:flutter/material.dart';
 import 'package:provider/provider.dart';
+import 'package:connectivity_plus/connectivity_plus.dart';
 
 import 'quiz_screen.dart';
 
-import '/data/math_questions.dart';
+//import '/data/math_questions.dart';
 import '/data/language_questions.dart';
 import '/data/science_questions.dart';
 import '/data/history_questions.dart';
+
+import '/viewmodels/quiz_questions_viewmodel.dart';
 
 import '/viewmodels/progress_viewmodel.dart';
 
@@ -81,34 +84,64 @@ class SubjectScreen extends StatelessWidget {
     required IconData icon,
   }) {
     return GestureDetector(
-      onTap: () {
+      onTap: () async {
+        //PoC FIRESTORE
         if (title == 'Matemáticas') {
+          final quizVM = Provider.of<QuizQuestionsViewModel>(
+            context,
+            listen: false,
+          );
+
+          final connectivityResult = await Connectivity().checkConnectivity();
+
+          if (connectivityResult.contains(ConnectivityResult.none)) {
+            ScaffoldMessenger.of(context).showSnackBar(
+              const SnackBar(
+                content: Text(
+                  "Sin conexión a Internet. Se intentará usar la copia local.",
+                ),
+                backgroundColor: Colors.orange,
+              ),
+            );
+          }
+
+          await quizVM.loadQuestions(subject: title, level: level);
+
+          if (quizVM.errorMessage != null) {
+            ScaffoldMessenger.of(
+              context,
+            ).showSnackBar(SnackBar(content: Text(quizVM.errorMessage!)));
+            return;
+          }
+
+          if (quizVM.questions.isEmpty) {
+            ScaffoldMessenger.of(context).showSnackBar(
+              const SnackBar(content: Text("No hay preguntas en Firebase")),
+            );
+            return;
+          }
+
           Navigator.push(
             context,
-
             MaterialPageRoute(
               builder: (_) => QuizScreen(
-                title: "Matemáticas",
-
+                title: title,
                 level: level,
-
-                questions:
-                    MathQuestions.levels[level] ?? MathQuestions.levels[1]!,
+                questions: quizVM.questions,
               ),
             ),
           );
+
+          return;
         }
 
         if (title == 'Lenguaje') {
           Navigator.push(
             context,
-
             MaterialPageRoute(
               builder: (_) => QuizScreen(
                 title: "Lenguaje",
-
                 level: level,
-
                 questions:
                     LanguageQuestions.levels[level] ??
                     LanguageQuestions.levels[1]!,
@@ -120,13 +153,10 @@ class SubjectScreen extends StatelessWidget {
         if (title == 'Ciencias') {
           Navigator.push(
             context,
-
             MaterialPageRoute(
               builder: (_) => QuizScreen(
                 title: "Ciencias",
-
                 level: level,
-
                 questions:
                     ScienceQuestions.levels[level] ??
                     ScienceQuestions.levels[1]!,
@@ -138,13 +168,10 @@ class SubjectScreen extends StatelessWidget {
         if (title == 'Historia') {
           Navigator.push(
             context,
-
             MaterialPageRoute(
               builder: (_) => QuizScreen(
                 title: "Historia",
-
                 level: level,
-
                 questions:
                     HistoryQuestions.levels[level] ??
                     HistoryQuestions.levels[1]!,
@@ -156,12 +183,9 @@ class SubjectScreen extends StatelessWidget {
 
       child: Container(
         margin: const EdgeInsets.all(8),
-
         decoration: BoxDecoration(
           color: color,
-
           borderRadius: BorderRadius.circular(20),
-
           boxShadow: [
             BoxShadow(
               color: Colors.black.withOpacity(0.2),
@@ -170,38 +194,26 @@ class SubjectScreen extends StatelessWidget {
             ),
           ],
         ),
-
         child: Column(
           mainAxisAlignment: MainAxisAlignment.center,
-
           children: [
             Icon(icon, size: 60, color: Colors.white),
-
             const SizedBox(height: 15),
-
             Text(
               title,
-
               style: const TextStyle(
                 color: Colors.white,
-
                 fontSize: 20,
-
                 fontWeight: FontWeight.bold,
               ),
             ),
-
             const SizedBox(height: 10),
-
             Container(
               padding: const EdgeInsets.symmetric(horizontal: 14, vertical: 6),
-
               decoration: BoxDecoration(
                 color: Colors.white24,
-
                 borderRadius: BorderRadius.circular(20),
               ),
-
               child: Text(
                 title == "Matemáticas"
                     ? (progressVM.progress.mathCompleted
