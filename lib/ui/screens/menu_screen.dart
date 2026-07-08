@@ -1,17 +1,16 @@
+import 'dart:async';
+import 'dart:io';
+
 import 'package:flutter/material.dart';
 import 'package:provider/provider.dart';
 import 'package:firebase_auth/firebase_auth.dart';
 import 'package:share_plus/share_plus.dart';
-import 'dart:io';
-import 'package:image_picker/image_picker.dart'; //para las traducciones generadas
-import '../../l10n/app_localizations.dart';
+import 'package:connectivity_plus/connectivity_plus.dart';
 
+import '../../l10n/app_localizations.dart';
 import '../../viewmodels/settings_viewmodel.dart';
 import '../../viewmodels/progress_viewmodel.dart';
 import '../../viewmodels/history_viewmodel.dart';
-import 'package:firebase_auth/firebase_auth.dart';
-import 'dart:io';
-import 'package:image_picker/image_picker.dart';
 
 class MenuScreen extends StatefulWidget {
   const MenuScreen({Key? key}) : super(key: key);
@@ -21,7 +20,8 @@ class MenuScreen extends StatefulWidget {
 }
 
 class _MenuScreenState extends State<MenuScreen> {
-  int _selectedIndex = 0;
+  StreamSubscription<List<ConnectivityResult>>? _connectivitySubscription;
+  bool _wasOffline = false;
 
   @override
   void initState() {
@@ -31,6 +31,8 @@ class _MenuScreenState extends State<MenuScreen> {
       results,
     ) {
       final hasInternet = !results.contains(ConnectivityResult.none);
+
+      if (!mounted) return;
 
       if (!hasInternet) {
         _wasOffline = true;
@@ -71,14 +73,19 @@ class _MenuScreenState extends State<MenuScreen> {
   }
 
   @override
+  void dispose() {
+    _connectivitySubscription?.cancel();
+    super.dispose();
+  }
+
+  @override
   Widget build(BuildContext context) {
-    final settingsVM = Provider.of<SettingsViewModel>(context);
     final theme = Theme.of(context);
-    // Instancia de localizaciones para acceder a las traducciones
     final l10n = AppLocalizations.of(context)!;
 
     return Scaffold(
       backgroundColor: Colors.lightBlue.shade100,
+
       drawer: Drawer(
         child: ListView(
           padding: EdgeInsets.zero,
@@ -110,21 +117,25 @@ class _MenuScreenState extends State<MenuScreen> {
                 },
               ),
             ),
+
             ListTile(
               leading: const Icon(Icons.person),
               title: Text(l10n.profile),
               onTap: () => Navigator.pushNamed(context, '/profile'),
             ),
+
             ListTile(
               leading: const Icon(Icons.settings),
               title: Text(l10n.settings),
               onTap: () => Navigator.pushNamed(context, '/settings'),
             ),
+
             ListTile(
               leading: const Icon(Icons.help),
               title: Text(l10n.helpAndSupport),
               onTap: () => Navigator.pushNamed(context, '/help'),
             ),
+
             ListTile(
               leading: const Icon(Icons.logout),
               title: Text(l10n.logout),
@@ -169,6 +180,7 @@ class _MenuScreenState extends State<MenuScreen> {
           ],
         ),
       ),
+
       appBar: AppBar(
         title: const Text('StudyPlay'),
         centerTitle: true,
@@ -181,17 +193,22 @@ class _MenuScreenState extends State<MenuScreen> {
           ),
         ],
       ),
+
       body: Center(
         child: Column(
           mainAxisAlignment: MainAxisAlignment.center,
           children: [
             Image.asset('assets/images/perrito1.png', width: 200, height: 200),
+
             const SizedBox(height: 10),
+
             Text(
               l10n.learnWhilePlaying,
               style: const TextStyle(fontSize: 20, fontWeight: FontWeight.bold),
             ),
+
             const SizedBox(height: 30),
+
             ElevatedButton.icon(
               onPressed: () {
                 Navigator.pushNamed(context, '/subjects');
@@ -202,13 +219,16 @@ class _MenuScreenState extends State<MenuScreen> {
           ],
         ),
       ),
+
       floatingActionButton: FloatingActionButton(
         onPressed: () {
           Navigator.pushNamed(context, '/rewards');
         },
         child: const Icon(Icons.emoji_events),
       ),
+
       floatingActionButtonLocation: FloatingActionButtonLocation.centerDocked,
+
       bottomNavigationBar: BottomAppBar(
         shape: const CircularNotchedRectangle(),
         notchMargin: 8,
@@ -219,7 +239,9 @@ class _MenuScreenState extends State<MenuScreen> {
               icon: const Icon(Icons.history),
               onPressed: () => Navigator.pushNamed(context, '/history'),
             ),
+
             const SizedBox(width: 40),
+
             IconButton(
               icon: const Icon(Icons.person),
               onPressed: () => Navigator.pushNamed(context, '/profile'),
@@ -228,10 +250,5 @@ class _MenuScreenState extends State<MenuScreen> {
         ),
       ),
     );
-  }
-
-  void dispose() {
-    _connectivitySubscription?.cancel();
-    super.dispose();
   }
 }
