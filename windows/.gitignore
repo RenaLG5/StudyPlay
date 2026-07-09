@@ -15,3 +15,23 @@ x86/
 *.[Cc]ache
 # but keep track of directories ending in .cache
 !*.[Cc]ache/
+# =========================
+# Flutter
+# =========================
+.flutter-plugins
+.flutter-plugins-dependencies
+.dart_tool/
+.packages
+.pub/
+build/
+
+# =========================
+# VS Code
+# =========================
+.vscode/
+
+# =========================
+# Node.js
+# =========================
+node_modules/
+package-lock.json

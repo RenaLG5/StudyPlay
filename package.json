@@ -1,0 +1,28 @@
+{
+  "name": "studyplay",
+  "version": "1.0.0",
+  "description": "StudyPlay es una aplicación móvil que transforma el aprendizaje en una experiencia interactiva mediante gamificación. Permite a los usuarios estudiar a través de trivias dinámicas, obtener recompensas y mejorar sus hábitos de estudio en cualquier lugar, abordando la desmotivación del aprendizaje tradicional mediante el uso de puntos, logros y progreso visual.",
+  "main": "index.js",
+  "directories": {
+    "lib": "lib",
+    "test": "test"
+  },
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/RenaLG5/StudyPlay.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "type": "commonjs",
+  "bugs": {
+    "url": "https://github.com/RenaLG5/StudyPlay/issues"
+  },
+  "homepage": "https://github.com/RenaLG5/StudyPlay#readme",
+  "dependencies": {
+    "firebase-admin": "^14.1.0"
+  }
+}
