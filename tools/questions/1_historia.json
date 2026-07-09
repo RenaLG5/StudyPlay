@@ -1,4 +1,5 @@
-[
+{
+  "questions": [
   {
     "text": "¿Qué documento o registro nos ayuda a conocer la historia de nuestra familia?",
     "options": [
@@ -250,3 +251,4 @@
     "correctIndex": 0
   }
 ]
+}

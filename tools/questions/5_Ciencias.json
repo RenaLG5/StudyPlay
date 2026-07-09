@@ -1,4 +1,5 @@
-[
+{
+  "questions": [
   {
     "text": "¿Qué es una red alimentaria?",
     "options": [
@@ -250,3 +251,4 @@
     "correctIndex": 0
   }
 ]
+}

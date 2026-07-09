@@ -1,4 +1,5 @@
-[
+{
+  "questions": [
   {
     "text": "¿En qué año llegó Cristóbal Colón a América?",
     "options": [
@@ -250,3 +251,4 @@
     "correctIndex": 0
   }
 ]
+}

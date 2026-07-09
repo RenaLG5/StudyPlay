@@ -1,4 +1,5 @@
-[
+{
+  "questions": [
   {
     "text": "¿Cuál es la función del sistema reproductor?",
     "options": [
@@ -250,3 +251,4 @@
     "correctIndex": 0
   }
 ]
+}

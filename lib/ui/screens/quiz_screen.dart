@@ -6,8 +6,6 @@ import '../../viewmodels/progress_viewmodel.dart';
 import 'package:provider/provider.dart';
 import '../../viewmodels/settings_viewmodel.dart';
 
-import '/controller/achievement_controller.dart';
-
 import '/services/sound_service.dart';
 import '/services/achviement_service.dart';
 
@@ -114,98 +112,99 @@ class _QuizScreenState extends State<QuizScreen> {
     historyVM.addResult(game);
 
     if (passed) {
-      final beforeMath = progressVM.progress.mathLevel;
-      final beforeScience = progressVM.progress.scienceLevel;
-      final beforeLanguage = progressVM.progress.languageLevel;
-      final beforeHistory = progressVM.progress.historyLevel;
-
       await progressVM.registerQuizResult(widget.title, passed);
-
-      await Future.delayed(const Duration(milliseconds: 50));
-
-      final afterMath = progressVM.progress.mathLevel;
-      final afterScience = progressVM.progress.scienceLevel;
-      final afterLanguage = progressVM.progress.languageLevel;
-      final afterHistory = progressVM.progress.historyLevel;
-
-      if (widget.title == "Matemáticas") {
-        if (beforeMath == 3 && afterMath == 4) {
-          achievements.add("Matemático");
-          //await SoundService.reward();
-        }
-
-        if (beforeMath == 5 && afterMath == 5) {
-          achievements.add("Genio Matemático");
-          //await SoundService.victory();
-        }
-      }
-
-      if (widget.title == "Lenguaje") {
-        if (beforeLanguage == 3 && afterLanguage == 4) {
-          achievements.add("Lector Experto");
-          //await SoundService.reward();
-        }
-
-        if (beforeLanguage == 5 && afterLanguage == 5) {
-          achievements.add("Maestro del Lenguaje");
-          //await SoundService.victory();
-        }
-      }
-
-      if (widget.title == "Ciencias") {
-        if (beforeScience == 3 && afterScience == 4) {
-          achievements.add("Científico");
-          //await SoundService.reward();
-        }
-
-        if (beforeScience == 5 && afterScience == 5) {
-          achievements.add("Científico Experto");
-          //await SoundService.victory();
-        }
-      }
-
-      if (widget.title == "Historia") {
-        if (beforeHistory == 3 && afterHistory == 4) {
-          achievements.add("Historiador");
-          //await SoundService.reward();
-        }
-
-        if (beforeHistory == 5 && afterHistory == 5) {
-          achievements.add("Historiador Experto");
-          //await SoundService.victory();
-        }
-      }
-
-      if (afterMath >= 5 &&
-          afterLanguage >= 5 &&
-          afterScience >= 5 &&
-          afterHistory >= 5) {
-        achievements.add("Dominador de StudyPlay");
-        //await SoundService.victory();
-      }
     }
 
     final totalVictories = historyVM.results.where((e) => e.isVictory).length;
+    final totalPlayed = historyVM.results.length;
 
-    if (totalVictories == 1) {
-      achievements.add("Primer Paso");
-      //await SoundService.reward();
-    }
-    if (totalVictories == 5) {
-      achievements.add("Aprendiz");
-      //await SoundService.reward();
-    }
-    if (totalVictories == 10) {
-      achievements.add("Estudiante Experto");
-      //await SoundService.reward();
-    }
-    if (totalVictories == 20) {
-      achievements.add("Maestro del Conocimiento");
-      //await SoundService.reward();
+    final perfectGames = historyVM.results
+        .where((e) => e.isVictory && e.wrongAnswers == 0)
+        .length;
+
+    final mathWins = historyVM.results
+        .where((e) => e.isVictory && e.subject == "Matemáticas")
+        .length;
+
+    final languageWins = historyVM.results
+        .where((e) => e.isVictory && e.subject == "Lenguaje")
+        .length;
+
+    final scienceWins = historyVM.results
+        .where((e) => e.isVictory && e.subject == "Ciencias")
+        .length;
+
+    final historyWins = historyVM.results
+        .where((e) => e.isVictory && e.subject == "Historia")
+        .length;
+
+    final course1Wins = historyVM.results
+        .where((e) => e.isVictory && e.course == 1)
+        .length;
+
+    final course2Wins = historyVM.results
+        .where((e) => e.isVictory && e.course == 2)
+        .length;
+
+    final course3Wins = historyVM.results
+        .where((e) => e.isVictory && e.course == 3)
+        .length;
+
+    final course4Wins = historyVM.results
+        .where((e) => e.isVictory && e.course == 4)
+        .length;
+
+    final course5Wins = historyVM.results
+        .where((e) => e.isVictory && e.course == 5)
+        .length;
+
+    final course6Wins = historyVM.results
+        .where((e) => e.isVictory && e.course == 6)
+        .length;
+
+    if (totalVictories == 1) achievements.add("Primer Paso");
+    if (totalVictories == 5) achievements.add("Aprendiz");
+    if (totalVictories == 10) achievements.add("Estudiante Experto");
+    if (totalVictories == 20) achievements.add("Maestro del Conocimiento");
+
+    if (totalPlayed == 30) achievements.add("Constancia");
+
+    if (perfectGames == 3) achievements.add("Perfeccionista");
+    if (perfectGames == 10) achievements.add("Imparable");
+
+    if (mathWins == 3) achievements.add("Matemático");
+    if (mathWins == 5) achievements.add("Genio Matemático");
+
+    if (languageWins == 3) achievements.add("Lector");
+    if (languageWins == 5) achievements.add("Lector Experto");
+
+    if (scienceWins == 3) achievements.add("Científico");
+    if (scienceWins == 5) achievements.add("Científico Experto");
+
+    if (historyWins == 3) achievements.add("Historiador");
+    if (historyWins == 5) achievements.add("Historiador Experto");
+
+    if (course1Wins == 5) achievements.add("Inicio Escolar");
+    if (course2Wins == 5) achievements.add("Segundo Escalón");
+    if (course3Wins == 5) achievements.add("Tercer Desafío");
+    if (course4Wins == 5) achievements.add("Cuarto Avance");
+    if (course5Wins == 5) achievements.add("Quinto Nivel");
+    if (course6Wins == 5) achievements.add("Sexto Dominado");
+
+    if (mathWins == 5 &&
+        languageWins == 5 &&
+        scienceWins == 5 &&
+        historyWins == 5) {
+      achievements.add("Dominador de StudyPlay");
     }
 
-    for (final title in achievements) {
-      AchievementService.show(context, title);
+    if (course1Wins == 5 &&
+        course2Wins == 5 &&
+        course3Wins == 5 &&
+        course4Wins == 5 &&
+        course5Wins == 5 &&
+        course6Wins == 5) {
+      achievements.add("Camino Completo");
     }
 
     if (!mounted) return;
@@ -227,33 +226,6 @@ class _QuizScreenState extends State<QuizScreen> {
         ],
       ),
     );
-
-    final subjectWins = historyVM.results
-        .where((e) => e.isVictory && e.subject == widget.title)
-        .length;
-
-    AchievementController.check(
-      context: context,
-      achievements: achievements
-          .map((e) => {"title": e, "unlocked": true})
-          .toList(),
-      subject: widget.title,
-      subjectWins: subjectWins,
-    );
-  }
-
-  List<Map<String, dynamic>> buildAchievements(
-    HistoryViewModel historyVM,
-    ProgressViewModel progressVM,
-  ) {
-    final totalCompleted = historyVM.results.where((e) => e.isVictory).length;
-
-    return [
-      {"title": "Primer Paso", "unlocked": totalCompleted >= 1},
-      {"title": "Aprendiz", "unlocked": totalCompleted >= 5},
-      {"title": "Estudiante Experto", "unlocked": totalCompleted >= 10},
-      {"title": "Matemático", "unlocked": progressVM.progress.mathLevel >= 3},
-    ];
   }
 
   Color color(int i) {

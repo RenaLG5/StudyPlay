@@ -1,4 +1,5 @@
-[
+{
+  "questions": [
   {
     "text": "¿Qué antigua civilización se desarrolló en la península de Grecia y es reconocida por la creación de la democracia?",
     "options": [
@@ -250,3 +251,4 @@
     "correctIndex": 0
   }
 ]
+}

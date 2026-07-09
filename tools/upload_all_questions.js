@@ -16,9 +16,19 @@ const QUESTIONS_PER_LEVEL = 5;
 
 const subjectMap = {
   matematicas: "Matemáticas",
+  matematica: "Matemáticas",
+
   lenguaje: "Lenguaje",
+  lengua: "Lenguaje",
+
   ciencias: "Ciencias",
+  ciencia: "Ciencias",
+  ciencias_naturales: "Ciencias",
+
   historia: "Historia",
+  historia_geografia: "Historia",
+  historia_y_geografia: "Historia",
+  historia_geografia_ciencias_sociales: "Historia",
 };
 
 function normalizeText(text) {
@@ -42,6 +52,13 @@ async function uploadAllQuestions() {
     const course = Number(parts[0]);
     const subjectKey = parts.slice(1).join("_");
     const subject = subjectMap[subjectKey];
+
+    console.log({
+    archivo: file,
+    course,
+    subjectKey,
+    subject,
+    });
 
     if (!course || !subject) {
       console.log(`Archivo ignorado: ${file}`);

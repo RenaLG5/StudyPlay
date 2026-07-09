@@ -1,4 +1,5 @@
-[
+{
+  "questions": [
   {
     "text": "¿En qué año se conmemora el inicio del proceso de independencia de Chile con la Primera Junta Nacional de Gobierno?",
     "options": ["1810", "1818", "1492", "1900"],
@@ -210,3 +211,4 @@
     "correctIndex": 0
   }
 ]
+}
