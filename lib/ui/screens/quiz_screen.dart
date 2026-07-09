@@ -4,6 +4,7 @@ import '/models/game_result.dart';
 import '../../viewmodels/history_viewmodel.dart';
 import '../../viewmodels/progress_viewmodel.dart';
 import 'package:provider/provider.dart';
+import '../../viewmodels/settings_viewmodel.dart';
 
 import '/controller/achievement_controller.dart';
 
@@ -84,6 +85,7 @@ class _QuizScreenState extends State<QuizScreen> {
     final historyVM = Provider.of<HistoryViewModel>(context, listen: false);
     final progressVM = Provider.of<ProgressViewModel>(context, listen: false);
 
+    final settingsVM = Provider.of<SettingsViewModel>(context, listen: false);
     final achievements = <String>[];
 
     final endTime = DateTime.now();
@@ -106,6 +108,7 @@ class _QuizScreenState extends State<QuizScreen> {
       correctAnswers: score,
       wrongAnswers: widget.questions.length - score,
       level: widget.level,
+      course: settingsVM.selectedCourse,
     );
 
     historyVM.addResult(game);

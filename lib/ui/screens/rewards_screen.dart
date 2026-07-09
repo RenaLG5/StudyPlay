@@ -79,6 +79,36 @@ class _RewardsScreenState extends State<RewardsScreen> {
 
     final totalCompleted = historyVM.results.where((e) => e.isVictory).length;
 
+    final totalPlayed = historyVM.results.length;
+
+    final perfectGames = historyVM.results
+        .where((e) => e.isVictory && e.wrongAnswers == 0)
+        .length;
+
+    final course1Wins = historyVM.results
+        .where((e) => e.isVictory && e.course == 1)
+        .length;
+
+    final course2Wins = historyVM.results
+        .where((e) => e.isVictory && e.course == 2)
+        .length;
+
+    final course3Wins = historyVM.results
+        .where((e) => e.isVictory && e.course == 3)
+        .length;
+
+    final course4Wins = historyVM.results
+        .where((e) => e.isVictory && e.course == 4)
+        .length;
+
+    final course5Wins = historyVM.results
+        .where((e) => e.isVictory && e.course == 5)
+        .length;
+
+    final course6Wins = historyVM.results
+        .where((e) => e.isVictory && e.course == 6)
+        .length;
+
     final mathWins = historyVM.results
         .where((e) => e.isVictory && e.subject == "Matemáticas")
         .length;
@@ -121,62 +151,130 @@ class _RewardsScreenState extends State<RewardsScreen> {
         "unlocked": totalCompleted >= 20,
       },
       {
+        "title": "Constancia",
+        "desc": "Juega 30 partidas",
+        "icon": Icons.timeline,
+        "unlocked": totalPlayed >= 30,
+      },
+      {
+        "title": "Perfeccionista",
+        "desc": "Completa 3 niveles sin errores",
+        "icon": Icons.verified,
+        "unlocked": perfectGames >= 3,
+      },
+      {
+        "title": "Imparable",
+        "desc": "Completa 10 niveles sin errores",
+        "icon": Icons.flash_on,
+        "unlocked": perfectGames >= 10,
+      },
+
+      {
         "title": "Matemático",
-        "desc": "Completa el nivel 3 en Matemáticas",
+        "desc": "Completa 3 niveles de Matemáticas",
         "icon": Icons.calculate,
         "unlocked": mathWins >= 3,
       },
       {
         "title": "Genio Matemático",
-        "desc": "Completa el nivel 5 en Matemáticas",
+        "desc": "Completa 5 niveles de Matemáticas",
         "icon": Icons.functions,
         "unlocked": mathWins >= 5,
       },
       {
         "title": "Lector",
-        "desc": "Completa el nivel 3 en Lenguaje",
+        "desc": "Completa 3 niveles de Lenguaje",
         "icon": Icons.menu_book,
         "unlocked": languageWins >= 3,
       },
       {
         "title": "Lector Experto",
-        "desc": "Completa el nivel 5 en Lenguaje",
+        "desc": "Completa 5 niveles de Lenguaje",
         "icon": Icons.auto_stories,
         "unlocked": languageWins >= 5,
       },
       {
         "title": "Científico",
-        "desc": "Completa el nivel 3 en Ciencias",
+        "desc": "Completa 3 niveles de Ciencias",
         "icon": Icons.science,
         "unlocked": scienceWins >= 3,
       },
       {
         "title": "Científico Experto",
-        "desc": "Completa el nivel 5 en Ciencias",
+        "desc": "Completa 5 niveles de Ciencias",
         "icon": Icons.biotech,
         "unlocked": scienceWins >= 5,
       },
       {
         "title": "Historiador",
-        "desc": "Completa el nivel 3 en Historia",
+        "desc": "Completa 3 niveles de Historia",
         "icon": Icons.account_balance,
         "unlocked": historyWins >= 3,
       },
       {
         "title": "Historiador Experto",
-        "desc": "Completa el nivel 5 en Historia",
+        "desc": "Completa 5 niveles de Historia",
         "icon": Icons.history_edu,
         "unlocked": historyWins >= 5,
       },
+
+      {
+        "title": "Inicio Escolar",
+        "desc": "Completa 5 niveles de 1° básico",
+        "icon": Icons.looks_one,
+        "unlocked": course1Wins >= 5,
+      },
+      {
+        "title": "Segundo Escalón",
+        "desc": "Completa 5 niveles de 2° básico",
+        "icon": Icons.looks_two,
+        "unlocked": course2Wins >= 5,
+      },
+      {
+        "title": "Tercer Desafío",
+        "desc": "Completa 5 niveles de 3° básico",
+        "icon": Icons.looks_3,
+        "unlocked": course3Wins >= 5,
+      },
+      {
+        "title": "Cuarto Avance",
+        "desc": "Completa 5 niveles de 4° básico",
+        "icon": Icons.looks_4,
+        "unlocked": course4Wins >= 5,
+      },
+      {
+        "title": "Quinto Nivel",
+        "desc": "Completa 5 niveles de 5° básico",
+        "icon": Icons.looks_5,
+        "unlocked": course5Wins >= 5,
+      },
+      {
+        "title": "Sexto Dominado",
+        "desc": "Completa 5 niveles de 6° básico",
+        "icon": Icons.looks_6,
+        "unlocked": course6Wins >= 5,
+      },
       {
         "title": "Dominador de StudyPlay",
-        "desc": "Completa el nivel 5 en todas las materias",
+        "desc": "Completa al menos 5 niveles en todas las asignaturas",
         "icon": Icons.workspace_premium,
         "unlocked":
             mathWins >= 5 &&
             languageWins >= 5 &&
             scienceWins >= 5 &&
             historyWins >= 5,
+      },
+      {
+        "title": "Camino Completo",
+        "desc": "Completa niveles en los 6 cursos",
+        "icon": Icons.military_tech,
+        "unlocked":
+            course1Wins >= 5 &&
+            course2Wins >= 5 &&
+            course3Wins >= 5 &&
+            course4Wins >= 5 &&
+            course5Wins >= 5 &&
+            course6Wins >= 5,
       },
     ];
 

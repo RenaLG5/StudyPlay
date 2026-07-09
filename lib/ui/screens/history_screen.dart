@@ -1,7 +1,6 @@
 import 'package:flutter/material.dart';
-import '../../models/game_result.dart';
-
 import 'package:provider/provider.dart';
+
 import '../../viewmodels/history_viewmodel.dart';
 
 class HistoryScreen extends StatelessWidget {
@@ -58,13 +57,12 @@ class HistoryScreen extends StatelessWidget {
                       _getSubjectIcon(game.subject),
                       color: _getSubjectColor(game.subject),
                     ),
-
-                    title: Text(game.subject),
+                    title: Text("${game.subject} - ${game.course}° básico"),
                     subtitle: Text(
                       "Nivel ${game.level}\n"
-                      "✔ ${game.correctAnswers} | "
-                      "✘ ${game.wrongAnswers}\n"
-                      "${game.date}",
+                      "✔ Correctas: ${game.correctAnswers} | "
+                      "✘ Incorrectas: ${game.wrongAnswers}\n"
+                      "Fecha: ${game.date}",
                     ),
                     trailing: Text(game.timeSpent),
                   ),

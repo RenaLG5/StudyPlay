@@ -31,6 +31,11 @@ build/
 .vscode/
 
 # =========================
+# Firebase
+# =========================
+tools/serviceAccountKey.json
+
+# =========================
 # Node.js
 # =========================
 node_modules/
