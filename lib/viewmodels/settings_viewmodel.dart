@@ -7,6 +7,7 @@ import '/services/notification_service.dart';
 
 class SettingsViewModel extends ChangeNotifier {
   String username = "";
+  int selectedCourse = 1;
   String difficulty = "Fácil";
 
   bool notifications = true;
@@ -15,7 +16,7 @@ class SettingsViewModel extends ChangeNotifier {
 
   String age = "";
   String country = "";
-  
+
   // Nueva propiedad para el idioma
   Locale _locale = const Locale('es');
 
@@ -44,6 +45,7 @@ class SettingsViewModel extends ChangeNotifier {
     final prefs = await SharedPreferences.getInstance();
     _userKey = prefs.getString("currentUser") ?? "";
     await loadUserData();
+    selectedCourse = prefs.getInt("selectedCourse_$_userKey") ?? 1;
   }
 
   Future<void> loadUserData() async {
@@ -57,11 +59,13 @@ class SettingsViewModel extends ChangeNotifier {
       notifications = true;
       darkMode = false;
       sound = true;
+      selectedCourse = 1;
       _locale = const Locale('es');
       notifyListeners();
+
       return;
     }
-    
+
     profileImagePath = prefs.getString("profileImage_$_userKey") ?? "";
     username = prefs.getString("username_$_userKey") ?? "";
     age = prefs.getString("age_$_userKey") ?? "";
@@ -70,7 +74,7 @@ class SettingsViewModel extends ChangeNotifier {
     notifications = prefs.getBool("notifications_$_userKey") ?? true;
     darkMode = prefs.getBool("darkMode_$_userKey") ?? false;
     sound = prefs.getBool("sound_$_userKey") ?? true;
-    
+
     // Cargar idioma guardado
     String langCode = prefs.getString("language_$_userKey") ?? 'es';
     _locale = Locale(langCode);
@@ -109,6 +113,7 @@ class SettingsViewModel extends ChangeNotifier {
     sound = true;
     _locale = const Locale('es');
     _userKey = "";
+    selectedCourse = 1;
     notifyListeners();
   }
 
@@ -176,6 +181,20 @@ class SettingsViewModel extends ChangeNotifier {
     } else {
       await NotificationService.cancelAll();
     }
+    notifyListeners();
+  }
+
+  Future<void> setSelectedCourse(int course) async {
+    selectedCourse = course;
+
+    final prefs = await SharedPreferences.getInstance();
+
+    if (_userKey.isNotEmpty) {
+      await prefs.setInt("selectedCourse_$_userKey", course);
+    } else {
+      await prefs.setInt("selectedCourse_guest", course);
+    }
+
     notifyListeners();
   }
 }

@@ -20,12 +20,12 @@ class ProgressViewModel extends ChangeNotifier {
 
   String _email = "";
 
-  Future<void> load(String email) async {
+  Future<void> load(String email, {int course = 1}) async {
     final prefs = await SharedPreferences.getInstance();
 
-    _email = email;
+    _email = "${email}_course_$course";
 
-    final data = prefs.getString("progress_$email");
+    final data = prefs.getString("progress_$_email");
 
     if (data != null) {
       progress = ProgressModel.fromJson(jsonDecode(data));

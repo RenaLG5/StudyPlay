@@ -211,7 +211,7 @@ class _MenuScreenState extends State<MenuScreen> {
 
             ElevatedButton.icon(
               onPressed: () {
-                Navigator.pushNamed(context, '/subjects');
+                Navigator.pushNamed(context, '/courses');
               },
               icon: const Icon(Icons.play_arrow),
               label: Text(l10n.play),

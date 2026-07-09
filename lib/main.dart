@@ -13,36 +13,31 @@ import 'ui/screens/history_screen.dart';
 import 'ui/screens/profile_screen.dart';
 import 'ui/screens/rewards_screen.dart';
 import 'ui/screens/setting_screen.dart';
-import 'ui/screens/splash_screen.dart';
 import 'ui/screens/about.dart';
 import 'ui/screens/quality_screen.dart';
 import 'ui/screens/feedback_screen.dart';
 import 'ui/screens/help_screen.dart';
+import 'ui/screens/course_selection_screen.dart';
 
-// Data
-import 'data/math_questions.dart';
-import 'data/language_questions.dart';
-import 'data/science_questions.dart';
-import 'data/history_questions.dart';
-
-// Services & ViewModels
+// Services
 import 'services/notification_service.dart';
+
+// ViewModels
 import 'viewmodels/settings_viewmodel.dart';
 import 'viewmodels/quality_viewmodel.dart';
 import 'viewmodels/feedback_viewmodel.dart';
 import 'viewmodels/history_viewmodel.dart';
 import 'viewmodels/progress_viewmodel.dart';
 import 'viewmodels/auth_viewmodel.dart';
-
 import 'viewmodels/quiz_questions_viewmodel.dart';
 
 void main() async {
   WidgetsFlutterBinding.ensureInitialized();
 
+  await Firebase.initializeApp(options: DefaultFirebaseOptions.currentPlatform);
+
   await NotificationService.init();
   await NotificationService.requestPermission();
-
-  await Firebase.initializeApp(options: DefaultFirebaseOptions.currentPlatform);
 
   final settingsVM = SettingsViewModel();
   await settingsVM.loadCurrentUser();
@@ -72,8 +67,8 @@ class MyApp extends StatelessWidget {
       builder: (context, settings, _) {
         return MaterialApp(
           title: 'StudyPlay',
+          debugShowCheckedModeBanner: false,
 
-          //CONFIG DE INTERNACIONALIZACIÓN
           localizationsDelegates: AppLocalizations.localizationsDelegates,
           supportedLocales: AppLocalizations.supportedLocales,
           locale: settings.currentLocale,
@@ -100,12 +95,14 @@ class MyApp extends StatelessWidget {
                   body: Center(child: CircularProgressIndicator()),
                 );
               }
+
               return const MenuScreen();
             },
           ),
 
           routes: {
             '/menu': (context) => const MenuScreen(),
+            '/courses': (context) => const CourseSelectionScreen(),
             '/subjects': (context) => const SubjectScreen(),
             '/quiz': (context) =>
                 QuizScreen(title: '', questions: const [], level: 1),
@@ -117,26 +114,6 @@ class MyApp extends StatelessWidget {
             '/feedback': (context) => const FeedbackScreen(),
             '/about': (context) => const AboutScreen(),
             '/help': (context) => const HelpScreen(),
-            '/quiz_math': (_) => QuizScreen(
-              title: "Matemática",
-              questions: MathQuestions.levels[1]!,
-              level: 1,
-            ),
-            '/quiz_language': (_) => QuizScreen(
-              title: "Lenguaje",
-              questions: LanguageQuestions.levels[1]!,
-              level: 1,
-            ),
-            '/quiz_science': (_) => QuizScreen(
-              title: "Ciencias",
-              questions: ScienceQuestions.levels[1]!,
-              level: 1,
-            ),
-            '/quiz_history': (_) => QuizScreen(
-              title: "Historia",
-              questions: HistoryQuestions.levels[1]!,
-              level: 1,
-            ),
           },
         );
       },
