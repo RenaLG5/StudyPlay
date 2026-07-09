@@ -1,0 +1,254 @@
+{
+  "questions": [
+    {
+      "text": "¿Qué es un hábitat?",
+      "options": [
+        "El lugar donde vive un ser vivo",
+        "Un tipo de alimento",
+        "Un instrumento de medición",
+        "Un animal"
+      ],
+      "correctIndex": 0
+    },
+    {
+      "text": "¿Qué es una cadena alimentaria?",
+      "options": [
+        "La relación de quién se come a quién en un ecosistema",
+        "Una lista de compras",
+        "Un tipo de planta",
+        "Un ciclo del agua"
+      ],
+      "correctIndex": 0
+    },
+    {
+      "text": "En una cadena alimentaria, ¿qué rol cumplen las plantas?",
+      "options": [
+        "Productores",
+        "Consumidores",
+        "Descomponedores",
+        "Depredadores"
+      ],
+      "correctIndex": 0
+    },
+    {
+      "text": "¿Cuál es la función del esqueleto en el cuerpo humano?",
+      "options": [
+        "Digerir alimentos",
+        "Dar soporte y proteger órganos",
+        "Producir sonidos",
+        "Ver imágenes"
+      ],
+      "correctIndex": 1
+    },
+    {
+      "text": "¿Qué sistema del cuerpo está formado por los músculos?",
+      "options": [
+        "Sistema óseo",
+        "Sistema muscular",
+        "Sistema digestivo",
+        "Sistema nervioso"
+      ],
+      "correctIndex": 1
+    },
+    {
+      "text": "¿Cuál de estas es una adaptación de los animales del desierto?",
+      "options": [
+        "Tener mucho pelaje grueso",
+        "Poder resistir altas temperaturas y poca agua",
+        "Vivir bajo el agua",
+        "Tener aletas"
+      ],
+      "correctIndex": 1
+    },
+    {
+      "text": "¿Qué le sucede a un ecosistema si desaparece un eslabón de la cadena alimentaria?",
+      "options": [
+        "Nada cambia",
+        "Se afecta el equilibrio del ecosistema",
+        "Mejora automáticamente",
+        "Se duplica la población"
+      ],
+      "correctIndex": 1
+    },
+    {
+      "text": "¿Cuál de estos es un descomponedor en un ecosistema?",
+      "options": [
+        "El león",
+        "El hongo",
+        "El águila",
+        "El conejo"
+      ],
+      "correctIndex": 1
+    },
+    {
+      "text": "¿Qué necesitan los animales para adaptarse a climas fríos?",
+      "options": [
+        "Pelaje o grasa que los abrigue",
+        "Menos comida",
+        "Vivir en el desierto",
+        "Nada especial"
+      ],
+      "correctIndex": 0
+    },
+    {
+      "text": "¿Cómo se llama el cambio de estado de líquido a gaseoso?",
+      "options": [
+        "Fusión",
+        "Evaporación",
+        "Solidificación",
+        "Condensación"
+      ],
+      "correctIndex": 1
+    },
+    {
+      "text": "¿Cómo se llama el cambio de estado de sólido a líquido?",
+      "options": [
+        "Fusión",
+        "Evaporación",
+        "Condensación",
+        "Congelación"
+      ],
+      "correctIndex": 0
+    },
+    {
+      "text": "¿Qué sucede cuando el vapor de agua se enfría y forma gotitas?",
+      "options": [
+        "Fusión",
+        "Evaporación",
+        "Condensación",
+        "Sublimación"
+      ],
+      "correctIndex": 2
+    },
+    {
+      "text": "¿Qué tipo de fuerza hace que un objeto que se desliza sobre el suelo se detenga poco a poco?",
+      "options": [
+        "Fuerza magnética",
+        "Fuerza de roce",
+        "Fuerza eléctrica",
+        "Ninguna fuerza"
+      ],
+      "correctIndex": 1
+    },
+    {
+      "text": "¿Qué elementos se usan para producir sombras y observar la luz?",
+      "options": [
+        "Una linterna y un objeto opaco",
+        "Un termómetro",
+        "Una balanza",
+        "Un imán"
+      ],
+      "correctIndex": 0
+    },
+    {
+      "text": "¿Cuál de estos materiales es un buen conductor de la electricidad?",
+      "options": [
+        "El metal",
+        "La madera",
+        "El plástico",
+        "El papel"
+      ],
+      "correctIndex": 0
+    },
+    {
+      "text": "¿Qué ocurre si acercamos dos imanes por sus polos iguales?",
+      "options": [
+        "Se atraen",
+        "Se repelen",
+        "No pasa nada",
+        "Se derriten"
+      ],
+      "correctIndex": 1
+    },
+    {
+      "text": "¿Qué produce el sonido de una guitarra?",
+      "options": [
+        "La vibración de las cuerdas",
+        "El color de la madera",
+        "El peso del instrumento",
+        "La luz"
+      ],
+      "correctIndex": 0
+    },
+    {
+      "text": "¿Qué movimiento de la Tierra produce el día y la noche?",
+      "options": [
+        "Traslación",
+        "Rotación",
+        "Revolución solar",
+        "Ninguno"
+      ],
+      "correctIndex": 1
+    },
+    {
+      "text": "¿Qué movimiento de la Tierra produce las estaciones del año?",
+      "options": [
+        "Rotación",
+        "Traslación",
+        "Vibración",
+        "Ninguno"
+      ],
+      "correctIndex": 1
+    },
+    {
+      "text": "¿Cuánto tiempo tarda la Tierra en dar una vuelta completa sobre su propio eje?",
+      "options": [
+        "Un año",
+        "Un mes",
+        "Un día (24 horas)",
+        "Una semana"
+      ],
+      "correctIndex": 2
+    },
+    {
+      "text": "¿Cuánto tiempo tarda la Tierra en dar una vuelta completa alrededor del sol?",
+      "options": [
+        "Un día",
+        "Un mes",
+        "Un año",
+        "Una semana"
+      ],
+      "correctIndex": 2
+    },
+    {
+      "text": "¿Qué capa de la Tierra pisamos al caminar?",
+      "options": [
+        "Núcleo",
+        "Manto",
+        "Corteza terrestre",
+        "Atmósfera"
+      ],
+      "correctIndex": 2
+    },
+    {
+      "text": "Antes de hacer un experimento, ¿qué debemos formular?",
+      "options": [
+        "Una pregunta o hipótesis",
+        "Un dibujo cualquiera",
+        "Nada",
+        "Una canción"
+      ],
+      "correctIndex": 0
+    },
+    {
+      "text": "Si medimos el crecimiento de una planta cada semana, ¿qué habilidad científica estamos usando?",
+      "options": [
+        "Observar y registrar datos",
+        "Adivinar",
+        "Ignorar los cambios",
+        "Jugar"
+      ],
+      "correctIndex": 0
+    },
+    {
+      "text": "¿Qué debemos hacer si nuestros resultados no coinciden con lo que esperábamos?",
+      "options": [
+        "Cambiarlos para que coincidan",
+        "Analizarlos y comunicarlos con honestidad",
+        "Esconderlos",
+        "No informar nada"
+      ],
+      "correctIndex": 1
+    }
+  ]
+}

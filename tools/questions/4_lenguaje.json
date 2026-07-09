@@ -1,0 +1,254 @@
+{
+  "questions": [
+    {
+      "text": "¿Qué diferencia a una novela de un cuento?",
+      "options": [
+        "la novela es más extensa y desarrolla más personajes y sucesos",
+        "la novela es más corta",
+        "no hay diferencia",
+        "la novela no tiene personajes"
+      ],
+      "correctIndex": 0
+    },
+    {
+      "text": "¿Qué elementos tiene una historieta?",
+      "options": [
+        "solo texto",
+        "viñetas, globos de diálogo e imágenes",
+        "solo imágenes sin texto",
+        "solo diálogos sin imágenes"
+      ],
+      "correctIndex": 1
+    },
+    {
+      "text": "¿Qué información encontramos en una biografía?",
+      "options": [
+        "una receta de cocina",
+        "la vida y los hechos importantes de una persona",
+        "un poema",
+        "un aviso publicitario"
+      ],
+      "correctIndex": 1
+    },
+    {
+      "text": "En una receta, ¿qué sección indica lo que se necesita para prepararla?",
+      "options": [
+        "el modo de preparación",
+        "los ingredientes",
+        "el título",
+        "las porciones"
+      ],
+      "correctIndex": 1
+    },
+    {
+      "text": "Al leer instrucciones para armar un juego, ¿qué es fundamental?",
+      "options": [
+        "leerlas en cualquier orden",
+        "seguir el orden de los pasos",
+        "ignorarlas",
+        "leer solo el título"
+      ],
+      "correctIndex": 1
+    },
+    {
+      "text": "¿Cuál palabra es esdrújula (acento en la antepenúltima sílaba)?",
+      "options": [
+        "música",
+        "camión",
+        "pared",
+        "reloj"
+      ],
+      "correctIndex": 0
+    },
+    {
+      "text": "¿Cuál es la conjugación correcta del verbo \"hacer\" en pasado (yo)?",
+      "options": [
+        "yo hací",
+        "yo hice",
+        "yo hacé",
+        "yo haciendo"
+      ],
+      "correctIndex": 1
+    },
+    {
+      "text": "¿Cuál es la forma correcta del verbo \"ir\" en presente (él/ella)?",
+      "options": [
+        "va",
+        "iba",
+        "yendo",
+        "irá"
+      ],
+      "correctIndex": 0
+    },
+    {
+      "text": "¿Cuál palabra está bien escrita con \"c\", \"s\" o \"z\"?",
+      "options": [
+        "cazador",
+        "kasador",
+        "sazador",
+        "zasador"
+      ],
+      "correctIndex": 0
+    },
+    {
+      "text": "¿Cuál palabra usa correctamente la \"h\"?",
+      "options": [
+        "ehalar",
+        "exhalar",
+        "esalar",
+        "esshalar"
+      ],
+      "correctIndex": 1
+    },
+    {
+      "text": "Al escribir una narración, ¿qué elemento indica dónde y cuándo ocurre?",
+      "options": [
+        "el ambiente",
+        "el diálogo",
+        "la moraleja",
+        "solo el título"
+      ],
+      "correctIndex": 0
+    },
+    {
+      "text": "¿Cuál de estas palabras es un verbo irregular?",
+      "options": [
+        "amar",
+        "tener",
+        "saltar",
+        "caminar"
+      ],
+      "correctIndex": 1
+    },
+    {
+      "text": "¿Cuál es el plural correcto de \"luz\"?",
+      "options": [
+        "luzes",
+        "luces",
+        "luzs",
+        "lucez"
+      ],
+      "correctIndex": 1
+    },
+    {
+      "text": "¿Cuál palabra lleva tilde por ser esdrújula?",
+      "options": [
+        "telefono",
+        "teléfono",
+        "telefonó",
+        "telefonoo"
+      ],
+      "correctIndex": 1
+    },
+    {
+      "text": "¿Cuál oración usa correctamente los adverbios de tiempo?",
+      "options": [
+        "Ayer fuimos al parque",
+        "Ayer iremos al parque",
+        "Mañana fuimos al parque",
+        "Ayer vamos al parque"
+      ],
+      "correctIndex": 0
+    },
+    {
+      "text": "¿Qué palabra completa correctamente: \"El perro ___ toda la noche\" (ladrar, pasado)?",
+      "options": [
+        "ladra",
+        "ladró",
+        "ladrará",
+        "ladrando"
+      ],
+      "correctIndex": 1
+    },
+    {
+      "text": "¿Cuál es un correo electrónico bien estructurado?",
+      "options": [
+        "sin saludo ni despedida",
+        "con saludo, mensaje claro y despedida",
+        "solo con emojis",
+        "sin ningún orden"
+      ],
+      "correctIndex": 1
+    },
+    {
+      "text": "¿Cuál palabra usa correctamente \"b\" o \"v\"?",
+      "options": [
+        "escribir",
+        "escrivir",
+        "esscribir",
+        "escribbir"
+      ],
+      "correctIndex": 0
+    },
+    {
+      "text": "Al revisar un texto, ¿qué se debe verificar?",
+      "options": [
+        "solo la longitud",
+        "ortografía, gramática y que tenga sentido",
+        "nada",
+        "solo los dibujos"
+      ],
+      "correctIndex": 1
+    },
+    {
+      "text": "¿Cuál es el sujeto en \"Los estudiantes presentaron su proyecto\"?",
+      "options": [
+        "su proyecto",
+        "los estudiantes",
+        "presentaron",
+        "proyecto"
+      ],
+      "correctIndex": 1
+    },
+    {
+      "text": "En una exposición oral, ¿qué parte resume las ideas principales al final?",
+      "options": [
+        "la introducción",
+        "el desarrollo",
+        "el cierre",
+        "ninguna"
+      ],
+      "correctIndex": 2
+    },
+    {
+      "text": "¿Qué recurso visual puede apoyar una exposición?",
+      "options": [
+        "un power point o papelógrafo",
+        "nada",
+        "hablar sin mirar al público",
+        "esconder el rostro"
+      ],
+      "correctIndex": 0
+    },
+    {
+      "text": "Al dramatizar un personaje, ¿qué ayuda a representarlo mejor?",
+      "options": [
+        "usar un tono de voz y gestos acordes al personaje",
+        "hablar siempre igual",
+        "no moverse",
+        "leer sin expresión"
+      ],
+      "correctIndex": 0
+    },
+    {
+      "text": "¿Qué se debe hacer si no se entiende una palabra durante una exposición?",
+      "options": [
+        "preguntar con respeto al expositor",
+        "quedarse con la duda",
+        "burlarse",
+        "salir de la sala"
+      ],
+      "correctIndex": 0
+    },
+    {
+      "text": "Al ver un documental, ¿qué actitud crítica es recomendable?",
+      "options": [
+        "creer todo sin cuestionar",
+        "evaluar si la información presentada es clara y confiable",
+        "no prestar atención",
+        "dormir"
+      ],
+      "correctIndex": 1
+    }
+  ]
+}

@@ -1,0 +1,254 @@
+{
+  "questions": [
+    {
+      "text": "¿Qué es la fluidez lectora?",
+      "options": [
+        "leer rápido sin pausas ni sentido",
+        "leer con buen ritmo, entonación y precisión",
+        "leer en voz baja",
+        "no leer"
+      ],
+      "correctIndex": 1
+    },
+    {
+      "text": "¿Qué palabra es sinónimo de \"contento\"?",
+      "options": [
+        "triste",
+        "alegre",
+        "enojado",
+        "cansado"
+      ],
+      "correctIndex": 1
+    },
+    {
+      "text": "¿Qué palabra es antónimo de \"grande\"?",
+      "options": [
+        "enorme",
+        "pequeño",
+        "alto",
+        "ancho"
+      ],
+      "correctIndex": 1
+    },
+    {
+      "text": "En una fábula, ¿qué suele haber al final?",
+      "options": [
+        "una receta",
+        "una moraleja",
+        "un poema",
+        "una lista"
+      ],
+      "correctIndex": 1
+    },
+    {
+      "text": "¿Qué tipo de texto es un aviso publicitario?",
+      "options": [
+        "literario",
+        "no literario, busca vender o informar",
+        "un poema",
+        "una fábula"
+      ],
+      "correctIndex": 1
+    },
+    {
+      "text": "Si el cuento dice \"Había una vez una princesa que vivía en un castillo\", ¿dónde vivía?",
+      "options": [
+        "en un bosque",
+        "en un castillo",
+        "en el mar",
+        "en una cueva"
+      ],
+      "correctIndex": 1
+    },
+    {
+      "text": "¿Qué palabra podría reemplazar a \"veloz\" en un cuento?",
+      "options": [
+        "lento",
+        "rápido",
+        "triste",
+        "alto"
+      ],
+      "correctIndex": 1
+    },
+    {
+      "text": "¿Qué es una carta?",
+      "options": [
+        "un texto para comunicarse con alguien",
+        "una lista de compras",
+        "un poema",
+        "una receta"
+      ],
+      "correctIndex": 0
+    },
+    {
+      "text": "Para saber el significado de una palabra desconocida, ¿qué puedes usar?",
+      "options": [
+        "el dibujo del final",
+        "las palabras que están alrededor (contexto)",
+        "cerrar el libro",
+        "nada"
+      ],
+      "correctIndex": 1
+    },
+    {
+      "text": "¿Quién es la protagonista de \"Caperucita Roja\"?",
+      "options": [
+        "el lobo",
+        "Caperucita Roja",
+        "el cazador",
+        "la abuela"
+      ],
+      "correctIndex": 1
+    },
+    {
+      "text": "¿Cuál de estas palabras es un verbo (acción)?",
+      "options": [
+        "mesa",
+        "saltar",
+        "azul",
+        "el"
+      ],
+      "correctIndex": 1
+    },
+    {
+      "text": "¿Cuál es el adjetivo en \"El perro pequeño\"?",
+      "options": [
+        "el",
+        "perro",
+        "pequeño",
+        "ninguno"
+      ],
+      "correctIndex": 2
+    },
+    {
+      "text": "¿Cuál de estas palabras necesita mayúscula por ser nombre propio?",
+      "options": [
+        "lunes",
+        "maría",
+        "perro",
+        "casa"
+      ],
+      "correctIndex": 1
+    },
+    {
+      "text": "¿Dónde va la coma en: \"Compré manzanas peras y uvas\"?",
+      "options": [
+        "Compré, manzanas peras y uvas",
+        "Compré manzanas, peras y uvas",
+        "Compré manzanas peras, y uvas",
+        "no lleva coma"
+      ],
+      "correctIndex": 1
+    },
+    {
+      "text": "¿Cuál es el plural de \"papel\"?",
+      "options": [
+        "papeles",
+        "papels",
+        "papel",
+        "papeless"
+      ],
+      "correctIndex": 0
+    },
+    {
+      "text": "¿Qué signo se usa para preguntar?",
+      "options": [
+        "¿ ?",
+        ".",
+        ",",
+        ";"
+      ],
+      "correctIndex": 0
+    },
+    {
+      "text": "¿Cuál palabra está escrita correctamente?",
+      "options": [
+        "árbol",
+        "arbol",
+        "árvol",
+        "arvol"
+      ],
+      "correctIndex": 0
+    },
+    {
+      "text": "¿Cuál es el orden correcto de un cuento?",
+      "options": [
+        "desenlace, inicio, desarrollo",
+        "inicio, desarrollo, desenlace",
+        "desarrollo, desenlace, inicio",
+        "no tiene orden"
+      ],
+      "correctIndex": 1
+    },
+    {
+      "text": "¿Qué debes hacer al revisar tu escrito?",
+      "options": [
+        "nada, ya quedó listo",
+        "corregir errores de ortografía y sentido",
+        "borrarlo completo",
+        "copiarlo de otro"
+      ],
+      "correctIndex": 1
+    },
+    {
+      "text": "¿Cuál de estas oraciones usa correctamente el punto?",
+      "options": [
+        "el perro corre",
+        "El perro corre.",
+        "el Perro Corre",
+        "EL PERRO CORRE"
+      ],
+      "correctIndex": 1
+    },
+    {
+      "text": "Al exponer algo a tus compañeros, ¿qué debes hacer primero?",
+      "options": [
+        "hablar muy rápido",
+        "presentar el tema (introducción)",
+        "terminar",
+        "nada"
+      ],
+      "correctIndex": 1
+    },
+    {
+      "text": "¿Qué es importante al participar en una conversación grupal?",
+      "options": [
+        "hablar todos a la vez",
+        "respetar los turnos",
+        "gritar",
+        "no escuchar"
+      ],
+      "correctIndex": 1
+    },
+    {
+      "text": "¿Qué recurso puede ayudar en una exposición oral?",
+      "options": [
+        "un dibujo o papelógrafo",
+        "nada",
+        "hablar de espaldas",
+        "no mirar a nadie"
+      ],
+      "correctIndex": 0
+    },
+    {
+      "text": "Si un compañero cuenta una historia, ¿qué debes hacer?",
+      "options": [
+        "escuchar activamente",
+        "hablar de otra cosa",
+        "interrumpir",
+        "irte"
+      ],
+      "correctIndex": 0
+    },
+    {
+      "text": "¿Qué expresión usamos para agradecer?",
+      "options": [
+        "dame eso",
+        "gracias",
+        "ahora",
+        "rápido"
+      ],
+      "correctIndex": 1
+    }
+  ]
+}

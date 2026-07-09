@@ -1,0 +1,252 @@
+[
+  {
+    "text": "¿Cuál es la función del sistema reproductor?",
+    "options": [
+      "Permitir la reproducción y continuidad de la especie",
+      "Digerir alimentos",
+      "Producir movimiento",
+      "Filtrar el aire"
+    ],
+    "correctIndex": 0
+  },
+  {
+    "text": "¿Qué cambios ocurren durante la pubertad?",
+    "options": [
+      "Cambios físicos y hormonales relacionados con la maduración del cuerpo",
+      "Ningún cambio",
+      "Solo cambios en el cabello",
+      "Solo cambios de altura"
+    ],
+    "correctIndex": 0
+  },
+  {
+    "text": "¿Cuál de estas sustancias es nociva para la salud y su consumo debe evitarse?",
+    "options": [
+      "El agua",
+      "El tabaco",
+      "Las frutas",
+      "Las verduras"
+    ],
+    "correctIndex": 1
+  },
+  {
+    "text": "¿Qué efecto puede tener el consumo de alcohol en el organismo, especialmente en menores de edad?",
+    "options": [
+      "Ningún efecto",
+      "Daños en el desarrollo del organismo",
+      "Mejora la salud",
+      "Fortalece los músculos"
+    ],
+    "correctIndex": 1
+  },
+  {
+    "text": "¿Cuál es una consecuencia del cambio climático en los ecosistemas?",
+    "options": [
+      "Alteración de hábitats y especies en riesgo",
+      "Ningún cambio",
+      "Mejora automática de la biodiversidad",
+      "Aumento de agua dulce sin límite"
+    ],
+    "correctIndex": 0
+  },
+  {
+    "text": "¿Qué acción humana contribuye a la conservación de las especies?",
+    "options": [
+      "La creación de parques nacionales y áreas protegidas",
+      "La caza indiscriminada",
+      "La contaminación de ríos",
+      "La deforestación"
+    ],
+    "correctIndex": 0
+  },
+  {
+    "text": "¿Qué es la biodiversidad?",
+    "options": [
+      "La variedad de seres vivos que existen en un ecosistema",
+      "Un tipo de alimento",
+      "Una enfermedad",
+      "Un mineral"
+    ],
+    "correctIndex": 0
+  },
+  {
+    "text": "¿Cuál es un hábito que contribuye a una vida saludable en la adolescencia?",
+    "options": [
+      "Mantener una alimentación equilibrada y actividad física",
+      "El sedentarismo",
+      "El consumo de sustancias nocivas",
+      "Dormir muy pocas horas"
+    ],
+    "correctIndex": 0
+  },
+  {
+    "text": "¿Qué sistema del cuerpo trabaja junto al sistema circulatorio para transportar oxígeno?",
+    "options": [
+      "Sistema respiratorio",
+      "Sistema digestivo",
+      "Sistema óseo",
+      "Sistema reproductor"
+    ],
+    "correctIndex": 0
+  },
+  {
+    "text": "¿Qué es un circuito eléctrico en serie?",
+    "options": [
+      "Un circuito donde los componentes están conectados uno tras otro en un solo camino",
+      "Un circuito sin conexión",
+      "Un circuito que nunca funciona",
+      "Un tipo de imán"
+    ],
+    "correctIndex": 0
+  },
+  {
+    "text": "¿Qué sucede si se abre un interruptor en un circuito eléctrico simple?",
+    "options": [
+      "El circuito se interrumpe y deja de funcionar",
+      "El circuito funciona más rápido",
+      "No afecta el circuito",
+      "Se genera más luz"
+    ],
+    "correctIndex": 0
+  },
+  {
+    "text": "¿Cuál es la diferencia entre masa y peso?",
+    "options": [
+      "La masa es la cantidad de materia y el peso es la fuerza de gravedad sobre esa masa",
+      "Son exactamente lo mismo",
+      "El peso no cambia nunca",
+      "La masa depende del lugar donde estemos"
+    ],
+    "correctIndex": 0
+  },
+  {
+    "text": "¿Qué tipo de fuerza se opone al movimiento entre dos superficies en contacto?",
+    "options": [
+      "Fuerza magnética",
+      "Fuerza de roce",
+      "Fuerza de gravedad",
+      "Fuerza eléctrica"
+    ],
+    "correctIndex": 1
+  },
+  {
+    "text": "¿Qué ejemplo demuestra la fuerza magnética?",
+    "options": [
+      "Un imán atrayendo un clip de metal",
+      "Una pelota cayendo al suelo",
+      "Un objeto flotando en el agua",
+      "El viento moviendo una hoja"
+    ],
+    "correctIndex": 0
+  },
+  {
+    "text": "¿Cuál es una fuente de energía no renovable?",
+    "options": [
+      "El carbón",
+      "El sol",
+      "El viento",
+      "El agua"
+    ],
+    "correctIndex": 0
+  },
+  {
+    "text": "¿Qué medida representa el uso responsable de la energía eléctrica?",
+    "options": [
+      "Desconectar aparatos que no se usan",
+      "Dejar encendidas todas las luces",
+      "Usar electrodomésticos sin control",
+      "No importa el consumo"
+    ],
+    "correctIndex": 0
+  },
+  {
+    "text": "¿Qué propiedad de los materiales permite que algunos floten en el agua y otros se hundan?",
+    "options": [
+      "La densidad",
+      "El color",
+      "El sabor",
+      "El olor"
+    ],
+    "correctIndex": 0
+  },
+  {
+    "text": "¿Qué fenómeno ocurre cuando la Luna se interpone entre el Sol y la Tierra?",
+    "options": [
+      "Eclipse solar",
+      "Eclipse lunar",
+      "Marea alta",
+      "Solsticio"
+    ],
+    "correctIndex": 0
+  },
+  {
+    "text": "¿Qué fenómeno ocurre cuando la Tierra se interpone entre el Sol y la Luna?",
+    "options": [
+      "Eclipse solar",
+      "Eclipse lunar",
+      "Fase nueva",
+      "Equinoccio"
+    ],
+    "correctIndex": 1
+  },
+  {
+    "text": "¿Qué son las fases lunares?",
+    "options": [
+      "Los cambios en la apariencia de la Luna vistos desde la Tierra debido a su posición respecto al Sol",
+      "Cambios de color del Sol",
+      "Movimientos de las placas tectónicas",
+      "Tipos de estrellas"
+    ],
+    "correctIndex": 0
+  },
+  {
+    "text": "¿Qué fenómeno puede generar un tsunami?",
+    "options": [
+      "Un sismo submarino de gran magnitud",
+      "La lluvia intensa",
+      "Un eclipse",
+      "Una fase lunar"
+    ],
+    "correctIndex": 0
+  },
+  {
+    "text": "¿Cuál es la capa más externa de la Tierra donde se ubican los continentes y océanos?",
+    "options": [
+      "Núcleo",
+      "Manto",
+      "Corteza terrestre",
+      "Atmósfera"
+    ],
+    "correctIndex": 2
+  },
+  {
+    "text": "¿Qué característica debe tener una investigación científica confiable?",
+    "options": [
+      "Ser reproducible y basada en evidencia",
+      "Basarse en opiniones sin evidencia",
+      "No necesitar datos",
+      "Ser secreta"
+    ],
+    "correctIndex": 0
+  },
+  {
+    "text": "Al comunicar los resultados de una investigación, ¿qué es fundamental incluir?",
+    "options": [
+      "Los datos obtenidos y las conclusiones basadas en evidencia",
+      "Solo opiniones personales",
+      "Nada, basta con el título",
+      "Datos inventados"
+    ],
+    "correctIndex": 0
+  },
+  {
+    "text": "¿Qué habilidad científica se usa al comparar los resultados de un experimento con lo que se esperaba antes de realizarlo (la hipótesis)?",
+    "options": [
+      "Analizar y evaluar evidencia",
+      "Adivinar",
+      "Ignorar los datos",
+      "Ninguna"
+    ],
+    "correctIndex": 0
+  }
+]

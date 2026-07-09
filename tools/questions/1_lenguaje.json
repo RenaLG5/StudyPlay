@@ -1,0 +1,254 @@
+{
+  "questions": [
+    {
+      "text": "¿Qué letra hace el sonido inicial de la palabra \"mamá\"?",
+      "options": [
+        "m",
+        "n",
+        "l",
+        "t"
+      ],
+      "correctIndex": 0
+    },
+    {
+      "text": "¿Cuántas sílabas tiene la palabra \"pelota\"?",
+      "options": [
+        "1",
+        "2",
+        "3",
+        "4"
+      ],
+      "correctIndex": 2
+    },
+    {
+      "text": "¿Qué palabra rima con \"gato\"?",
+      "options": [
+        "perro",
+        "pato",
+        "casa",
+        "mesa"
+      ],
+      "correctIndex": 1
+    },
+    {
+      "text": "¿Cuál es la primera sílaba de la palabra \"camisa\"?",
+      "options": [
+        "mi",
+        "sa",
+        "ca",
+        "ma"
+      ],
+      "correctIndex": 2
+    },
+    {
+      "text": "¿Qué palabra comienza con el mismo sonido que \"sol\"?",
+      "options": [
+        "luna",
+        "silla",
+        "árbol",
+        "pan"
+      ],
+      "correctIndex": 1
+    },
+    {
+      "text": "En el cuento de los tres chanchitos, ¿quién construye la casa de paja?",
+      "options": [
+        "el lobo",
+        "el chanchito mayor",
+        "el primer chanchito",
+        "el cazador"
+      ],
+      "correctIndex": 2
+    },
+    {
+      "text": "¿Qué es una fábula?",
+      "options": [
+        "una noticia",
+        "un relato con animales que enseña una lección",
+        "una carta",
+        "una receta"
+      ],
+      "correctIndex": 1
+    },
+    {
+      "text": "¿Qué palabra significa lo mismo que \"feliz\"?",
+      "options": [
+        "triste",
+        "contento",
+        "enojado",
+        "cansado"
+      ],
+      "correctIndex": 1
+    },
+    {
+      "text": "Si un texto dice \"El perro corre rápido\", ¿qué hace el perro?",
+      "options": [
+        "duerme",
+        "come",
+        "corre",
+        "salta"
+      ],
+      "correctIndex": 2
+    },
+    {
+      "text": "¿Qué se debe hacer primero al leer un cuento?",
+      "options": [
+        "mirar el título y las imágenes",
+        "cerrar el libro",
+        "escribir un resumen",
+        "buscar en internet"
+      ],
+      "correctIndex": 0
+    },
+    {
+      "text": "¿Cuál de estas palabras nombra algo (sustantivo)?",
+      "options": [
+        "correr",
+        "mesa",
+        "rápido",
+        "y"
+      ],
+      "correctIndex": 1
+    },
+    {
+      "text": "¿Cuál de estas palabras es un artículo?",
+      "options": [
+        "el",
+        "comer",
+        "azul",
+        "saltar"
+      ],
+      "correctIndex": 0
+    },
+    {
+      "text": "¿Con qué letra empiezan los nombres propios?",
+      "options": [
+        "minúscula",
+        "mayúscula",
+        "número",
+        "no importa"
+      ],
+      "correctIndex": 1
+    },
+    {
+      "text": "¿Qué signo se usa al final de una oración?",
+      "options": [
+        "coma",
+        "punto",
+        "guion",
+        "paréntesis"
+      ],
+      "correctIndex": 1
+    },
+    {
+      "text": "¿Cuál es el plural de \"flor\"?",
+      "options": [
+        "flores",
+        "flor",
+        "flories",
+        "flors"
+      ],
+      "correctIndex": 0
+    },
+    {
+      "text": "¿Cuál palabra describe cómo es algo (adjetivo)?",
+      "options": [
+        "casa",
+        "grande",
+        "correr",
+        "el"
+      ],
+      "correctIndex": 1
+    },
+    {
+      "text": "¿Cuál es el orden correcto de estas palabras?",
+      "options": [
+        "El niño juega con la pelota",
+        "Pelota el juega niño con la",
+        "Con la pelota juega el niño niño",
+        "Juega niño el con pelota"
+      ],
+      "correctIndex": 0
+    },
+    {
+      "text": "¿Cuál palabra está bien escrita?",
+      "options": [
+        "qasa",
+        "casa",
+        "kasa",
+        "caza (para la vivienda)"
+      ],
+      "correctIndex": 1
+    },
+    {
+      "text": "¿Cuál de estas es una oración completa?",
+      "options": [
+        "El perro",
+        "El perro ladra",
+        "Perro ladra",
+        "Ladra"
+      ],
+      "correctIndex": 1
+    },
+    {
+      "text": "¿Qué debemos hacer antes de escribir un cuento?",
+      "options": [
+        "pensar de qué se tratará",
+        "borrarlo",
+        "firmarlo",
+        "nada"
+      ],
+      "correctIndex": 0
+    },
+    {
+      "text": "Cuando alguien habla, ¿qué debemos hacer?",
+      "options": [
+        "hablar más fuerte",
+        "escuchar con atención",
+        "mirar el celular",
+        "interrumpir"
+      ],
+      "correctIndex": 1
+    },
+    {
+      "text": "¿Qué palabra usamos para pedir algo con cortesía?",
+      "options": [
+        "dame",
+        "por favor",
+        "ahora",
+        "rápido"
+      ],
+      "correctIndex": 1
+    },
+    {
+      "text": "Si no entendiste algo, ¿qué debes hacer?",
+      "options": [
+        "quedarte callado",
+        "preguntar",
+        "inventar una respuesta",
+        "llorar"
+      ],
+      "correctIndex": 1
+    },
+    {
+      "text": "En una conversación, ¿qué se debe respetar?",
+      "options": [
+        "los turnos para hablar",
+        "nada",
+        "solo hablar uno todo el tiempo",
+        "gritar"
+      ],
+      "correctIndex": 0
+    },
+    {
+      "text": "¿Qué gesto ayuda a mostrar que estamos escuchando?",
+      "options": [
+        "mirar a otro lado",
+        "mirar a quien habla",
+        "dar la espalda",
+        "cerrar los ojos"
+      ],
+      "correctIndex": 1
+    }
+  ]
+}

@@ -1,0 +1,254 @@
+{
+  "questions": [
+    {
+      "text": "¿Qué necesita una planta para poder crecer sana?",
+      "options": [
+        "Agua, luz y aire",
+        "Solo agua",
+        "Solo tierra",
+        "Nada"
+      ],
+      "correctIndex": 0
+    },
+    {
+      "text": "¿Cuál es el ciclo de vida de una mariposa?",
+      "options": [
+        "Huevo-oruga-crisálida-mariposa",
+        "Huevo-mariposa",
+        "Oruga-huevo-mariposa",
+        "Mariposa-huevo-oruga"
+      ],
+      "correctIndex": 0
+    },
+    {
+      "text": "¿Cuál de estos animales es un mamífero?",
+      "options": [
+        "Gallina",
+        "Perro",
+        "Rana",
+        "Pez"
+      ],
+      "correctIndex": 1
+    },
+    {
+      "text": "¿Qué parte del cuerpo usamos para masticar los alimentos?",
+      "options": [
+        "Los dientes",
+        "Los ojos",
+        "Las orejas",
+        "La nariz"
+      ],
+      "correctIndex": 0
+    },
+    {
+      "text": "¿Cuál de estos alimentos pertenece al grupo de las frutas?",
+      "options": [
+        "Manzana",
+        "Pan",
+        "Leche",
+        "Pollo"
+      ],
+      "correctIndex": 0
+    },
+    {
+      "text": "¿Cuántas veces al día se recomienda lavarse los dientes?",
+      "options": [
+        "Nunca",
+        "Una vez",
+        "Al menos dos o tres veces",
+        "Solo los fines de semana"
+      ],
+      "correctIndex": 2
+    },
+    {
+      "text": "¿Qué debemos hacer antes de comer?",
+      "options": [
+        "Lavarnos las manos",
+        "Correr",
+        "Dormir",
+        "Nada"
+      ],
+      "correctIndex": 0
+    },
+    {
+      "text": "¿Cuál de estos hábitats es el hogar de los peces?",
+      "options": [
+        "El desierto",
+        "El agua",
+        "La nieve",
+        "El aire"
+      ],
+      "correctIndex": 1
+    },
+    {
+      "text": "Un renacuajo se convierte, al crecer, en...",
+      "options": [
+        "Pez",
+        "Rana",
+        "Ave",
+        "Serpiente"
+      ],
+      "correctIndex": 1
+    },
+    {
+      "text": "¿Cuál de estos es un cambio de estado del agua?",
+      "options": [
+        "El agua se convierte en hielo",
+        "El agua cambia de color",
+        "El agua desaparece",
+        "El agua se hace más pesada"
+      ],
+      "correctIndex": 0
+    },
+    {
+      "text": "¿Qué estado de la materia toma la forma del recipiente que lo contiene?",
+      "options": [
+        "Sólido",
+        "Líquido",
+        "Gaseoso",
+        "Ninguno"
+      ],
+      "correctIndex": 1
+    },
+    {
+      "text": "¿Qué sucede cuando calentamos hielo?",
+      "options": [
+        "Se convierte en agua líquida",
+        "Se convierte en piedra",
+        "Desaparece",
+        "Se congela más"
+      ],
+      "correctIndex": 0
+    },
+    {
+      "text": "¿Cuál de estos materiales es duro y mantiene su forma?",
+      "options": [
+        "Una piedra",
+        "El agua",
+        "El aire",
+        "El humo"
+      ],
+      "correctIndex": 0
+    },
+    {
+      "text": "Si empujo un carrito con más fuerza, ¿qué sucede?",
+      "options": [
+        "Se mueve más rápido",
+        "Se mueve más lento",
+        "No se mueve",
+        "Cambia de color"
+      ],
+      "correctIndex": 0
+    },
+    {
+      "text": "¿Cuál de estos objetos es atraído por un imán?",
+      "options": [
+        "Un clavo de metal",
+        "Una hoja de papel",
+        "Un trozo de madera",
+        "Una goma"
+      ],
+      "correctIndex": 0
+    },
+    {
+      "text": "¿Qué produce el roce entre dos superficies?",
+      "options": [
+        "Frío",
+        "Calor y resistencia al movimiento",
+        "Luz",
+        "Sonido siempre"
+      ],
+      "correctIndex": 1
+    },
+    {
+      "text": "¿Qué necesitamos para que un objeto haga sombra?",
+      "options": [
+        "Oscuridad total",
+        "Una fuente de luz",
+        "Agua",
+        "Viento"
+      ],
+      "correctIndex": 1
+    },
+    {
+      "text": "¿Qué provoca el día y la noche?",
+      "options": [
+        "El movimiento de rotación de la Tierra",
+        "El movimiento de la luna alrededor del sol",
+        "Las nubes",
+        "El viento"
+      ],
+      "correctIndex": 0
+    },
+    {
+      "text": "¿Cuál es el planeta en el que vivimos?",
+      "options": [
+        "Marte",
+        "Tierra",
+        "Venus",
+        "Júpiter"
+      ],
+      "correctIndex": 1
+    },
+    {
+      "text": "¿Qué astro gira alrededor de la Tierra?",
+      "options": [
+        "El sol",
+        "La luna",
+        "Marte",
+        "Una estrella"
+      ],
+      "correctIndex": 1
+    },
+    {
+      "text": "¿Cuáles son las cuatro estaciones del año?",
+      "options": [
+        "Verano, otoño, invierno, primavera",
+        "Lunes, martes, miércoles, jueves",
+        "Enero, febrero, marzo, abril",
+        "Mañana, tarde, noche, madrugada"
+      ],
+      "correctIndex": 0
+    },
+    {
+      "text": "¿Qué necesitan las plantas para crecer en el suelo?",
+      "options": [
+        "Agua y nutrientes del suelo",
+        "Solo piedras",
+        "Solo aire",
+        "Nada"
+      ],
+      "correctIndex": 0
+    },
+    {
+      "text": "Al hacer un experimento, ¿qué debemos anotar?",
+      "options": [
+        "Lo que observamos",
+        "Nada",
+        "Solo el nombre",
+        "Solo la fecha"
+      ],
+      "correctIndex": 0
+    },
+    {
+      "text": "Si queremos comparar el crecimiento de dos plantas, una con agua y otra sin agua, estamos...",
+      "options": [
+        "Adivinando",
+        "Experimentando",
+        "Jugando",
+        "Durmiendo"
+      ],
+      "correctIndex": 1
+    },
+    {
+      "text": "¿Qué hacemos al final de una investigación científica?",
+      "options": [
+        "Comunicar los resultados",
+        "Esconder los resultados",
+        "Olvidar todo",
+        "Nada"
+      ],
+      "correctIndex": 0
+    }
+  ]
+}

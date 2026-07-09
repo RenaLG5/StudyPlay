@@ -1,0 +1,252 @@
+[
+  {
+    "text": "¿Qué antigua civilización se desarrolló en la península de Grecia y es reconocida por la creación de la democracia?",
+    "options": [
+      "Grecia",
+      "Egipto",
+      "China",
+      "Roma"
+    ],
+    "correctIndex": 0
+  },
+  {
+    "text": "¿Cuál es un legado importante de la civilización griega?",
+    "options": [
+      "La democracia y la filosofía",
+      "La pizza",
+      "El fútbol moderno",
+      "El automóvil"
+    ],
+    "correctIndex": 0
+  },
+  {
+    "text": "¿Qué gran imperio de la antigüedad tuvo su capital en la ciudad de Roma?",
+    "options": [
+      "El Imperio Romano",
+      "El Imperio Chino",
+      "El Imperio Azteca",
+      "El Imperio Inca"
+    ],
+    "correctIndex": 0
+  },
+  {
+    "text": "¿Cuál es un legado de la civilización romana que usamos hoy en día?",
+    "options": [
+      "El derecho y el sistema de leyes",
+      "Los jeroglíficos",
+      "Las pirámides de Egipto",
+      "El té"
+    ],
+    "correctIndex": 0
+  },
+  {
+    "text": "¿En qué tipo de espacio se reunían los antiguos griegos para discutir asuntos públicos?",
+    "options": [
+      "El ágora",
+      "El desierto",
+      "La selva",
+      "El glaciar"
+    ],
+    "correctIndex": 0
+  },
+  {
+    "text": "¿Qué actividad era común en la vida cotidiana de la antigua Roma?",
+    "options": [
+      "Asistir al Coliseo para ver espectáculos",
+      "Usar internet",
+      "Viajar en avión",
+      "Ver televisión"
+    ],
+    "correctIndex": 0
+  },
+  {
+    "text": "¿Cuál era la lengua hablada por los antiguos romanos?",
+    "options": [
+      "El latín",
+      "El español actual",
+      "El inglés",
+      "El mapudungún"
+    ],
+    "correctIndex": 0
+  },
+  {
+    "text": "¿Qué tipo de gobierno tenía la antigua Grecia en la ciudad de Atenas?",
+    "options": [
+      "Democracia",
+      "Monarquía absoluta únicamente",
+      "Ninguno",
+      "Dictadura"
+    ],
+    "correctIndex": 0
+  },
+  {
+    "text": "¿Por qué es importante estudiar las civilizaciones clásicas como Grecia y Roma?",
+    "options": [
+      "Porque su legado influye en la cultura actual",
+      "No tiene importancia",
+      "Porque son iguales a las de hoy",
+      "Porque no dejaron nada"
+    ],
+    "correctIndex": 0
+  },
+  {
+    "text": "¿Qué instrumento usamos para representar toda la superficie de la Tierra en una imagen plana?",
+    "options": [
+      "Un mapa mundi",
+      "Una regla",
+      "Un termómetro",
+      "Una balanza"
+    ],
+    "correctIndex": 0
+  },
+  {
+    "text": "¿Cuáles son los puntos cardinales intermedios?",
+    "options": [
+      "Noreste, noroeste, sureste y suroeste",
+      "Arriba y abajo",
+      "Izquierda y derecha",
+      "Rojo y azul"
+    ],
+    "correctIndex": 0
+  },
+  {
+    "text": "¿Qué representa un plano a diferencia de un mapa?",
+    "options": [
+      "Un espacio más pequeño, como una casa o un colegio",
+      "Todo el planeta",
+      "El universo",
+      "Un país completo"
+    ],
+    "correctIndex": 0
+  },
+  {
+    "text": "¿Cuál es el clima característico de las zonas cercanas al Ecuador?",
+    "options": [
+      "Clima cálido y húmedo",
+      "Clima polar",
+      "Clima desértico frío",
+      "Clima templado frío"
+    ],
+    "correctIndex": 0
+  },
+  {
+    "text": "¿Qué zona climática se caracteriza por tener nieve y hielo todo el año?",
+    "options": [
+      "Zona polar",
+      "Zona tropical",
+      "Zona desértica cálida",
+      "Zona templada"
+    ],
+    "correctIndex": 0
+  },
+  {
+    "text": "¿Cómo se llaman las líneas imaginarias horizontales que rodean la Tierra?",
+    "options": [
+      "Paralelos o líneas de latitud",
+      "Meridianos",
+      "Fronteras",
+      "Cordilleras"
+    ],
+    "correctIndex": 0
+  },
+  {
+    "text": "¿Cómo se llaman las líneas imaginarias verticales que van de polo a polo?",
+    "options": [
+      "Meridianos o líneas de longitud",
+      "Paralelos",
+      "Fronteras",
+      "Cordilleras"
+    ],
+    "correctIndex": 0
+  },
+  {
+    "text": "¿Qué elemento del paisaje corresponde a una elevación importante del terreno?",
+    "options": [
+      "Una montaña",
+      "Un río",
+      "Un valle",
+      "Una llanura"
+    ],
+    "correctIndex": 0
+  },
+  {
+    "text": "¿Por qué las personas se adaptan a vivir en diferentes climas del planeta?",
+    "options": [
+      "Para poder satisfacer sus necesidades básicas en su entorno",
+      "No es necesario adaptarse",
+      "Es imposible vivir en climas distintos",
+      "Porque todos los climas son iguales"
+    ],
+    "correctIndex": 0
+  },
+  {
+    "text": "¿Qué es una norma de convivencia escolar?",
+    "options": [
+      "Una regla que ayuda a mantener el orden y respeto en la escuela",
+      "Un juego",
+      "Un color",
+      "Un número"
+    ],
+    "correctIndex": 0
+  },
+  {
+    "text": "¿Qué actitud debemos tener frente a las diferencias entre las personas?",
+    "options": [
+      "Respeto y tolerancia",
+      "Discriminación",
+      "Burla",
+      "Rechazo"
+    ],
+    "correctIndex": 0
+  },
+  {
+    "text": "¿Qué se debe hacer si presenciamos una situación de maltrato hacia un compañero?",
+    "options": [
+      "Contarlo a un adulto responsable",
+      "Ignorarlo",
+      "Participar en el maltrato",
+      "Reírse"
+    ],
+    "correctIndex": 0
+  },
+  {
+    "text": "¿Cuál de estas es una virtud importante para la vida en comunidad?",
+    "options": [
+      "La honestidad",
+      "El egoísmo",
+      "La mentira",
+      "La indiferencia"
+    ],
+    "correctIndex": 0
+  },
+  {
+    "text": "¿Qué significa actuar con empatía?",
+    "options": [
+      "Comprender y respetar los sentimientos de los demás",
+      "Ignorar a los demás",
+      "Burlarse de otros",
+      "Actuar solo por interés propio"
+    ],
+    "correctIndex": 0
+  },
+  {
+    "text": "¿Por qué es importante cumplir las normas en distintos espacios (casa, escuela, espacios públicos)?",
+    "options": [
+      "Para una buena convivencia y respeto mutuo",
+      "No es necesario",
+      "Para limitar la libertad",
+      "Sin ninguna razón"
+    ],
+    "correctIndex": 0
+  },
+  {
+    "text": "¿Qué debemos hacer ante un desacuerdo con un compañero?",
+    "options": [
+      "Dialogar y buscar una solución pacífica",
+      "Pelear",
+      "Ignorar el problema",
+      "Buscar venganza"
+    ],
+    "correctIndex": 0
+  }
+]

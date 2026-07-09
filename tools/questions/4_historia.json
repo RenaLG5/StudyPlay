@@ -1,0 +1,252 @@
+[
+  {
+    "text": "¿Cuál de estas civilizaciones se desarrolló en la península de Yucatán, en Mesoamérica?",
+    "options": [
+      "Los mayas",
+      "Los incas",
+      "Los romanos",
+      "Los griegos"
+    ],
+    "correctIndex": 0
+  },
+  {
+    "text": "¿Qué imperio americano tuvo su capital en Tenochtitlán?",
+    "options": [
+      "El imperio azteca",
+      "El imperio inca",
+      "El imperio maya",
+      "El imperio romano"
+    ],
+    "correctIndex": 0
+  },
+  {
+    "text": "¿Cuál fue la capital del imperio inca?",
+    "options": [
+      "Cusco",
+      "Tenochtitlán",
+      "Roma",
+      "Atenas"
+    ],
+    "correctIndex": 0
+  },
+  {
+    "text": "¿Qué sistema de escritura desarrollaron los mayas?",
+    "options": [
+      "Jeroglíficos mayas",
+      "El alfabeto latino",
+      "El alfabeto griego",
+      "Ninguno"
+    ],
+    "correctIndex": 0
+  },
+  {
+    "text": "¿Qué avance destacó en la civilización inca para comunicar sus territorios?",
+    "options": [
+      "Una extensa red de caminos (el Qhapaq Ñan)",
+      "Aviones",
+      "Barcos a vapor",
+      "Trenes"
+    ],
+    "correctIndex": 0
+  },
+  {
+    "text": "¿Qué actividad económica fue muy importante para los aztecas en su capital rodeada de lagos?",
+    "options": [
+      "La agricultura en chinampas",
+      "La pesca en el mar",
+      "El comercio marítimo internacional",
+      "La minería del carbón"
+    ],
+    "correctIndex": 0
+  },
+  {
+    "text": "¿Qué civilización americana desarrolló un calendario muy preciso basado en la observación astronómica?",
+    "options": [
+      "Los mayas",
+      "Solo los incas",
+      "Ninguna",
+      "Solo los aztecas"
+    ],
+    "correctIndex": 0
+  },
+  {
+    "text": "¿Cuál es un elemento cultural de los pueblos americanos que perdura hasta hoy?",
+    "options": [
+      "El idioma quechua y otras lenguas originarias",
+      "Nada de estas culturas perdura",
+      "Solo la arquitectura",
+      "Ninguno"
+    ],
+    "correctIndex": 0
+  },
+  {
+    "text": "¿Qué tienen en común los mayas, aztecas e incas?",
+    "options": [
+      "Fueron grandes civilizaciones americanas con avances culturales y tecnológicos",
+      "Todos vivían en Europa",
+      "No compartían nada",
+      "Todos hablaban el mismo idioma"
+    ],
+    "correctIndex": 0
+  },
+  {
+    "text": "¿Cuál es el continente donde se ubica Chile?",
+    "options": [
+      "América",
+      "Europa",
+      "Asia",
+      "África"
+    ],
+    "correctIndex": 0
+  },
+  {
+    "text": "¿Cuál es la cordillera más importante del continente americano?",
+    "options": [
+      "La cordillera de los Andes",
+      "Los Alpes",
+      "El Himalaya",
+      "Los Urales"
+    ],
+    "correctIndex": 0
+  },
+  {
+    "text": "¿Cuál es uno de los ríos más largos e importantes de América?",
+    "options": [
+      "El río Amazonas",
+      "El río Nilo",
+      "El río Danubio",
+      "El río Ganges"
+    ],
+    "correctIndex": 0
+  },
+  {
+    "text": "¿Qué recurso natural es abundante en la selva amazónica?",
+    "options": [
+      "La biodiversidad y madera",
+      "El petróleo únicamente",
+      "El cobre",
+      "El carbón"
+    ],
+    "correctIndex": 0
+  },
+  {
+    "text": "¿Cuál es un paisaje característico de América del Norte?",
+    "options": [
+      "Grandes llanuras y praderas",
+      "Solo desiertos",
+      "Solo selvas tropicales",
+      "Solo zonas polares"
+    ],
+    "correctIndex": 0
+  },
+  {
+    "text": "¿Qué recurso natural importante se extrae en la zona andina de Sudamérica?",
+    "options": [
+      "Minerales como el cobre",
+      "Petróleo únicamente",
+      "Diamantes",
+      "Ninguno"
+    ],
+    "correctIndex": 0
+  },
+  {
+    "text": "¿Qué zona de América se caracteriza por selvas tropicales y alta biodiversidad?",
+    "options": [
+      "La cuenca del Amazonas",
+      "El desierto de Atacama",
+      "La Patagonia",
+      "Las praderas de Norteamérica"
+    ],
+    "correctIndex": 0
+  },
+  {
+    "text": "¿Qué recurso natural es fundamental para la agricultura en cualquier país americano?",
+    "options": [
+      "El agua",
+      "El petróleo",
+      "El oro",
+      "El carbón"
+    ],
+    "correctIndex": 0
+  },
+  {
+    "text": "¿Por qué es importante cuidar los recursos naturales del continente americano?",
+    "options": [
+      "Porque son limitados y necesarios para las futuras generaciones",
+      "Porque son ilimitados",
+      "No es necesario cuidarlos",
+      "Porque no afectan a nadie"
+    ],
+    "correctIndex": 0
+  },
+  {
+    "text": "¿Cuáles son los tres poderes del Estado en Chile?",
+    "options": [
+      "Ejecutivo, Legislativo y Judicial",
+      "Solo el Ejecutivo",
+      "Solo el Legislativo",
+      "Ninguno"
+    ],
+    "correctIndex": 0
+  },
+  {
+    "text": "¿Quién es la máxima autoridad del poder ejecutivo en Chile?",
+    "options": [
+      "El Presidente o Presidenta de la República",
+      "Un alcalde",
+      "Un juez",
+      "Un senador"
+    ],
+    "correctIndex": 0
+  },
+  {
+    "text": "¿Qué función cumple el poder legislativo?",
+    "options": [
+      "Crear y modificar las leyes",
+      "Aplicar la justicia",
+      "Gobernar el país",
+      "Ninguna"
+    ],
+    "correctIndex": 0
+  },
+  {
+    "text": "¿Qué función cumple el poder judicial?",
+    "options": [
+      "Aplicar justicia y resolver conflictos según la ley",
+      "Crear leyes",
+      "Gobernar el país",
+      "Ninguna"
+    ],
+    "correctIndex": 0
+  },
+  {
+    "text": "¿Qué es la Constitución de un país?",
+    "options": [
+      "La ley fundamental que organiza el Estado y establece derechos y deberes",
+      "Un cuento",
+      "Un mapa",
+      "Un himno"
+    ],
+    "correctIndex": 0
+  },
+  {
+    "text": "¿Cuál es un cargo de elección popular en Chile?",
+    "options": [
+      "Presidente de la República",
+      "Un profesor",
+      "Un médico",
+      "Un policía"
+    ],
+    "correctIndex": 0
+  },
+  {
+    "text": "¿Por qué es importante la participación ciudadana en una democracia?",
+    "options": [
+      "Porque permite que las personas influyan en las decisiones del país",
+      "No es importante",
+      "Porque solo el gobierno decide",
+      "Porque limita la libertad"
+    ],
+    "correctIndex": 0
+  }
+]

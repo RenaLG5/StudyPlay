@@ -1,0 +1,252 @@
+[
+  {
+    "text": "¿En qué año llegó Cristóbal Colón a América?",
+    "options": [
+      "1492",
+      "1810",
+      "1600",
+      "1520"
+    ],
+    "correctIndex": 0
+  },
+  {
+    "text": "¿Quién fue el conquistador español que fundó la ciudad de Santiago?",
+    "options": [
+      "Pedro de Valdivia",
+      "Cristóbal Colón",
+      "Diego de Almagro",
+      "Bernardo O'Higgins"
+    ],
+    "correctIndex": 0
+  },
+  {
+    "text": "¿En qué año llegó la primera expedición española al territorio de Chile, liderada por Diego de Almagro?",
+    "options": [
+      "1536",
+      "1810",
+      "1600",
+      "1900"
+    ],
+    "correctIndex": 0
+  },
+  {
+    "text": "¿Qué sistema colonial obligaba a los pueblos originarios a trabajar para los españoles?",
+    "options": [
+      "La encomienda",
+      "La democracia",
+      "El voto popular",
+      "La república"
+    ],
+    "correctIndex": 0
+  },
+  {
+    "text": "¿Cuál era la principal actividad económica durante la Colonia en Chile?",
+    "options": [
+      "La agricultura y la ganadería en haciendas",
+      "La tecnología digital",
+      "El turismo internacional",
+      "La industria automotriz"
+    ],
+    "correctIndex": 0
+  },
+  {
+    "text": "¿Qué institución representaba el poder del rey de España en cada ciudad colonial?",
+    "options": [
+      "El Cabildo",
+      "El Congreso Nacional",
+      "El Senado",
+      "La Junta de Gobierno actual"
+    ],
+    "correctIndex": 0
+  },
+  {
+    "text": "¿Qué grupo social convivía en la sociedad colonial chilena, formado por la mezcla de españoles y pueblos originarios?",
+    "options": [
+      "Los mestizos",
+      "Los extraterrestres",
+      "Los vikingos",
+      "Ninguno"
+    ],
+    "correctIndex": 0
+  },
+  {
+    "text": "¿Qué pueblo originario se resistió fuertemente a la conquista española en el sur de Chile?",
+    "options": [
+      "El pueblo mapuche",
+      "Solo el pueblo rapa nui",
+      "Ninguno resistió",
+      "El pueblo aymara"
+    ],
+    "correctIndex": 0
+  },
+  {
+    "text": "¿Qué elementos trajeron los españoles que cambiaron la vida en América?",
+    "options": [
+      "El caballo, nuevas herramientas y el idioma español",
+      "Nada cambió",
+      "Solo alimentos",
+      "Ninguno de los anteriores"
+    ],
+    "correctIndex": 0
+  },
+  {
+    "text": "¿Cuáles son las principales zonas naturales de Chile de norte a sur?",
+    "options": [
+      "Norte Grande, Norte Chico, Zona Central, Zona Sur y Zona Austral",
+      "Solo desierto y selva",
+      "Solo montañas",
+      "Ninguna zona"
+    ],
+    "correctIndex": 0
+  },
+  {
+    "text": "¿Cuál es el recurso natural más importante de la minería chilena?",
+    "options": [
+      "El cobre",
+      "El petróleo",
+      "El diamante",
+      "El carbón"
+    ],
+    "correctIndex": 0
+  },
+  {
+    "text": "¿Qué recurso natural es importante en la zona sur de Chile, relacionado con los bosques?",
+    "options": [
+      "Los recursos forestales",
+      "El petróleo",
+      "El cobre",
+      "El oro"
+    ],
+    "correctIndex": 0
+  },
+  {
+    "text": "¿Cuál es un riesgo natural común en Chile debido a su ubicación geográfica?",
+    "options": [
+      "Los sismos o terremotos",
+      "Los huracanes tropicales frecuentes",
+      "Las inundaciones del Nilo",
+      "Los tifones"
+    ],
+    "correctIndex": 0
+  },
+  {
+    "text": "¿Por qué Chile es un país con alta actividad volcánica?",
+    "options": [
+      "Porque se ubica en el denominado \"Cinturón de Fuego del Pacífico\"",
+      "Porque está lejos de placas tectónicas",
+      "No tiene actividad volcánica",
+      "Por el clima únicamente"
+    ],
+    "correctIndex": 0
+  },
+  {
+    "text": "¿Qué zona de Chile se caracteriza por tener el desierto más árido del mundo?",
+    "options": [
+      "El Norte Grande (Desierto de Atacama)",
+      "La Zona Austral",
+      "La Zona Central",
+      "El Norte Chico"
+    ],
+    "correctIndex": 0
+  },
+  {
+    "text": "¿Qué zona de Chile se caracteriza por sus glaciares, fiordos y canales?",
+    "options": [
+      "La Zona Austral",
+      "El Norte Grande",
+      "La Zona Central",
+      "El Norte Chico"
+    ],
+    "correctIndex": 0
+  },
+  {
+    "text": "¿Cuál es la zona de Chile donde vive la mayor parte de la población y se concentra la actividad agrícola?",
+    "options": [
+      "La Zona Central",
+      "La Zona Austral",
+      "El Norte Grande",
+      "El Norte Chico"
+    ],
+    "correctIndex": 0
+  },
+  {
+    "text": "¿Qué medida ayuda a prevenir los efectos de un sismo?",
+    "options": [
+      "Contar con planes de emergencia y construcciones antisísmicas",
+      "No hacer nada",
+      "Ignorar el riesgo",
+      "Construir sin ninguna norma"
+    ],
+    "correctIndex": 0
+  },
+  {
+    "text": "¿Qué es la Constitución Política de Chile?",
+    "options": [
+      "La ley fundamental que organiza el Estado chileno",
+      "Un tratado internacional únicamente",
+      "Un decreto municipal",
+      "Un reglamento escolar"
+    ],
+    "correctIndex": 0
+  },
+  {
+    "text": "¿Cuál es un cargo de elección popular a nivel comunal en Chile?",
+    "options": [
+      "Alcalde",
+      "Ministro",
+      "Juez",
+      "Intendente"
+    ],
+    "correctIndex": 0
+  },
+  {
+    "text": "¿Qué poder del Estado está representado por el Congreso Nacional?",
+    "options": [
+      "El poder legislativo",
+      "El poder ejecutivo",
+      "El poder judicial",
+      "Ninguno"
+    ],
+    "correctIndex": 0
+  },
+  {
+    "text": "¿Cada cuántos años se elige al Presidente de la República en Chile?",
+    "options": [
+      "4 años",
+      "1 año",
+      "10 años",
+      "20 años"
+    ],
+    "correctIndex": 0
+  },
+  {
+    "text": "¿Qué significa que Chile sea una república democrática?",
+    "options": [
+      "Que las autoridades son elegidas por votación popular",
+      "Que un rey gobierna de forma hereditaria",
+      "Que no hay elecciones",
+      "Que el poder lo tiene una sola persona sin elección"
+    ],
+    "correctIndex": 0
+  },
+  {
+    "text": "¿Por qué es importante que los ciudadanos voten en las elecciones?",
+    "options": [
+      "Porque permite elegir a las autoridades y participar en democracia",
+      "No tiene importancia",
+      "Porque es obligatorio sin ningún propósito",
+      "Porque decide el clima del país"
+    ],
+    "correctIndex": 0
+  },
+  {
+    "text": "¿Qué institución se encarga de administrar justicia en Chile?",
+    "options": [
+      "El Poder Judicial",
+      "El Congreso Nacional",
+      "La Presidencia",
+      "Los municipios"
+    ],
+    "correctIndex": 0
+  }
+]

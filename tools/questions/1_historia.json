@@ -1,0 +1,252 @@
+[
+  {
+    "text": "¿Qué documento o registro nos ayuda a conocer la historia de nuestra familia?",
+    "options": [
+      "Un árbol genealógico o fotos familiares",
+      "Un mapa",
+      "Una balanza",
+      "Un termómetro"
+    ],
+    "correctIndex": 0
+  },
+  {
+    "text": "¿Cuál es el nombre de la bandera de nuestro país?",
+    "options": [
+      "La bandera chilena",
+      "La bandera argentina",
+      "La bandera peruana",
+      "Ninguna de las anteriores"
+    ],
+    "correctIndex": 0
+  },
+  {
+    "text": "¿Cuáles son los colores de la bandera de Chile?",
+    "options": [
+      "Rojo, blanco y azul",
+      "Verde, amarillo y rojo",
+      "Azul y amarillo",
+      "Negro y blanco"
+    ],
+    "correctIndex": 0
+  },
+  {
+    "text": "¿Cuál es el himno que se canta para representar a nuestro país?",
+    "options": [
+      "El himno nacional",
+      "Una canción de cuna",
+      "Un cuento",
+      "Un poema"
+    ],
+    "correctIndex": 0
+  },
+  {
+    "text": "¿Quién es una persona que ha aportado a la sociedad chilena, por ejemplo cuidando la salud de las personas?",
+    "options": [
+      "Un médico",
+      "Un extraterrestre",
+      "Un personaje de caricatura",
+      "Nadie"
+    ],
+    "correctIndex": 0
+  },
+  {
+    "text": "¿Qué es una tradición familiar?",
+    "options": [
+      "Una costumbre que se repite y se transmite en la familia",
+      "Un tipo de comida extranjera",
+      "Un mapa",
+      "Un número"
+    ],
+    "correctIndex": 0
+  },
+  {
+    "text": "¿Cuál es un símbolo patrio de Chile?",
+    "options": [
+      "La bandera",
+      "Un lápiz",
+      "Una pelota",
+      "Un libro cualquiera"
+    ],
+    "correctIndex": 0
+  },
+  {
+    "text": "¿Qué representa el escudo de un país?",
+    "options": [
+      "La identidad y valores de una nación",
+      "Un juego",
+      "Un dibujo sin significado",
+      "Una receta"
+    ],
+    "correctIndex": 0
+  },
+  {
+    "text": "¿Por qué es importante conocer nuestra historia familiar?",
+    "options": [
+      "Para entender de dónde venimos y nuestra identidad",
+      "No es importante",
+      "Para aburrirse",
+      "Para copiar a otros"
+    ],
+    "correctIndex": 0
+  },
+  {
+    "text": "Si levanto mi mano derecha, ¿qué lado estoy señalando?",
+    "options": [
+      "Derecha",
+      "Izquierda",
+      "Arriba",
+      "Abajo"
+    ],
+    "correctIndex": 0
+  },
+  {
+    "text": "¿Qué representa un plano de mi casa o colegio?",
+    "options": [
+      "La forma de un espacio visto desde arriba",
+      "Un dibujo de personas",
+      "Un cuento",
+      "Una canción"
+    ],
+    "correctIndex": 0
+  },
+  {
+    "text": "¿Cuál de estos elementos forma parte del paisaje de mi localidad?",
+    "options": [
+      "Montañas, ríos o calles",
+      "Un cuento",
+      "Un número",
+      "Una palabra"
+    ],
+    "correctIndex": 0
+  },
+  {
+    "text": "¿Qué instrumento nos ayuda a representar el planeta Tierra en forma de esfera?",
+    "options": [
+      "El globo terráqueo",
+      "Una regla",
+      "Un lápiz",
+      "Una balanza"
+    ],
+    "correctIndex": 0
+  },
+  {
+    "text": "¿Cuál de estos lugares es parte de un paisaje urbano?",
+    "options": [
+      "Edificios y calles",
+      "Un desierto sin construcciones",
+      "Un glaciar",
+      "Una selva sin personas"
+    ],
+    "correctIndex": 0
+  },
+  {
+    "text": "¿Cuál de estos lugares es parte de un paisaje rural?",
+    "options": [
+      "El campo con animales y cultivos",
+      "Un edificio muy alto",
+      "Un supermercado",
+      "Un semáforo"
+    ],
+    "correctIndex": 0
+  },
+  {
+    "text": "Si algo está \"arriba\" de la mesa, ¿dónde se ubica?",
+    "options": [
+      "Sobre la mesa",
+      "Debajo de la mesa",
+      "Al lado de la mesa",
+      "Lejos de la mesa"
+    ],
+    "correctIndex": 0
+  },
+  {
+    "text": "¿Qué debemos usar para no perdernos en un lugar nuevo?",
+    "options": [
+      "Un mapa o las indicaciones de un adulto",
+      "Nada",
+      "Cerrar los ojos",
+      "Correr sin rumbo"
+    ],
+    "correctIndex": 0
+  },
+  {
+    "text": "¿Cuál de estos es un paisaje natural?",
+    "options": [
+      "Una montaña",
+      "Un edificio",
+      "Una calle pavimentada",
+      "Un supermercado"
+    ],
+    "correctIndex": 0
+  },
+  {
+    "text": "¿Qué debemos hacer cuando un compañero se siente triste?",
+    "options": [
+      "Ignorarlo",
+      "Mostrar empatía y ayudarlo",
+      "Burlarse",
+      "Alejarse"
+    ],
+    "correctIndex": 1
+  },
+  {
+    "text": "¿Qué es una norma en la escuela?",
+    "options": [
+      "Una regla para la buena convivencia",
+      "Un juego",
+      "Un color",
+      "Un número"
+    ],
+    "correctIndex": 0
+  },
+  {
+    "text": "¿Qué debemos hacer si rompemos algo sin querer?",
+    "options": [
+      "Decir la verdad con honestidad",
+      "Mentir",
+      "Esconderlo",
+      "Culpar a otro"
+    ],
+    "correctIndex": 0
+  },
+  {
+    "text": "¿Cuál de estas es una norma de convivencia en el hogar?",
+    "options": [
+      "Respetar a los demás integrantes de la familia",
+      "Gritar siempre",
+      "No compartir",
+      "Pelear"
+    ],
+    "correctIndex": 0
+  },
+  {
+    "text": "¿Qué actitud demuestra respeto hacia un compañero?",
+    "options": [
+      "Escuchar su opinión",
+      "Interrumpirlo",
+      "Burlarse de él",
+      "Ignorarlo"
+    ],
+    "correctIndex": 0
+  },
+  {
+    "text": "¿Por qué es importante seguir las normas del colegio?",
+    "options": [
+      "Para mantener un ambiente seguro y ordenado",
+      "Para molestar a los demás",
+      "No es importante",
+      "Para que los profesores se enojen"
+    ],
+    "correctIndex": 0
+  },
+  {
+    "text": "¿Qué debemos hacer si vemos que un compañero necesita ayuda?",
+    "options": [
+      "Ayudarlo",
+      "Ignorarlo",
+      "Reírse",
+      "Alejarse"
+    ],
+    "correctIndex": 0
+  }
+]

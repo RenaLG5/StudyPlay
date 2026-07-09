@@ -1,0 +1,254 @@
+{
+  "questions": [
+    {
+      "text": "¿Qué es la fotosíntesis?",
+      "options": [
+        "El proceso en que las plantas fabrican su alimento usando luz solar",
+        "La respiración de los animales",
+        "El ciclo del agua",
+        "La digestión de las plantas"
+      ],
+      "correctIndex": 0
+    },
+    {
+      "text": "¿Qué elementos necesita una planta para realizar la fotosíntesis?",
+      "options": [
+        "Luz solar, agua y dióxido de carbono",
+        "Solo tierra",
+        "Solo oscuridad",
+        "Solo aire frío"
+      ],
+      "correctIndex": 0
+    },
+    {
+      "text": "¿Qué gas liberan las plantas durante la fotosíntesis?",
+      "options": [
+        "Dióxido de carbono",
+        "Oxígeno",
+        "Nitrógeno",
+        "Hidrógeno"
+      ],
+      "correctIndex": 1
+    },
+    {
+      "text": "¿Cuál es la función del sistema digestivo?",
+      "options": [
+        "Transportar la sangre",
+        "Transformar los alimentos en nutrientes",
+        "Producir sonidos",
+        "Filtrar el aire"
+      ],
+      "correctIndex": 1
+    },
+    {
+      "text": "¿Qué órgano es el encargado de bombear la sangre por el cuerpo?",
+      "options": [
+        "El corazón",
+        "El estómago",
+        "El pulmón",
+        "El cerebro"
+      ],
+      "correctIndex": 0
+    },
+    {
+      "text": "¿Cuál es la función del sistema respiratorio?",
+      "options": [
+        "Digerir alimentos",
+        "Permitir el intercambio de oxígeno y dióxido de carbono",
+        "Mover los músculos",
+        "Filtrar la sangre"
+      ],
+      "correctIndex": 1
+    },
+    {
+      "text": "En una red alimentaria, ¿qué representa un organismo que se alimenta de varias fuentes?",
+      "options": [
+        "Una conexión entre distintas cadenas alimentarias",
+        "Un productor únicamente",
+        "Un descomponedor único",
+        "Nada"
+      ],
+      "correctIndex": 0
+    },
+    {
+      "text": "¿Cuál es una consecuencia de la actividad humana sobre los ecosistemas?",
+      "options": [
+        "La contaminación y pérdida de hábitats",
+        "El aumento automático de especies",
+        "Ningún efecto",
+        "La mejora sin intervención"
+      ],
+      "correctIndex": 0
+    },
+    {
+      "text": "¿Qué medida ayuda a cuidar el medioambiente?",
+      "options": [
+        "Reciclar los materiales",
+        "Botar basura en cualquier lugar",
+        "Talar árboles sin control",
+        "Usar más plástico"
+      ],
+      "correctIndex": 0
+    },
+    {
+      "text": "¿Cuál de estas es una propiedad de los materiales?",
+      "options": [
+        "La dureza",
+        "El nombre del dueño",
+        "El precio",
+        "El país de origen"
+      ],
+      "correctIndex": 0
+    },
+    {
+      "text": "¿Qué tipo de energía nos permite ver los objetos?",
+      "options": [
+        "Energía sonora",
+        "Energía luminosa",
+        "Energía eléctrica",
+        "Energía térmica"
+      ],
+      "correctIndex": 1
+    },
+    {
+      "text": "¿Qué elemento es necesario para que un circuito eléctrico simple funcione?",
+      "options": [
+        "Una fuente de energía, cables y un receptor",
+        "Solo un cable",
+        "Solo una ampolleta",
+        "Nada más que aire"
+      ],
+      "correctIndex": 0
+    },
+    {
+      "text": "¿Qué sucede con la energía eléctrica en una ampolleta encendida?",
+      "options": [
+        "Se transforma en luz y calor",
+        "Desaparece",
+        "Se convierte en sonido únicamente",
+        "No cambia"
+      ],
+      "correctIndex": 0
+    },
+    {
+      "text": "¿Cuál de estas es una fuente de energía renovable?",
+      "options": [
+        "El carbón",
+        "El petróleo",
+        "El sol",
+        "El gas natural"
+      ],
+      "correctIndex": 2
+    },
+    {
+      "text": "¿Qué tipo de fuerza mantiene los objetos pegados al suelo?",
+      "options": [
+        "Fuerza magnética",
+        "Fuerza de gravedad",
+        "Fuerza eléctrica",
+        "Fuerza de roce únicamente"
+      ],
+      "correctIndex": 1
+    },
+    {
+      "text": "¿Qué ejemplo demuestra el uso responsable de la energía?",
+      "options": [
+        "Apagar las luces al salir de una habitación",
+        "Dejar todo encendido",
+        "Usar más agua caliente de lo necesario",
+        "No importa el gasto"
+      ],
+      "correctIndex": 0
+    },
+    {
+      "text": "¿Qué sucede si dos imanes se acercan por polos opuestos?",
+      "options": [
+        "Se repelen",
+        "Se atraen",
+        "No pasa nada",
+        "Se destruyen"
+      ],
+      "correctIndex": 1
+    },
+    {
+      "text": "¿Qué componentes forman parte del Sistema Solar?",
+      "options": [
+        "El sol, planetas, lunas y cometas",
+        "Solo la Tierra",
+        "Solo las estrellas",
+        "Solo el sol"
+      ],
+      "correctIndex": 0
+    },
+    {
+      "text": "¿Cuál es el planeta más cercano al sol?",
+      "options": [
+        "Tierra",
+        "Mercurio",
+        "Marte",
+        "Venus"
+      ],
+      "correctIndex": 1
+    },
+    {
+      "text": "¿Cuál es la capa de la Tierra que se encuentra en el centro?",
+      "options": [
+        "Corteza",
+        "Manto",
+        "Núcleo",
+        "Atmósfera"
+      ],
+      "correctIndex": 2
+    },
+    {
+      "text": "¿Qué es la atmósfera?",
+      "options": [
+        "La capa de aire que rodea la Tierra",
+        "El interior de la Tierra",
+        "El fondo del mar",
+        "Una capa de roca"
+      ],
+      "correctIndex": 0
+    },
+    {
+      "text": "¿Cómo se llama la capa de agua de la Tierra?",
+      "options": [
+        "Litosfera",
+        "Hidrosfera",
+        "Atmósfera",
+        "Estratosfera"
+      ],
+      "correctIndex": 1
+    },
+    {
+      "text": "¿Qué es una hipótesis?",
+      "options": [
+        "Una respuesta tentativa a una pregunta de investigación",
+        "Una conclusión final",
+        "Un dibujo",
+        "Un experimento terminado"
+      ],
+      "correctIndex": 0
+    },
+    {
+      "text": "Al planificar una investigación, ¿qué debemos considerar primero?",
+      "options": [
+        "Los materiales que necesitaremos y la pregunta a responder",
+        "Solo el resultado final",
+        "Nada, se improvisa",
+        "El color del cuaderno"
+      ],
+      "correctIndex": 0
+    },
+    {
+      "text": "¿Por qué es importante comunicar los resultados de una investigación?",
+      "options": [
+        "Para compartir el conocimiento con otros",
+        "Para que nadie los conozca",
+        "Para inventar nuevos datos",
+        "No es importante"
+      ],
+      "correctIndex": 0
+    }
+  ]
+}

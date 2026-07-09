@@ -1,0 +1,254 @@
+{
+  "questions": [
+    {
+      "text": "¿Qué es una metáfora?",
+      "options": [
+        "una comparación directa usando \"como\"",
+        "una figura literaria que atribuye una cualidad de una cosa a otra sin usar \"como\"",
+        "una lista de palabras",
+        "un signo de puntuación"
+      ],
+      "correctIndex": 1
+    },
+    {
+      "text": "¿Qué es una comparación o símil?",
+      "options": [
+        "relacionar dos elementos usando \"como\" o \"tal cual\"",
+        "inventar una palabra",
+        "un tipo de verbo",
+        "un signo ortográfico"
+      ],
+      "correctIndex": 0
+    },
+    {
+      "text": "Al investigar en internet, ¿qué se debe hacer con la información encontrada?",
+      "options": [
+        "copiarla sin verificar",
+        "verificar que la fuente sea confiable y organizarla",
+        "ignorarla",
+        "inventar más datos"
+      ],
+      "correctIndex": 1
+    },
+    {
+      "text": "¿Qué palabra tiene la raíz \"tele-\" que significa \"a distancia\"?",
+      "options": [
+        "teléfono",
+        "mesa",
+        "papel",
+        "casa"
+      ],
+      "correctIndex": 0
+    },
+    {
+      "text": "¿Qué es un blog?",
+      "options": [
+        "una publicación periódica en internet donde alguien comparte contenido sobre un tema",
+        "una receta impresa",
+        "un mito",
+        "un poema tradicional"
+      ],
+      "correctIndex": 0
+    },
+    {
+      "text": "En un correo electrónico formal, ¿qué elemento no debe faltar?",
+      "options": [
+        "emojis únicamente",
+        "un saludo y un cierre adecuados",
+        "abreviaturas informales",
+        "nada en particular"
+      ],
+      "correctIndex": 1
+    },
+    {
+      "text": "¿Cuál palabra lleva tilde diacrítica para diferenciarse de otra?",
+      "options": [
+        "el / él",
+        "casa",
+        "perro",
+        "azul"
+      ],
+      "correctIndex": 0
+    },
+    {
+      "text": "¿Qué tipo de palabra es \"rápidamente\"?",
+      "options": [
+        "sustantivo",
+        "adverbio",
+        "adjetivo",
+        "pronombre"
+      ],
+      "correctIndex": 1
+    },
+    {
+      "text": "¿Cuál es el sujeto tácito en \"Fuimos al cine ayer\"?",
+      "options": [
+        "ellos",
+        "nosotros",
+        "tú",
+        "usted"
+      ],
+      "correctIndex": 1
+    },
+    {
+      "text": "¿Qué figura literaria se usa en \"sus ojos son dos luceros\"?",
+      "options": [
+        "metáfora",
+        "rima",
+        "aliteración",
+        "onomatopeya"
+      ],
+      "correctIndex": 0
+    },
+    {
+      "text": "¿Cuáles de estas palabras agudas deben llevar tilde?",
+      "options": [
+        "camión",
+        "canción",
+        "balón",
+        "todas las anteriores"
+      ],
+      "correctIndex": 3
+    },
+    {
+      "text": "¿Cuál palabra esdrújula está bien tildada?",
+      "options": [
+        "matematica",
+        "matemática",
+        "matematicaa",
+        "matemátic"
+      ],
+      "correctIndex": 1
+    },
+    {
+      "text": "¿Cuál palabra usa correctamente \"s\" o \"z\"?",
+      "options": [
+        "lápiz",
+        "lapis",
+        "lápis",
+        "lapiz"
+      ],
+      "correctIndex": 0
+    },
+    {
+      "text": "¿Cuál es el plural correcto de \"carácter\"?",
+      "options": [
+        "carácteres",
+        "caracteres",
+        "carácters",
+        "caractéres"
+      ],
+      "correctIndex": 1
+    },
+    {
+      "text": "¿Cuál palabra está bien escrita con \"g\" o \"j\"?",
+      "options": [
+        "jirafa",
+        "girafa",
+        "yirafa",
+        "hirafa"
+      ],
+      "correctIndex": 0
+    },
+    {
+      "text": "En la etapa de planificación de un texto, ¿qué se define?",
+      "options": [
+        "la idea principal, el propósito y el destinatario",
+        "solo la ortografía",
+        "nada",
+        "solo el título final"
+      ],
+      "correctIndex": 0
+    },
+    {
+      "text": "¿Cuál es el verbo conjugado correctamente en \"Yo ___ ya\" (comer, pretérito perfecto)?",
+      "options": [
+        "he comido",
+        "comí",
+        "comiendo",
+        "como"
+      ],
+      "correctIndex": 0
+    },
+    {
+      "text": "¿Qué palabra tiene un sufijo que indica \"lugar donde se hace algo\"?",
+      "options": [
+        "panadería",
+        "panecillo",
+        "pan",
+        "panadero"
+      ],
+      "correctIndex": 0
+    },
+    {
+      "text": "¿Cuál oración respeta correctamente el uso de la coma en un vocativo?",
+      "options": [
+        "Juan, ven aquí",
+        "Juan ven, aquí",
+        "Juan ven aquí,",
+        "Juan, ven, aquí"
+      ],
+      "correctIndex": 0
+    },
+    {
+      "text": "¿Cuál es el antónimo de \"generoso\"?",
+      "options": [
+        "amable",
+        "tacaño",
+        "alegre",
+        "educado"
+      ],
+      "correctIndex": 1
+    },
+    {
+      "text": "En una disertación, ¿qué parte desarrolla con detalle el tema?",
+      "options": [
+        "la introducción",
+        "el desarrollo",
+        "el cierre",
+        "ninguna"
+      ],
+      "correctIndex": 1
+    },
+    {
+      "text": "¿Qué registro de habla es apropiado para una exposición formal en clase?",
+      "options": [
+        "coloquial con modismos",
+        "formal y con vocabulario variado",
+        "gritos",
+        "monosílabos"
+      ],
+      "correctIndex": 1
+    },
+    {
+      "text": "Al participar en un debate, ¿qué actitud demuestra respeto por la opinión de otros?",
+      "options": [
+        "interrumpir constantemente",
+        "escuchar y esperar el turno para responder con argumentos",
+        "burlarse",
+        "ignorar al otro"
+      ],
+      "correctIndex": 1
+    },
+    {
+      "text": "¿Qué elemento visual ayuda a organizar ideas en una exposición?",
+      "options": [
+        "un esquema o power point",
+        "nada",
+        "hablar sin ningún apoyo",
+        "un dibujo sin relación al tema"
+      ],
+      "correctIndex": 0
+    },
+    {
+      "text": "Al analizar un mensaje publicitario, ¿qué se debe identificar?",
+      "options": [
+        "solo los colores usados",
+        "la intención persuasiva del mensaje",
+        "nada en particular",
+        "el precio únicamente"
+      ],
+      "correctIndex": 1
+    }
+  ]
+}

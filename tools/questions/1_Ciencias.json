@@ -1,0 +1,254 @@
+{
+  "questions": [
+    {
+      "text": "¿Qué necesitan los seres vivos para vivir, además de agua y alimento?",
+      "options": [
+        "Aire",
+        "Dinero",
+        "Ropa",
+        "Juguetes"
+      ],
+      "correctIndex": 0
+    },
+    {
+      "text": "¿Cuál de estos es un ser vivo?",
+      "options": [
+        "Una piedra",
+        "Un perro",
+        "Una silla",
+        "Un auto"
+      ],
+      "correctIndex": 1
+    },
+    {
+      "text": "¿Cuál sentido usamos para escuchar sonidos?",
+      "options": [
+        "Vista",
+        "Oído",
+        "Olfato",
+        "Tacto"
+      ],
+      "correctIndex": 1
+    },
+    {
+      "text": "¿Con qué sentido percibimos los colores?",
+      "options": [
+        "Vista",
+        "Oído",
+        "Gusto",
+        "Tacto"
+      ],
+      "correctIndex": 0
+    },
+    {
+      "text": "¿Cuál de estas es una acción de higiene?",
+      "options": [
+        "Lavarse las manos",
+        "Comer dulces",
+        "No dormir",
+        "No bañarse"
+      ],
+      "correctIndex": 0
+    },
+    {
+      "text": "¿Qué alimento es más saludable para el desayuno?",
+      "options": [
+        "Fruta",
+        "Papas fritas",
+        "Dulces",
+        "Bebida gaseosa"
+      ],
+      "correctIndex": 0
+    },
+    {
+      "text": "¿Cuál de estos animales nace de un huevo?",
+      "options": [
+        "Perro",
+        "Gato",
+        "Gallina",
+        "Vaca"
+      ],
+      "correctIndex": 2
+    },
+    {
+      "text": "Las plantas necesitan luz solar para...",
+      "options": [
+        "Crecer",
+        "Caminar",
+        "Hablar",
+        "Dormir"
+      ],
+      "correctIndex": 0
+    },
+    {
+      "text": "¿Qué parte de la planta absorbe el agua del suelo?",
+      "options": [
+        "Hojas",
+        "Raíz",
+        "Flor",
+        "Tallo"
+      ],
+      "correctIndex": 1
+    },
+    {
+      "text": "¿Cuál de estos objetos es sólido?",
+      "options": [
+        "Agua",
+        "Aire",
+        "Piedra",
+        "Vapor"
+      ],
+      "correctIndex": 2
+    },
+    {
+      "text": "¿Cuál de estos es un líquido?",
+      "options": [
+        "Leche",
+        "Piedra",
+        "Madera",
+        "Hielo"
+      ],
+      "correctIndex": 0
+    },
+    {
+      "text": "¿Qué necesitamos para ver los objetos en la oscuridad?",
+      "options": [
+        "Sonido",
+        "Luz",
+        "Aire",
+        "Agua"
+      ],
+      "correctIndex": 1
+    },
+    {
+      "text": "¿Cuál de estos objetos produce sonido?",
+      "options": [
+        "Una campana",
+        "Una piedra",
+        "Un libro cerrado",
+        "Una silla"
+      ],
+      "correctIndex": 0
+    },
+    {
+      "text": "¿Qué sentimos cuando tocamos algo caliente?",
+      "options": [
+        "Frío",
+        "Calor",
+        "Nada",
+        "Sonido"
+      ],
+      "correctIndex": 1
+    },
+    {
+      "text": "¿Cuál de estos es una fuente de luz?",
+      "options": [
+        "El sol",
+        "Una piedra",
+        "Un árbol",
+        "Una silla"
+      ],
+      "correctIndex": 0
+    },
+    {
+      "text": "Si empujamos una pelota, ¿qué le sucede?",
+      "options": [
+        "Se queda quieta",
+        "Se mueve",
+        "Desaparece",
+        "Cambia de color"
+      ],
+      "correctIndex": 1
+    },
+    {
+      "text": "¿Qué pasa con el hielo si lo dejamos al sol?",
+      "options": [
+        "Se derrite",
+        "Se congela más",
+        "No cambia",
+        "Se rompe"
+      ],
+      "correctIndex": 0
+    },
+    {
+      "text": "¿Qué astro nos da luz durante el día?",
+      "options": [
+        "La luna",
+        "El sol",
+        "Las estrellas",
+        "Los planetas"
+      ],
+      "correctIndex": 1
+    },
+    {
+      "text": "¿Qué vemos en el cielo durante la noche?",
+      "options": [
+        "El sol",
+        "La luna y las estrellas",
+        "Nubes de lluvia solamente",
+        "Nada"
+      ],
+      "correctIndex": 1
+    },
+    {
+      "text": "¿Cuándo es de día en nuestra ciudad?",
+      "options": [
+        "Cuando el sol está en el cielo",
+        "Cuando está la luna",
+        "Siempre",
+        "Nunca"
+      ],
+      "correctIndex": 0
+    },
+    {
+      "text": "¿Qué estación del año es la más calurosa?",
+      "options": [
+        "Invierno",
+        "Verano",
+        "Otoño",
+        "Primavera"
+      ],
+      "correctIndex": 1
+    },
+    {
+      "text": "¿En qué estación caen las hojas de los árboles?",
+      "options": [
+        "Verano",
+        "Otoño",
+        "Invierno",
+        "Primavera"
+      ],
+      "correctIndex": 1
+    },
+    {
+      "text": "Cuando observamos con atención un insecto para conocerlo mejor, estamos...",
+      "options": [
+        "Jugando",
+        "Observando",
+        "Durmiendo",
+        "Comiendo"
+      ],
+      "correctIndex": 1
+    },
+    {
+      "text": "Si queremos saber qué le pasa a una planta sin agua, ¿qué debemos hacer?",
+      "options": [
+        "Adivinar",
+        "Experimentar y observar",
+        "No hacer nada",
+        "Preguntar a un juguete"
+      ],
+      "correctIndex": 1
+    },
+    {
+      "text": "Después de un experimento, ¿qué debemos hacer con lo que observamos?",
+      "options": [
+        "Olvidarlo",
+        "Comunicarlo a otros",
+        "Esconderlo",
+        "No importa"
+      ],
+      "correctIndex": 1
+    }
+  ]
+}

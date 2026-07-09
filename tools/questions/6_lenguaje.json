@@ -1,0 +1,254 @@
+{
+  "questions": [
+    {
+      "text": "¿Qué elemento narrativo describe el lugar y tiempo en que ocurre la historia?",
+      "options": [
+        "el ambiente",
+        "el clímax",
+        "el narrador",
+        "el tema"
+      ],
+      "correctIndex": 0
+    },
+    {
+      "text": "¿Qué tipo de narrador conoce los pensamientos de todos los personajes?",
+      "options": [
+        "narrador protagonista",
+        "narrador omnisciente",
+        "narrador testigo",
+        "narrador en segunda persona"
+      ],
+      "correctIndex": 1
+    },
+    {
+      "text": "¿Qué es la hipérbole?",
+      "options": [
+        "una exageración con fines expresivos",
+        "una comparación con \"como\"",
+        "un tipo de rima",
+        "un signo de puntuación"
+      ],
+      "correctIndex": 0
+    },
+    {
+      "text": "Al leer una noticia, ¿qué se debe evaluar críticamente?",
+      "options": [
+        "solo el titular",
+        "la objetividad y las fuentes de la información",
+        "el tamaño del texto",
+        "nada"
+      ],
+      "correctIndex": 1
+    },
+    {
+      "text": "¿Qué es el clímax en una narración?",
+      "options": [
+        "el inicio de la historia",
+        "el punto de mayor tensión de la trama",
+        "el final feliz",
+        "la descripción del ambiente"
+      ],
+      "correctIndex": 1
+    },
+    {
+      "text": "En un texto argumentativo, ¿qué elemento presenta la postura del autor?",
+      "options": [
+        "la tesis",
+        "la anécdota",
+        "el título únicamente",
+        "la fecha"
+      ],
+      "correctIndex": 0
+    },
+    {
+      "text": "¿Qué figura literaria es la personificación?",
+      "options": [
+        "dar cualidades humanas a objetos o animales",
+        "repetir sonidos",
+        "exagerar",
+        "comparar con \"como\""
+      ],
+      "correctIndex": 0
+    },
+    {
+      "text": "¿Cuál de estas palabras es esdrújula?",
+      "options": [
+        "rápido",
+        "camino",
+        "pared",
+        "reloj"
+      ],
+      "correctIndex": 0
+    },
+    {
+      "text": "¿Cuál es la función de un artículo determinado?",
+      "options": [
+        "indicar una acción",
+        "acompañar y determinar al sustantivo",
+        "describir una cualidad",
+        "unir oraciones"
+      ],
+      "correctIndex": 1
+    },
+    {
+      "text": "¿Qué es un texto expositivo?",
+      "options": [
+        "uno que informa y explica un tema de manera objetiva",
+        "uno que narra una historia ficticia",
+        "un poema",
+        "una carta personal"
+      ],
+      "correctIndex": 0
+    },
+    {
+      "text": "¿Cuál palabra lleva tilde diacrítica?",
+      "options": [
+        "tu / tú",
+        "casa",
+        "perro",
+        "mesa"
+      ],
+      "correctIndex": 0
+    },
+    {
+      "text": "¿Cuál palabra está correctamente acentuada como sobresdrújula?",
+      "options": [
+        "diciéndomelo",
+        "diciendomelo",
+        "diciendomeloo",
+        "diciendo-melo"
+      ],
+      "correctIndex": 0
+    },
+    {
+      "text": "¿Cuál es el complemento directo en \"María compró un libro\"?",
+      "options": [
+        "María",
+        "compró",
+        "un libro",
+        "ninguno"
+      ],
+      "correctIndex": 2
+    },
+    {
+      "text": "¿Cuál palabra usa correctamente \"x\"?",
+      "options": [
+        "exelente",
+        "excelente",
+        "eselente",
+        "ecselente"
+      ],
+      "correctIndex": 1
+    },
+    {
+      "text": "¿Cuál es el pretérito pluscuamperfecto de \"comer\" (yo)?",
+      "options": [
+        "yo había comido",
+        "yo comí",
+        "yo como",
+        "yo comería"
+      ],
+      "correctIndex": 0
+    },
+    {
+      "text": "¿Cuál palabra está bien escrita con \"ll\" o \"y\"?",
+      "options": [
+        "lluvia",
+        "yubia",
+        "lluviia",
+        "lluvi"
+      ],
+      "correctIndex": 0
+    },
+    {
+      "text": "¿Cuál es el sujeto en \"Los libros fueron leídos por los estudiantes\"?",
+      "options": [
+        "los libros",
+        "los estudiantes",
+        "fueron",
+        "leídos"
+      ],
+      "correctIndex": 0
+    },
+    {
+      "text": "¿Qué conector se usa para expresar una causa?",
+      "options": [
+        "porque",
+        "sin embargo",
+        "además",
+        "después"
+      ],
+      "correctIndex": 0
+    },
+    {
+      "text": "¿Cuál de estas palabras es un pronombre relativo?",
+      "options": [
+        "que",
+        "rápido",
+        "casa",
+        "verde"
+      ],
+      "correctIndex": 0
+    },
+    {
+      "text": "¿Cuál es la etapa final del proceso de escritura donde se comparte el texto?",
+      "options": [
+        "planificación",
+        "publicación",
+        "borrador",
+        "revisión"
+      ],
+      "correctIndex": 1
+    },
+    {
+      "text": "En una disertación formal, ¿qué debe incluir el cierre?",
+      "options": [
+        "una síntesis de las ideas principales y una conclusión",
+        "nada",
+        "solo despedirse",
+        "repetir la introducción"
+      ],
+      "correctIndex": 0
+    },
+    {
+      "text": "Al dramatizar una obra de teatro, ¿qué ayuda a transmitir mejor las emociones del personaje?",
+      "options": [
+        "la voz, los gestos y los movimientos",
+        "leer el guion sin expresión",
+        "quedarse inmóvil",
+        "hablar muy bajo"
+      ],
+      "correctIndex": 0
+    },
+    {
+      "text": "¿Qué se debe hacer al participar en un debate para argumentar con solidez?",
+      "options": [
+        "usar datos y ejemplos que respalden la opinión",
+        "gritar más fuerte que el otro",
+        "repetir la misma frase",
+        "ignorar al otro participante"
+      ],
+      "correctIndex": 0
+    },
+    {
+      "text": "Al escuchar una película o documental, ¿qué se debe distinguir?",
+      "options": [
+        "hechos de opiniones",
+        "nada en particular",
+        "solo los efectos especiales",
+        "el color de la imagen"
+      ],
+      "correctIndex": 0
+    },
+    {
+      "text": "¿Qué actitud demuestra buena comunicación oral en una conversación grupal?",
+      "options": [
+        "esperar el turno y aportar con respeto",
+        "hablar por encima de los demás",
+        "no participar nunca",
+        "desviar siempre el tema"
+      ],
+      "correctIndex": 0
+    }
+  ]
+}

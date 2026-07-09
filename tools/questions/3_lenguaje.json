@@ -1,0 +1,254 @@
+{
+  "questions": [
+    {
+      "text": "¿Qué es una leyenda?",
+      "options": [
+        "un relato basado en hechos reales sin fantasía",
+        "un relato tradicional que mezcla hechos reales con elementos fantásticos",
+        "una receta",
+        "una noticia"
+      ],
+      "correctIndex": 1
+    },
+    {
+      "text": "¿Qué es un mito?",
+      "options": [
+        "un relato que explica el origen del mundo o fenómenos naturales con seres sobrenaturales",
+        "una lista de compras",
+        "un aviso publicitario",
+        "una carta"
+      ],
+      "correctIndex": 0
+    },
+    {
+      "text": "En una noticia, ¿qué información es importante encontrar?",
+      "options": [
+        "qué, quién, cuándo, dónde",
+        "solo el título",
+        "los dibujos",
+        "nada en especial"
+      ],
+      "correctIndex": 0
+    },
+    {
+      "text": "¿Cuál de estas palabras es un pronombre?",
+      "options": [
+        "casa",
+        "él",
+        "corriendo",
+        "azul"
+      ],
+      "correctIndex": 1
+    },
+    {
+      "text": "¿Cuál de estas palabras es un adverbio?",
+      "options": [
+        "rápidamente",
+        "mesa",
+        "azul",
+        "perro"
+      ],
+      "correctIndex": 0
+    },
+    {
+      "text": "¿Qué indica el prefijo \"des-\" en \"deshacer\"?",
+      "options": [
+        "hacer de nuevo",
+        "lo contrario de hacer",
+        "hacer rápido",
+        "nada"
+      ],
+      "correctIndex": 1
+    },
+    {
+      "text": "¿Cuál es el primer paso del proceso de escritura?",
+      "options": [
+        "editar",
+        "planificar",
+        "publicar",
+        "revisar"
+      ],
+      "correctIndex": 1
+    },
+    {
+      "text": "Después de escribir el borrador, ¿qué se debe hacer?",
+      "options": [
+        "publicarlo sin revisar",
+        "revisarlo y corregirlo",
+        "romperlo",
+        "nada"
+      ],
+      "correctIndex": 1
+    },
+    {
+      "text": "¿Qué tipo de texto usarías para contarle a un amigo sobre tus vacaciones?",
+      "options": [
+        "una receta",
+        "una carta o correo",
+        "un aviso",
+        "una fábula"
+      ],
+      "correctIndex": 1
+    },
+    {
+      "text": "En un texto informativo sobre animales, ¿qué buscamos principalmente?",
+      "options": [
+        "rimas",
+        "información y datos",
+        "diálogos de personajes",
+        "versos"
+      ],
+      "correctIndex": 1
+    },
+    {
+      "text": "¿Cuál es el sujeto en \"El niño juega en el parque\"?",
+      "options": [
+        "el niño",
+        "juega",
+        "en el parque",
+        "parque"
+      ],
+      "correctIndex": 0
+    },
+    {
+      "text": "¿Cuál palabra es el verbo en \"Los pájaros vuelan alto\"?",
+      "options": [
+        "los",
+        "pájaros",
+        "vuelan",
+        "alto"
+      ],
+      "correctIndex": 2
+    },
+    {
+      "text": "¿Cuál palabra es aguda (acento en la última sílaba)?",
+      "options": [
+        "camión",
+        "árbol",
+        "lápiz",
+        "mesa"
+      ],
+      "correctIndex": 0
+    },
+    {
+      "text": "¿Cuál palabra es grave (acento en la penúltima sílaba)?",
+      "options": [
+        "canción",
+        "mesa",
+        "camión",
+        "café"
+      ],
+      "correctIndex": 1
+    },
+    {
+      "text": "¿Qué signo indica una pausa breve dentro de una oración?",
+      "options": [
+        "el punto",
+        "la coma",
+        "el signo de interrogación",
+        "el guion"
+      ],
+      "correctIndex": 1
+    },
+    {
+      "text": "¿Cuál palabra está bien escrita con \"h\"?",
+      "options": [
+        "ombre",
+        "hombre",
+        "ombré",
+        "jombre"
+      ],
+      "correctIndex": 1
+    },
+    {
+      "text": "¿Cuál es el plural correcto de \"reloj\"?",
+      "options": [
+        "relojes",
+        "relojs",
+        "reloj",
+        "relojies"
+      ],
+      "correctIndex": 0
+    },
+    {
+      "text": "¿Cuál palabra usa correctamente \"b\" o \"v\"?",
+      "options": [
+        "nuebo",
+        "nuevo",
+        "niebe",
+        "vueno"
+      ],
+      "correctIndex": 1
+    },
+    {
+      "text": "¿Qué se hace en la etapa de \"edición\" del proceso de escritura?",
+      "options": [
+        "pensar el tema",
+        "hacer los últimos ajustes para la versión final",
+        "escribir el borrador",
+        "nada"
+      ],
+      "correctIndex": 1
+    },
+    {
+      "text": "¿Cuál oración usa correctamente los signos de exclamación?",
+      "options": [
+        "Qué alegría!",
+        "¡Qué alegría!",
+        "¡Qué alegría",
+        "Qué ¡alegría!"
+      ],
+      "correctIndex": 1
+    },
+    {
+      "text": "Antes de preguntar para aclarar una duda, ¿qué debes hacer?",
+      "options": [
+        "escuchar con atención lo que se dijo",
+        "interrumpir de inmediato",
+        "no prestar atención",
+        "hablar de otro tema"
+      ],
+      "correctIndex": 0
+    },
+    {
+      "text": "Al participar en una conversación grupal, ¿qué fórmula de cortesía es adecuada?",
+      "options": [
+        "\"cállate\"",
+        "\"con permiso\"",
+        "\"eso no importa\"",
+        "\"no me interesa\""
+      ],
+      "correctIndex": 1
+    },
+    {
+      "text": "¿Qué debes considerar al escuchar una noticia en la radio o TV?",
+      "options": [
+        "creer todo sin pensar",
+        "escuchar con atención y evaluar si la información es confiable",
+        "no prestar atención",
+        "cambiar de canal"
+      ],
+      "correctIndex": 1
+    },
+    {
+      "text": "¿Qué parte de una exposición oral presenta el tema?",
+      "options": [
+        "el desarrollo",
+        "la introducción",
+        "el cierre",
+        "ninguna"
+      ],
+      "correctIndex": 1
+    },
+    {
+      "text": "Al recitar un poema, ¿qué es importante cuidar?",
+      "options": [
+        "la entonación y expresión",
+        "hablar sin mirar a nadie",
+        "leer muy rápido sin pausas",
+        "no importa cómo se diga"
+      ],
+      "correctIndex": 0
+    }
+  ]
+}

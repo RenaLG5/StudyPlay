@@ -1,0 +1,252 @@
+[
+  {
+    "text": "¿Qué son los pueblos originarios de Chile?",
+    "options": [
+      "Los primeros habitantes del territorio chileno antes de la llegada de los españoles",
+      "Los turistas actuales",
+      "Los inmigrantes recientes",
+      "Ninguno"
+    ],
+    "correctIndex": 0
+  },
+  {
+    "text": "¿Cuál es un pueblo originario del norte de Chile?",
+    "options": [
+      "Aymara",
+      "Rapa Nui",
+      "Selk'nam del extremo sur",
+      "Ninguno existe"
+    ],
+    "correctIndex": 0
+  },
+  {
+    "text": "¿Cuál es un pueblo originario reconocido en el sur de Chile?",
+    "options": [
+      "Mapuche",
+      "Aymara",
+      "Rapa Nui",
+      "Ninguno"
+    ],
+    "correctIndex": 0
+  },
+  {
+    "text": "¿Qué pueblo originario habita la Isla de Pascua?",
+    "options": [
+      "Rapa Nui",
+      "Mapuche",
+      "Aymara",
+      "Diaguita"
+    ],
+    "correctIndex": 0
+  },
+  {
+    "text": "¿Qué es el mestizaje?",
+    "options": [
+      "La mezcla entre los pueblos originarios y los españoles",
+      "Un tipo de comida",
+      "Un paisaje",
+      "Un instrumento"
+    ],
+    "correctIndex": 0
+  },
+  {
+    "text": "¿De qué país llegaron los conquistadores que arribaron a Chile en el siglo XVI?",
+    "options": [
+      "España",
+      "Francia",
+      "Italia",
+      "Alemania"
+    ],
+    "correctIndex": 0
+  },
+  {
+    "text": "¿Qué elementos culturales heredamos de los pueblos originarios de Chile?",
+    "options": [
+      "Palabras, costumbres y tradiciones",
+      "Nada",
+      "Solo comida extranjera",
+      "Ninguno"
+    ],
+    "correctIndex": 0
+  },
+  {
+    "text": "¿Qué es la diversidad cultural?",
+    "options": [
+      "La existencia de diferentes costumbres, lenguas y tradiciones en una sociedad",
+      "Un tipo de paisaje",
+      "Un mapa",
+      "Una norma"
+    ],
+    "correctIndex": 0
+  },
+  {
+    "text": "¿Por qué es importante valorar la diversidad cultural de nuestro país?",
+    "options": [
+      "Porque enriquece nuestra identidad como sociedad",
+      "Porque no importa",
+      "Porque debemos ser todos iguales",
+      "No tiene importancia"
+    ],
+    "correctIndex": 0
+  },
+  {
+    "text": "¿Cuáles son los puntos cardinales?",
+    "options": [
+      "Norte, sur, este y oeste",
+      "Arriba, abajo, izquierda y derecha",
+      "Rojo, azul, verde y amarillo",
+      "Uno, dos, tres y cuatro"
+    ],
+    "correctIndex": 0
+  },
+  {
+    "text": "Si el sol sale por el este, ¿por dónde se oculta?",
+    "options": [
+      "Por el oeste",
+      "Por el norte",
+      "Por el sur",
+      "No se oculta"
+    ],
+    "correctIndex": 0
+  },
+  {
+    "text": "¿Qué representa un mapa?",
+    "options": [
+      "Una representación gráfica de un territorio",
+      "Un dibujo sin sentido",
+      "Una historia",
+      "Una canción"
+    ],
+    "correctIndex": 0
+  },
+  {
+    "text": "¿Cuál es un clima cálido característico del norte de Chile?",
+    "options": [
+      "Clima desértico",
+      "Clima polar",
+      "Clima muy frío todo el año",
+      "Clima tropical lluvioso"
+    ],
+    "correctIndex": 0
+  },
+  {
+    "text": "¿Qué tipo de clima predomina en el extremo sur de Chile?",
+    "options": [
+      "Clima frío",
+      "Clima desértico",
+      "Clima tropical",
+      "Clima cálido todo el año"
+    ],
+    "correctIndex": 0
+  },
+  {
+    "text": "¿Cómo se llaman las personas que estudian y representan el territorio?",
+    "options": [
+      "Geógrafos",
+      "Historiadores",
+      "Músicos",
+      "Médicos"
+    ],
+    "correctIndex": 0
+  },
+  {
+    "text": "¿Qué elemento nos permite ubicar lugares en el planeta?",
+    "options": [
+      "El globo terráqueo y los mapas",
+      "Un termómetro",
+      "Una balanza",
+      "Un lápiz"
+    ],
+    "correctIndex": 0
+  },
+  {
+    "text": "¿Cuál de estos es un paisaje de la zona central de Chile?",
+    "options": [
+      "Valles y cordillera",
+      "Desierto todo el año",
+      "Glaciares permanentes",
+      "Selva tropical"
+    ],
+    "correctIndex": 0
+  },
+  {
+    "text": "¿Por qué las personas se adaptan a diferentes climas?",
+    "options": [
+      "Para poder vivir y desarrollarse en su entorno",
+      "Porque no tienen opción",
+      "No se adaptan",
+      "Es imposible adaptarse"
+    ],
+    "correctIndex": 0
+  },
+  {
+    "text": "¿Qué es la honestidad?",
+    "options": [
+      "Decir siempre la verdad",
+      "Mentir cuando conviene",
+      "Esconder información",
+      "Engañar a otros"
+    ],
+    "correctIndex": 0
+  },
+  {
+    "text": "¿Qué norma debemos cumplir en el hogar y la escuela?",
+    "options": [
+      "Respetar a los demás y sus pertenencias",
+      "Ignorar a los demás",
+      "No seguir ninguna regla",
+      "Pelear siempre"
+    ],
+    "correctIndex": 0
+  },
+  {
+    "text": "¿Qué debemos hacer si un compañero comete un error?",
+    "options": [
+      "Ayudarlo con empatía",
+      "Burlarnos de él",
+      "Ignorarlo",
+      "Reírnos"
+    ],
+    "correctIndex": 0
+  },
+  {
+    "text": "¿Cuál de estas acciones demuestra respeto por las normas?",
+    "options": [
+      "Cumplir con las tareas y horarios establecidos",
+      "Llegar tarde siempre",
+      "No seguir instrucciones",
+      "Desobedecer"
+    ],
+    "correctIndex": 0
+  },
+  {
+    "text": "¿Por qué es importante la convivencia pacífica en la escuela?",
+    "options": [
+      "Para que todos puedan aprender en un ambiente seguro",
+      "No es importante",
+      "Para generar conflictos",
+      "Para competir siempre"
+    ],
+    "correctIndex": 0
+  },
+  {
+    "text": "¿Qué actitud demuestra empatía hacia otra persona?",
+    "options": [
+      "Ponerse en el lugar del otro y comprender sus sentimientos",
+      "Ignorar sus sentimientos",
+      "Burlarse de sus problemas",
+      "No prestar atención"
+    ],
+    "correctIndex": 0
+  },
+  {
+    "text": "¿Qué se espera cuando existe un conflicto entre compañeros?",
+    "options": [
+      "Buscar una solución dialogando con respeto",
+      "Pelear",
+      "Ignorar el problema",
+      "Buscar venganza"
+    ],
+    "correctIndex": 0
+  }
+]

@@ -1,0 +1,252 @@
+[
+  {
+    "text": "¿Qué es una red alimentaria?",
+    "options": [
+      "El conjunto de varias cadenas alimentarias interconectadas",
+      "Una sola cadena alimentaria",
+      "Un tipo de planta",
+      "Un ciclo del agua"
+    ],
+    "correctIndex": 0
+  },
+  {
+    "text": "¿Cuál es la función del sistema circulatorio?",
+    "options": [
+      "Transportar sangre, oxígeno y nutrientes por el cuerpo",
+      "Digerir los alimentos",
+      "Producir movimiento",
+      "Filtrar el aire"
+    ],
+    "correctIndex": 0
+  },
+  {
+    "text": "¿Qué órgano del sistema nervioso controla las funciones del cuerpo?",
+    "options": [
+      "El corazón",
+      "El cerebro",
+      "El estómago",
+      "El pulmón"
+    ],
+    "correctIndex": 1
+  },
+  {
+    "text": "¿Cuál es una función del sistema nervioso?",
+    "options": [
+      "Recibir y procesar información del entorno",
+      "Digerir alimentos",
+      "Bombear sangre",
+      "Producir sonidos únicamente"
+    ],
+    "correctIndex": 0
+  },
+  {
+    "text": "¿Qué actividad humana puede afectar negativamente a un ecosistema?",
+    "options": [
+      "La deforestación",
+      "La reforestación",
+      "El reciclaje",
+      "La protección de especies"
+    ],
+    "correctIndex": 0
+  },
+  {
+    "text": "¿Qué medida ayuda a proteger especies en peligro de extinción?",
+    "options": [
+      "Crear áreas protegidas y reservas naturales",
+      "Aumentar la caza",
+      "Destruir su hábitat",
+      "Ignorar el problema"
+    ],
+    "correctIndex": 0
+  },
+  {
+    "text": "¿Cuál es un ejemplo de interacción entre seres vivos en un ecosistema?",
+    "options": [
+      "La depredación (un animal se come a otro)",
+      "Un río sin vida",
+      "Una piedra en el suelo",
+      "El viento soplando"
+    ],
+    "correctIndex": 0
+  },
+  {
+    "text": "¿Qué sucede si se elimina un depredador de un ecosistema?",
+    "options": [
+      "La población de sus presas puede aumentar descontroladamente",
+      "No pasa nada",
+      "El ecosistema mejora siempre",
+      "Las plantas desaparecen"
+    ],
+    "correctIndex": 0
+  },
+  {
+    "text": "¿Cuál es un hábito de vida saludable?",
+    "options": [
+      "Realizar actividad física regularmente",
+      "No dormir",
+      "Comer solo comida chatarra",
+      "No hacer ejercicio"
+    ],
+    "correctIndex": 0
+  },
+  {
+    "text": "¿Cuál es una propiedad de la materia relacionada con la cantidad de espacio que ocupa?",
+    "options": [
+      "El volumen",
+      "El color",
+      "El olor",
+      "El sabor"
+    ],
+    "correctIndex": 0
+  },
+  {
+    "text": "¿Qué transformación de energía ocurre en un panel solar?",
+    "options": [
+      "De energía luminosa a energía eléctrica",
+      "De energía eléctrica a energía luminosa únicamente",
+      "De energía sonora a energía eléctrica",
+      "Ninguna"
+    ],
+    "correctIndex": 0
+  },
+  {
+    "text": "¿Cuál es la fuerza que atrae los objetos hacia el centro de la Tierra?",
+    "options": [
+      "Fuerza magnética",
+      "Fuerza de gravedad",
+      "Fuerza eléctrica",
+      "Fuerza de roce"
+    ],
+    "correctIndex": 1
+  },
+  {
+    "text": "¿Qué tipo de fuerza permite que un imán atraiga objetos de metal?",
+    "options": [
+      "Fuerza de gravedad",
+      "Fuerza magnética",
+      "Fuerza de roce",
+      "Fuerza eléctrica"
+    ],
+    "correctIndex": 1
+  },
+  {
+    "text": "¿Qué sucede con la masa de un objeto si lo llevamos a la Luna?",
+    "options": [
+      "Se mantiene igual, pero su peso cambia",
+      "Aumenta al doble",
+      "Desaparece",
+      "Se transforma en energía"
+    ],
+    "correctIndex": 0
+  },
+  {
+    "text": "¿Cuál es un ejemplo de transformación de energía?",
+    "options": [
+      "Una bombilla que transforma electricidad en luz",
+      "Una piedra que no cambia",
+      "El agua que se congela sin razón",
+      "Nada"
+    ],
+    "correctIndex": 0
+  },
+  {
+    "text": "¿Qué característica tiene un buen aislante eléctrico?",
+    "options": [
+      "Permite el paso de la corriente eléctrica fácilmente",
+      "No permite el paso de la corriente eléctrica",
+      "Es siempre metálico",
+      "Es líquido"
+    ],
+    "correctIndex": 1
+  },
+  {
+    "text": "¿Qué recurso energético es más contaminante para el medioambiente?",
+    "options": [
+      "La energía solar",
+      "La energía eólica",
+      "El petróleo",
+      "La energía hidráulica"
+    ],
+    "correctIndex": 2
+  },
+  {
+    "text": "¿Qué son las placas tectónicas?",
+    "options": [
+      "Grandes bloques que forman la corteza terrestre y se mueven lentamente",
+      "Capas de la atmósfera",
+      "Tipos de rocas volcánicas",
+      "Corrientes marinas"
+    ],
+    "correctIndex": 0
+  },
+  {
+    "text": "¿Qué fenómeno ocurre cuando dos placas tectónicas chocan o se deslizan bruscamente?",
+    "options": [
+      "Un sismo o terremoto",
+      "Una lluvia",
+      "Un eclipse",
+      "Una marea"
+    ],
+    "correctIndex": 0
+  },
+  {
+    "text": "¿Qué es un volcán?",
+    "options": [
+      "Una abertura en la corteza terrestre por donde sale material del interior de la Tierra",
+      "Una montaña de hielo",
+      "Un tipo de nube",
+      "Un río subterráneo"
+    ],
+    "correctIndex": 0
+  },
+  {
+    "text": "¿Qué proceso desgasta el suelo y las rocas por acción del agua, viento o hielo?",
+    "options": [
+      "La erosión",
+      "La fotosíntesis",
+      "La evaporación",
+      "La combustión"
+    ],
+    "correctIndex": 0
+  },
+  {
+    "text": "¿Cuál es la diferencia principal entre agua dulce y agua salada?",
+    "options": [
+      "El agua salada contiene mayor concentración de sales",
+      "El agua dulce es siempre más fría",
+      "El agua salada no se puede beber por su color",
+      "No hay diferencia"
+    ],
+    "correctIndex": 0
+  },
+  {
+    "text": "Al analizar los datos de un experimento, ¿qué debemos hacer?",
+    "options": [
+      "Buscar patrones y relaciones entre los resultados",
+      "Ignorarlos",
+      "Inventar nuevos datos",
+      "Borrarlos"
+    ],
+    "correctIndex": 0
+  },
+  {
+    "text": "¿Qué elemento de una investigación permite comparar resultados entre un grupo experimental y otro sin cambios?",
+    "options": [
+      "El grupo control",
+      "El título",
+      "El dibujo",
+      "La fecha"
+    ],
+    "correctIndex": 0
+  },
+  {
+    "text": "¿Por qué es importante repetir un experimento varias veces?",
+    "options": [
+      "Para verificar que los resultados sean confiables",
+      "Para perder el tiempo",
+      "Para confundir los datos",
+      "No es importante"
+    ],
+    "correctIndex": 0
+  }
+]

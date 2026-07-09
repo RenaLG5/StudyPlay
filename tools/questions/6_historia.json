@@ -1,0 +1,212 @@
+[
+  {
+    "text": "¿En qué año se conmemora el inicio del proceso de independencia de Chile con la Primera Junta Nacional de Gobierno?",
+    "options": ["1810", "1818", "1492", "1900"],
+    "correctIndex": 0
+  },
+  {
+    "text": "¿En qué año se proclamó oficialmente la independencia de Chile?",
+    "options": ["1818", "1810", "1492", "1830"],
+    "correctIndex": 0
+  },
+  {
+    "text": "¿Quién es considerado el \"padre de la patria\" en Chile?",
+    "options": ["Bernardo O'Higgins", "Pedro de Valdivia", "Cristóbal Colón", "Arturo Prat"],
+    "correctIndex": 0
+  },
+  {
+    "text": "¿Qué batalla marcó un momento decisivo en la independencia de Chile en 1818?",
+    "options": ["La batalla de Maipú", "La batalla de Rancagua", "La batalla de Chacabuco", "Ninguna"],
+    "correctIndex": 0
+  },
+  {
+    "text": "¿Qué proceso ocurrió en Chile durante el siglo XIX luego de la independencia?",
+    "options": [
+      "La organización de la República y su institucionalidad",
+      "La conquista española",
+      "El descubrimiento de América",
+      "La llegada de los primeros pueblos originarios"
+    ],
+    "correctIndex": 0
+  },
+  {
+    "text": "¿Qué característica tuvo el proceso de democratización de Chile durante el siglo XX?",
+    "options": [
+      "La ampliación del derecho a voto a más ciudadanos, incluidas las mujeres",
+      "La eliminación del voto",
+      "El regreso a la monarquía",
+      "Ninguna de las anteriores"
+    ],
+    "correctIndex": 0
+  },
+  {
+    "text": "¿En qué año las mujeres obtuvieron el derecho a voto en elecciones presidenciales en Chile?",
+    "options": ["1949", "1810", "1900", "2000"],
+    "correctIndex": 0
+  },
+  {
+    "text": "¿Qué significa el proceso de \"organización de la República\" en el siglo XIX?",
+    "options": [
+      "La creación de instituciones políticas y una Constitución para gobernar el país",
+      "La llegada de los españoles",
+      "El fin de la Segunda Guerra Mundial",
+      "La fundación de Santiago"
+    ],
+    "correctIndex": 0
+  },
+  {
+    "text": "¿Por qué es importante estudiar el proceso de independencia y organización republicana de Chile?",
+    "options": [
+      "Para comprender el origen de nuestras instituciones actuales",
+      "No tiene relevancia",
+      "Porque no influyó en nada",
+      "Porque ocurrió en otro país"
+    ],
+    "correctIndex": 0
+  },
+  {
+    "text": "¿Cuántas regiones político-administrativas tiene Chile actualmente?",
+    "options": ["16", "10", "5", "20"],
+    "correctIndex": 0
+  },
+  {
+    "text": "¿Cuál es la capital de Chile?",
+    "options": ["Santiago", "Valparaíso", "Concepción", "Antofagasta"],
+    "correctIndex": 0
+  },
+  {
+    "text": "¿Qué recurso natural ha sido históricamente el principal producto de exportación minera de Chile?",
+    "options": ["El cobre", "El petróleo", "El carbón", "El oro"],
+    "correctIndex": 0
+  },
+  {
+    "text": "¿Qué significa el concepto de \"recursos naturales limitados\"?",
+    "options": [
+      "Que los recursos pueden agotarse si no se usan de forma responsable",
+      "Que los recursos son infinitos",
+      "Que no existen recursos naturales",
+      "Que todos los recursos se renuevan solos sin cuidado"
+    ],
+    "correctIndex": 0
+  },
+  {
+    "text": "¿Qué es el desarrollo sostenible?",
+    "options": [
+      "Satisfacer las necesidades actuales sin comprometer las de las futuras generaciones",
+      "Usar todos los recursos sin control",
+      "Ignorar el medioambiente",
+      "Solo beneficiar a las empresas"
+    ],
+    "correctIndex": 0
+  },
+  {
+    "text": "¿Cómo potencia el trabajo humano los recursos naturales?",
+    "options": [
+      "Transformándolos en bienes y servicios útiles para la sociedad",
+      "No los modifica en nada",
+      "Los destruye siempre",
+      "No existe relación"
+    ],
+    "correctIndex": 0
+  },
+  {
+    "text": "¿Cuál es una región de Chile ubicada en el extremo norte del país?",
+    "options": [
+      "Región de Arica y Parinacota",
+      "Región de Magallanes",
+      "Región de Aysén",
+      "Región del Biobío"
+    ],
+    "correctIndex": 0
+  },
+  {
+    "text": "¿Cuál es una región de Chile ubicada en el extremo sur del país?",
+    "options": [
+      "Región de Magallanes y la Antártica Chilena",
+      "Región de Arica y Parinacota",
+      "Región de Tarapacá",
+      "Región de Atacama"
+    ],
+    "correctIndex": 0
+  },
+  {
+    "text": "¿Por qué es importante el cuidado del medioambiente en la explotación de recursos naturales como el cobre?",
+    "options": [
+      "Para evitar la contaminación y asegurar la sostenibilidad",
+      "No es necesario cuidar el medioambiente",
+      "Porque no genera ningún impacto",
+      "Porque los recursos se regeneran solos sin cuidado"
+    ],
+    "correctIndex": 0
+  },
+  {
+    "text": "¿Qué son los Derechos Humanos?",
+    "options": [
+      "Derechos fundamentales que tienen todas las personas por su dignidad humana",
+      "Beneficios que otorga el gobierno solo a algunos",
+      "Normas que solo aplican en algunos países",
+      "Leyes que pueden eliminarse fácilmente"
+    ],
+    "correctIndex": 0
+  },
+  {
+    "text": "¿Qué institución internacional promueve la Declaración Universal de los Derechos Humanos?",
+    "options": [
+      "La Organización de las Naciones Unidas (ONU)",
+      "Un club deportivo",
+      "Una empresa privada",
+      "Ninguna"
+    ],
+    "correctIndex": 0
+  },
+  {
+    "text": "¿Cuál es un ejemplo de un derecho humano fundamental?",
+    "options": [
+      "El derecho a la educación",
+      "El derecho a discriminar",
+      "El derecho a no cumplir leyes",
+      "Ninguno de los anteriores"
+    ],
+    "correctIndex": 0
+  },
+  {
+    "text": "¿Cuál es un deber ciudadano en una democracia?",
+    "options": [
+      "Respetar las leyes y participar responsablemente en la sociedad",
+      "No cumplir ninguna norma",
+      "Ignorar las elecciones",
+      "No participar en nada"
+    ],
+    "correctIndex": 0
+  },
+  {
+    "text": "¿Qué rol cumple el Estado respecto a los derechos de las personas?",
+    "options": [
+      "Resguardar y garantizar el cumplimiento de los derechos humanos",
+      "Ignorarlos",
+      "Eliminarlos",
+      "No tiene ningún rol"
+    ],
+    "correctIndex": 0
+  },
+  {
+    "text": "¿Por qué es importante la participación ciudadana en la vida democrática de un país?",
+    "options": [
+      "Porque permite influir en las decisiones que afectan a la comunidad",
+      "No aporta nada",
+      "Porque solo el gobierno debe decidir",
+      "Porque limita la libertad de las personas"
+    ],
+    "correctIndex": 0
+  },
+  {
+    "text": "¿Qué actitud demuestra el ejercicio responsable de la ciudadanía?",
+    "options": [
+      "Informarse y participar respetando las opiniones de los demás",
+      "Ignorar la información",
+      "Imponer la propia opinión sin escuchar",
+      "No participar en la comunidad"
+    ],
+    "correctIndex": 0
+  }
+]
