@@ -99,10 +99,17 @@ class _MenuScreenState extends State<MenuScreen> {
                     children: [
                       CircleAvatar(
                         radius: 30,
+                        backgroundColor: Colors.white,
                         backgroundImage: settingsVM.profileImagePath.isNotEmpty
                             ? FileImage(File(settingsVM.profileImagePath))
-                            : const AssetImage('assets/images/perfil.png')
-                                  as ImageProvider,
+                            : null,
+                        child: settingsVM.profileImagePath.isEmpty
+                            ? const Icon(
+                                Icons.person,
+                                size: 35,
+                                color: Colors.grey,
+                              )
+                            : null,
                       ),
                       const SizedBox(height: 10),
                       Text(
