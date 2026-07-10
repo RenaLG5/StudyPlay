@@ -15,6 +15,8 @@ StudyPlay es una aplicación móvil que transforma el aprendizaje en una experie
 * Uso de recursos visuales (iconos, imágenes y tarjetas).
 * Efectos de sonido y vibración.
 * Selección de imagen de perfil desde la galería.
+* Detección automática de conexión a Internet.
+* Funcionamiento offline utilizando caché local.
 
 ---
 
@@ -25,6 +27,10 @@ StudyPlay es una aplicación móvil que transforma el aprendizaje en una experie
 * Como estudiante, quiero ganar logros para motivarme.
 * Como estudiante, quiero revisar mi historial de partidas.
 * Como estudiante, quiero ver mi perfil y progreso.
+* Como estudiante, quiero seleccionar el curso en el que estoy para responder preguntas acordes a mi nivel.
+* Como estudiante, quiero continuar utilizando la aplicación aunque pierda conexión a Internet.
+* Como estudiante, quiero cambiar el idioma de la aplicación.
+* Como estudiante, quiero iniciar sesión para guardar mi progreso en la nube.
 
 ---
 
@@ -41,6 +47,12 @@ StudyPlay es una aplicación móvil que transforma el aprendizaje en una experie
 * RF9: El sistema debe guardar configuraciones personalizadas.
 * RF10: El sistema debe permitir cambiar la foto de perfil.
 * RF11: El sistema debe almacenar respuestas de encuestas en Firebase.
+* RF12: El sistema debe permitir seleccionar el curso del estudiante.
+* RF13: El sistema debe cargar preguntas desde Firebase Firestore.
+* RF14: El sistema debe almacenar preguntas localmente para uso offline.
+* RF15: El sistema debe sincronizar automáticamente la información al recuperar la conexión.
+* RF16: El sistema debe permitir cambiar el idioma entre español e inglés.
+* RF17: El sistema debe mostrar preguntas aleatorias al repetir una asignatura completada.
 
 ---
 
@@ -53,6 +65,9 @@ StudyPlay es una aplicación móvil que transforma el aprendizaje en una experie
 * RNF5: Arquitectura escalable y modular.
 * RNF6: Persistencia de datos entre sesiones.
 * RNF7: Compatibilidad con Firebase.
+* RNF8: La aplicación debe funcionar sin conexión utilizando la última información descargada.
+* RNF9: La sincronización con Firestore debe realizarse de manera asíncrona.
+* RNF10: Debe soportar internacionalización.
 
 ---
 
@@ -90,6 +105,7 @@ Se utiliza Provider para:
 
 Se utiliza SharedPreferences para almacenar:
 
+* Curso seleccionado.
 * Nombre del usuario.
 * Edad.
 * País.
@@ -97,19 +113,36 @@ Se utiliza SharedPreferences para almacenar:
 * Configuración de sonido.
 * Configuración de notificaciones.
 * Tema oscuro.
+* Idioma seleccionado.
 * Usuario actual.
+* Progreso del jugador.
+* Historial.
+* Caché de preguntas descargadas desde Firestore.
 
 ## Persistencia en la nube
 
-Se utiliza Firebase:
+Se utiliza Firebase como Backend as a Service (BaaS):
 
-* Firebase Authentication para inicio de sesión.
-* Cloud Firestore para:
-  * Historial de partidas.
-  * Progreso del usuario.
-  * Logros.
-  * Encuestas de calidad.
-  * Encuestas de satisfacción.
+### Firebase Authentication
+
+* Registro mediante correo electrónico.
+* Inicio de sesión.
+* Mantención de sesión.
+* Cambio de cuenta.
+
+### Cloud Firestore
+
+* Preguntas organizadas por:
+  * Curso (1° a 6° básico)
+  * Asignatura
+  * Nivel
+* Historial de partidas.
+* Progreso del usuario.
+* Configuración.
+* Encuestas de calidad.
+* Encuestas de satisfacción.
+
+Las preguntas se descargan de forma asíncrona y se almacenan automáticamente en caché para permitir jugar sin conexión.
 
 ---
 
@@ -135,25 +168,52 @@ Se utiliza Firebase:
 ### Diseño
 * Material Design 3
 
+### Conectividad
+
+* Connectivity Plus
+
+### Internacionalización
+
+* flutter_localizations
+
+### Backend as a Service
+
+* Firebase Authentication
+* Cloud Firestore
+
+### Offline First
+
+* SharedPreferences
+
 ---
 
-## NAVEGACIÓN
+### Menú principal
 
-La aplicación utiliza múltiples sistemas de navegación:
+* Botón Jugar
 
-### Bottom Navigation Bar
-* Historial
-* Perfil
-### Floating Action Button
-* Recompensas y logros
-### Floating Action Button (centro)
-* Iniciar juego (JUGAR)
+↓
 
-### Drawer (menú lateral ☰)
-* Perfil
-* Configuración
-* Notificaciones (simuladas)
-* Ayuda y soporte
+### Selección de curso
+
+* 1° Básico
+* 2° Básico
+* 3° Básico
+* 4° Básico
+* 5° Básico
+* 6° Básico
+
+↓
+
+### Selección de asignatura
+
+* Matemáticas
+* Lenguaje
+* Ciencias
+* Historia
+
+↓
+
+### Quiz
 
 ---
 
@@ -161,6 +221,7 @@ La aplicación utiliza múltiples sistemas de navegación:
 
 * Splash Screen (inicio)
 * Menú principal
+* Selección de curso
 * Selección de asignaturas
 * Quiz
 * Resultado de partida
@@ -183,92 +244,164 @@ La aplicación utiliza múltiples sistemas de navegación:
 * Cerrar sesión.
 * Mantener configuraciones independientes para * cada usuario.
 
+Cada usuario mantiene de forma independiente:
+
+* Curso seleccionado.
+* Configuración.
+* Progreso.
+* Historial.
+* Logros.
+
 Los datos personales y preferencias se restauran automáticamente al volver a iniciar sesión.
 
 ## GAMIFICACIÓN
 
-La aplicación incluye un sistema de logros:
+La aplicación incorpora un sistema de progresión basado en niveles y logros.
 
-### Logros por progreso
-* Primer quiz completado.
-* 5 quizzes completados.
-* 10 quizzes completados.
+### Logros generales
+
+* Primer nivel completado.
+* 5 niveles completados.
+* 10 niveles completados.
+* 20 niveles completados.
+
 ### Logros por asignatura
+
 * Matemáticas.
 * Lenguaje.
 * Ciencias.
 * Historia.
-### Recompensas visuales
-* Banners emergentes.
-* Sonidos de recompensa.
-* Vibración.
 
----
+### Logros por curso
 
-## MANUAL DE USO
+* Completar 5 niveles de 1° Básico.
+* Completar 5 niveles de 2° Básico.
+* Completar 5 niveles de 3° Básico.
+* Completar 5 niveles de 4° Básico.
+* Completar 5 niveles de 5° Básico.
+* Completar 5 niveles de 6° Básico.
 
-### Menú principal
-* Presionar "JUGAR" para iniciar un quiz
-* Usar barra inferior para acceder a historial o perfil
-* Usar menú lateral para opciones adicionales
+### Logro final
 
-### Quiz
-* Seleccionar asignatura
-* Responder preguntas
-* Visualizar resultados
-
-### Historial
-* Ver partidas anteriores con:
-  - Fecha
-  - Tiempo
-  - Dificultad
-  - Asignatura
-  - Respuestas correctas/incorrectas
+* Dominar todas las asignaturas de todos los cursos.
 
 ### Recompensas
-* Visualizar logros obtenidos
-* Ver logros bloqueados
 
-### Perfil
-* Ver información personal
-* Imagen de usuario
-* Datos básicos
-
-### Ayuda
-* Preguntas frecuentes
-* Información de soporte
+* Desbloqueo visual.
+* Banners.
+* Persistencia del progreso.
 
 ---
 
-## DIAGRAMA DE FLUJO
+### Menú principal
+
+1. Presionar "JUGAR"
+
+### Selección de curso
+
+2. Elegir el curso correspondiente.
+
+### Selección de asignatura
+
+3. Elegir Matemáticas, Lenguaje, Ciencias o Historia.
+
+### Quiz
+
+4. Responder las preguntas.
+
+### Resultados
+
+5. Obtener puntaje y avanzar al siguiente nivel.
+
+### Historial
+
+6. Consultar partidas anteriores.
+
+### Recompensas
+
+7. Revisar logros desbloqueados.
+
+### Configuración
+
+8. Cambiar:
+
+- Idioma
+- Sonido
+- Notificaciones
+- Tema
+- Foto de perfil
+
+---
 
 ```mermaid
 flowchart TD
 
+A[Splash Screen]
 
-    A[Splash Screen] --> B[Menú Principal]
+A --> B[Menú Principal]
 
-    B --> C[Jugar]
-    B --> H[Historial]
-    B --> P[Perfil]
-    B --> R[Recompensas]
-    B --> D[Menú lateral]
+B --> C[Seleccionar Curso]
 
-    D --> S[Configuración]
-    D --> N[Notificaciones]
-    D --> AY[Ayuda]
+C --> D[Seleccionar Asignatura]
 
-    C --> E[Seleccionar Asignatura]
-    E --> F[Iniciar Quiz]
-    F --> G[Responder Preguntas]
-    G --> I[Resultados]
-    I --> H
+D --> E[Descargar preguntas desde Firestore]
 
-    R --> B
-    P --> B
-    S --> B
-    AY --> B
+E --> F{¿Hay Internet?}
+
+F -->|Sí| G[Guardar preguntas en caché]
+
+F -->|No| H[Usar preguntas almacenadas]
+
+G --> I[Quiz]
+
+H --> I
+
+I --> J[Resultados]
+
+J --> K[Guardar progreso]
+
+K --> L[Historial]
+
+B --> M[Perfil]
+
+B --> N[Recompensas]
+
+B --> O[Menú lateral]
+
+O --> P[Configuración]
+
+O --> Q[Ayuda]
+
+P --> R[Cambiar idioma]
+
+P --> S[Cambiar tema]
+
+P --> T[Editar perfil]
 ```
+
+## FUNCIONAMIENTO OFFLINE
+
+StudyPlay implementa una estrategia **Offline First**.
+
+Cuando el usuario abre una asignatura:
+
+1. Se intenta descargar las preguntas desde Firestore.
+2. Las preguntas se almacenan automáticamente en SharedPreferences.
+3. Si el dispositivo pierde conexión, la aplicación utiliza la copia local.
+4. Al recuperar Internet, las preguntas se sincronizan nuevamente con Firestore.
+
+Esto permite seguir utilizando la aplicación incluso sin conexión.
+
+## INTERNACIONALIZACIÓN
+
+La aplicación soporta múltiples idiomas mediante el sistema de localización de Flutter.
+
+Idiomas disponibles:
+
+* Español
+* Inglés
+
+El idioma puede modificarse desde Configuración y se guarda automáticamente para cada usuario.
 
 ### AUTOR
 * Renato León
